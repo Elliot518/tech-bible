@@ -12,6 +12,12 @@
 
 [订单系统的架构进化](Architecture/Evolution/订单系统的架构进化.md)
 
+<hr>
+
+### 2.3 高并发设计
+
+[分库分表](Architecture/Concurrency/分库分表.md)
+
 &nbsp;
 
 ## III. 框架
