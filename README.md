@@ -7,3 +7,4 @@ Elliot's technical bible
 - [中文目录](Chinese/Guideline.md)
 
 - [English Catalog](English/Guideline.md)
+
