@@ -34,6 +34,11 @@ Real world data is usually messy, so data cleaning is of the upmost importance t
 **3. Feature engineering**
 New features need to be engineered from the existing features or raw data.
 
-4 Modeling—In this stage, you train a model using the selected features and corresponding targets.
-5 Evaluation—After training the model, you must ensure it is reliable and can perform well on unseen data (e.g., test data).
-6 Creating a user interface for stakeholders to use the model—In most cases, you will need to provide a dashboard/user interface for users to interact with the model.
+**4. Modeling**
+In this stage, you train a model using the selected features and corresponding targets.
+
+**5. Evaluation**
+After training the model, you must ensure it is reliable and can perform well on unseen data (e.g., test data).
+
+**6. Creating a user interface for stakeholders to use the model**
+In most cases, you will need to provide a dashboard/user interface for users to interact with the model.
