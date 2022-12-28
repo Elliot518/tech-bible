@@ -1,5 +1,7 @@
 [Back](Catalog.md)
 
+<hr>
+
 ### 1. What is TensorFlow
 
 - Authoritative Definition
