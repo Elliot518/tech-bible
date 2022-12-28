@@ -56,3 +56,11 @@ In most cases, you will need to provide a dashboard/user interface for users to 
 
 - Other Knowledage
   > Keras can be integrated with multiple deep learning engines including Google TensorFlow, Microsoft CNTK, Amazon MXNet, and Theano. Starting with TensorFlow 2.0, Keras, the API developed by François Chollet, has been adopted as the standard high-level API, largely simplifying coding and making programming more intuitive.
+
+&nbsp;
+
+### 4. What is Neural Networks
+
+> Artificial neural networks (briefly, “nets” or ANNs) represent a class of machine learning models loosely inspired by studies about the central nervous systems of mammals.Each ANN is made up of several interconnected “neurons,” organized in “layers.” Neurons in one layer pass messages to neurons in the next layer and this is how the network computes things.
+>
+> Neural networks aims at generalizing established observations to predict future results.
