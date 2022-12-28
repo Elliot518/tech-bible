@@ -32,7 +32,7 @@
 
 ### 7.1 TensorFlow
 
-[Catalog](7_AI/README.md)
+[Catalog](7_AI/TensorFlow/README.md)
 
 &nbsp;
 
