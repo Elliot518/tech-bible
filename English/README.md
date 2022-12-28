@@ -6,7 +6,7 @@
 
 ### 2.1 DDD(Domain Driven Design)
 
-[DDD Concepts](Architecture/DDD/ddd_concepts.md)
+[Catalog](2_Architecture/DDD/README.md)
 
 <hr>
 
