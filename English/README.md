@@ -8,8 +8,6 @@
 
 [Catalog](2_Architecture/DDD/README.md)
 
-<hr>
-
 ### 2.2 Architecture Evolution
 
 &nbsp;
@@ -31,6 +29,10 @@
 &nbsp;
 
 ## VII. Artificial Intelligence
+
+### 7.1 TensorFlow
+
+[Catalog](7_AI/README.md)
 
 &nbsp;
 
