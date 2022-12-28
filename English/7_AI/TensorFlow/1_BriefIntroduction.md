@@ -15,11 +15,9 @@
 
 &nbsp;
 
-### 2. Deep inside TensorFlow
+### 2. What is Machine Learning
 
 Since we know that TensorFlow is a software library for machine learning, but what is machine learning?
-
-#### What is Machine Learning
 
 > Machine learning is a process where we train and deploy a computational model to predict some output given the data as input.
 
@@ -42,3 +40,19 @@ After training the model, you must ensure it is reliable and can perform well on
 
 **6. Creating a user interface for stakeholders to use the model**
 In most cases, you will need to provide a dashboard/user interface for users to interact with the model.
+
+&nbsp;
+
+### 3. What is Keras
+
+- Authoritative Definition
+
+  > Keras is a deep learning API written in Python, running on top of the machine learning platform TensorFlow.Keras is the high-level API of TensorFlow 2, it is a beautiful API for composing building blocks to create and train deep learning models.
+
+- History
+
+  > Keras was initially founded by François Chollet as a platform-agnostic, high-level API that can use one of two popular low-level symbolic math libraries at a time: Tensor- Flow or Theano. Specifically, Keras provides layers (e.g., fully connected layers, con- volution layers, etc.), which encapsulate core computations of neural networks.
+  > Furthermore, Keras provides pretrained models that can be downloaded and used conveniently. As Theano retired in 2017, TensorFlow became the go-to backend for Keras. In 2017 (TensorFlow v1.4 upward), Keras was integrated into TensorFlow and is now a submodule in TensorFlow that provides a wide variety of reusable layers that can be used to build deep learning models as well as pretrained models.
+
+- Other Knowledage
+  > Keras can be integrated with multiple deep learning engines including Google TensorFlow, Microsoft CNTK, Amazon MXNet, and Theano. Starting with TensorFlow 2.0, Keras, the API developed by François Chollet, has been adopted as the standard high-level API, largely simplifying coding and making programming more intuitive.
