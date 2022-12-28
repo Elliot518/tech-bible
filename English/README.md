@@ -14,8 +14,24 @@
 
 &nbsp;
 
-## III. Frameworks
+## III. Server Side
 
 &nbsp;
 
 ## IV. Middle Wares
+
+&nbsp;
+
+## V. Front End
+
+&nbsp;
+
+## VI. Mobile Programming
+
+&nbsp;
+
+## VII. Artificial Intelligence
+
+&nbsp;
+
+## VIII. Security
