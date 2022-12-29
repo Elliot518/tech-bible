@@ -32,7 +32,7 @@ After installing Anaconda, it is time to create an environment.
 
 With so many independently developed Python libraries, each having many different versions and each version having various dependencies, things can get out of hand real quick.
 
-####How to create an environment
+#### How to create an environment
 
 - Terminal Mode
 
