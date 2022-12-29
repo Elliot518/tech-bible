@@ -22,13 +22,14 @@ After installing Anaconda, it is time to create an environment.
 
 ### 2. Conda Virtual Environments
 
-####What is Virtual environments
+#### What is Virtual environments
 
 > Virtual environments are a convenient way to isolate Python installations associated with different projects.
 >
 > It is like a replication of Python itself and some of its libraries, so,after setting up virtual env, you’ll end up with multiple Python installations on your computer.
 
-####Why can’t I just use one single Python installation for everything?
+#### Why can’t I just use one single Python installation for everything?
+
 With so many independently developed Python libraries, each having many different versions and each version having various dependencies, things can get out of hand real quick.
 
 ####How to create an environment
@@ -40,7 +41,8 @@ With so many independently developed Python libraries, each having many differen
 conda create -n env_name anaconda
 ```
 
-####Activate an environment
+#### Activate an environment
+
 After setting up an environment, you must activate it.
 It means making that Python installation the one to be used now.
 
@@ -67,7 +69,8 @@ conda install pytorch torchvision -c pytorch
 pip3 install torch torchvision
 ```
 
-####VERIFICATION
+#### VERIFICATION
+
 To ensure that PyTorch was installed correctly, we can verify the installation by running sample PyTorch code. Here we will construct a randomly initialized tensor.
 
 ```
@@ -149,6 +152,6 @@ see reference:
 
 <hr>
 
-###Blog Articles:
+### Blog Articles:
 
 [A Frist Demo on Gradient Descent(Chinese)](https://www.jianshu.com/p/d1398b690644)
