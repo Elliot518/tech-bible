@@ -5,3 +5,5 @@
 <hr>
 
 [1. Introduction](1_Introduction.md)
+
+[2. Setup PyTorch Developing Environment](2_Environment.md)
