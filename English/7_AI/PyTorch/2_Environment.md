@@ -39,3 +39,50 @@ With so many independently developed Python libraries, each having many differen
 # eg: here env_name is your environment name
 conda create -n env_name anaconda
 ```
+
+####Activate an environment
+After setting up an environment, you must activate it.
+It means making that Python installation the one to be used now.
+
+```
+conda activate env_name
+```
+
+&nbsp;
+
+### 3. Install PyTorch
+
+- Anaconda
+
+```
+conda install pytorch torchvision -c pytorch
+```
+
+<hr>
+
+- pip
+
+```
+# Python 3.x
+pip3 install torch torchvision
+```
+
+####VERIFICATION
+To ensure that PyTorch was installed correctly, we can verify the installation by running sample PyTorch code. Here we will construct a randomly initialized tensor.
+
+```
+import torch
+
+x = torch.rand(5, 3)
+print(x)
+```
+
+The output should be something similar to:
+
+```
+tensor([[0.3380, 0.3845, 0.3217],
+        [0.8337, 0.9050, 0.2650],
+        [0.2979, 0.7141, 0.9069],
+        [0.1449, 0.1132, 0.1375],
+        [0.4675, 0.3947, 0.1426]])
+```
