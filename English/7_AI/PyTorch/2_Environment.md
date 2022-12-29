@@ -86,3 +86,61 @@ tensor([[0.3380, 0.3845, 0.3217],
         [0.1449, 0.1132, 0.1375],
         [0.4675, 0.3947, 0.1426]])
 ```
+
+&nbsp;
+
+### 4. Install TensorBoard
+
+> TensorBoard is TensorFlow’s visualization toolkit, and provides the visualization and tooling needed for machine learning experimentation.
+
+TensorBoard is a powerful tool, and we can use it even if we are developing models in PyTorch. Luckily, you don’t need to install the whole TensorFlow to get it, you can easily install TensorBoard alone using Conda.
+
+```
+# install tensorboard alone
+conda install -c conda-forge tensorboard
+```
+
+&nbsp;
+
+### 5. Install GraphViz and Torchviz (optional)
+
+> GraphViz is an open source graph visualization software. It is a way of representing structural information as diagrams of abstract graphs and networks.
+
+- Install GraphViz
+  We need to install GraphViz to use TorchViz, a neat package that allows us to visualize a model’s structure. Please check the installation instructions for your OS at https://www.graphviz.org/download/
+
+If you are using Windows, please use the GraphViz’s Windows Package installer at https://graphviz.gitlab.io/_pages/Download/windows/graphviz-2.38.msi
+
+- Install torchviz
+  After installing GraphViz, you can install the torchviz package. This package is not part of Anaconda Distribution Repository and is only available at [PyPI](https://pypi.org/), the Python Package Index, so we need to pip install it.
+
+pip
+
+```
+pip install torchviz
+```
+
+anaconda
+
+```
+conda install torchviz
+```
+
+##### check your GraphViz / TorchViz installation
+
+```
+import torch
+from torchviz import make_dot
+v = torch.tensor(1.0, requires_grad=True)
+make_dot(v)
+```
+
+Output
+
+```
+<graphviz.dot.Digraph object at 0x7ff540c56f50>
+```
+
+&nbsp;
+
+### 6. Install Juyter
