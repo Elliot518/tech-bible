@@ -42,6 +42,10 @@
 
 [Catalog](7_AI/TensorFlow/Catalog.md)
 
+### 7.2 PyTorch
+
+[Catalog](7_AI/PyTorch/README.md)
+
 &nbsp;
 
 ## VIII. Security
