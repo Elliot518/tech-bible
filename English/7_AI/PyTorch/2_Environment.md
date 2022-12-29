@@ -144,3 +144,11 @@ Output
 &nbsp;
 
 ### 6. Install Juyter
+
+see reference:
+
+<hr>
+
+###Blog Articles:
+
+[A Frist Demo on Gradient Descent(Chinese)](https://www.jianshu.com/p/d1398b690644)
