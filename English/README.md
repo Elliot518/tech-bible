@@ -56,7 +56,11 @@
 
 &nbsp;
 
-## VIII. Security
+## VIII. Network & Security
+
+### 8.1 Web Scraping
+
+[Catalog](8_Security/WebScraping/README.md)
 
 &nbsp;
 
