@@ -5,3 +5,5 @@
 <hr>
 
 [1. 数据仓库(Data Warehouse)](1_DataWarehouse.md)
+
+[2. 数据湖(Data Lake)]()
