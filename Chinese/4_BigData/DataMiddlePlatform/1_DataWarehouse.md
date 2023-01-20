@@ -41,7 +41,7 @@
 - AWS Redshift
 - Pivotal Greenplum
 - Apache Hive
-
+- Apache HBase
 
 
 
