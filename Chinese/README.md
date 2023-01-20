@@ -2,7 +2,7 @@
 
 ### 1.1 Java
 
-[Catalog](1_Program/Java/README.md)
+[目录](1_Program/Java/README.md)
 
 &nbsp;
 
@@ -14,13 +14,13 @@
 
 ### 2.2 架构演进
 
-[Catalog](2_Architecture/Evolution/README.md)
+[目录](2_Architecture/Evolution/README.md)
 
 <hr>
 
 ### 2.3 高并发设计
 
-[分库分表](Architecture/Concurrency/分库分表.md)
+[目录](2_Architecture/Concurrency/README.md)
 
 &nbsp;
 
@@ -32,6 +32,6 @@
 
 ### 4.1 数据中台
 
-[Catalog](4_BigData/DataMiddlePlatform/README.md)
+[目录](4_BigData/DataMiddlePlatform/README.md)
 
 <hr>
