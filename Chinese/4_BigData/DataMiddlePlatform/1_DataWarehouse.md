@@ -27,6 +27,23 @@
 
 ![数据仓库作用](https://mmbiz.qpic.cn/mmbiz_png/tTxx79AMjpFYg2GSH9KbUDm1u2kAW7S9dcSMTvySiaicmXibXPicucnJiccnwJ6W6b1Qou8oPxGdJ0RjiaZEOd3SEZHw/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1)
 
+&nbsp;
+
 ### 3. 数据仓库的缺点
 
 数据仓库针对实时数据处理和非结构化数据处理能力较弱，以及在业务在预警预测等方面应用有一定的限制。
+
+&nbsp;
+
+### 4. 数据仓库技术选型
+
+数据仓库比较适合的数据库有:
+- AWS Redshift
+- Pivotal Greenplum
+- Apache Hive
+
+
+
+
+
+
