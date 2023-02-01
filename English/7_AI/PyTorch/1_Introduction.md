@@ -35,15 +35,40 @@ PyTorch provides two high-level features:
 
 - Tensor
 
-_In deep learning, we see tensors everywhere. Google’s framework is called TensorFlow! So what is a tensor?_
+  _In deep learning, we see tensors everywhere. Google’s framework is called TensorFlow! So what is a tensor?_
 
->Tensor is a data structure that has three or more dimensions. 
+  >Tensor is a data structure that has three or more dimensions. 
 
-_In Numpy, you may have an array that has three dimensions, right? That is, technically speaking, a tensor._
+  _In Numpy, you may have an array that has three dimensions, right? That is, technically speaking, a tensor._
 
-A scalar (a single number) has zero dimensions.
-A vector has one dimension.
-A matrix has two dimensions.
-A tensor has three or more dimensions.
+  A scalar (a single number) has zero dimensions.
+  A vector has one dimension.
+  A matrix has two dimensions.
+  A tensor has three or more dimensions.
 
-![image.png](https://upload-images.jianshu.io/upload_images/12347236-4951b08d5478d605.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+  ![image.png](https://upload-images.jianshu.io/upload_images/12347236-4951b08d5478d605.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+  how to create tensors
+  ```python
+  scalar = torch.tensor(3.14159)
+  vector = torch.tensor([1, 2, 3])
+  matrix = torch.ones((2, 3), dtype=torch.float)
+  tensor = torch.randn((2, 3, 4), dtype=torch.float)
+
+  print(scalar)
+  print(vector)
+  print(matrix)
+  print(tensor)
+  ```
+  Output:
+
+  tensor(3.1416)
+  tensor([1, 2, 3])
+  tensor([[1., 1., 1.],
+          [1., 1., 1.]])
+  tensor([[[ 0.4491, -0.4545,  0.7688, -1.1622],
+          [ 0.8552, -0.2642,  0.5951, -1.1271],
+          [-0.3165, -1.1745, -0.0240, -0.2610]],
+          [[ 1.1852,  0.1704, -0.1652, -0.3403],
+          [ 0.9745,  1.1581, -0.3177,  1.8837],
+          [ 1.7287,  0.2592, -1.2862,  0.6317]]])
