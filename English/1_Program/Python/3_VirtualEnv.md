@@ -19,3 +19,45 @@
     Each of our environments will only have the packages that it needs installed. 
     This makes it easy to share our environment with others, have multiple versions of the same package installed on our machine for different projects without interfering with each other.
 
+&nbsp;
+
+
+### 2. How to create a virtual environment in Python
+
+  - venv
+  Python 3 comes with the venv module, which will create a virtual environment in the location of our choice. 
+  
+  <hr>
+  
+  - Steps of setting up a virtual environment
+  1. Create a folder for the project.
+  ```shell
+  mkdir my_project && cd my_project
+  ```
+
+  2. Use venv to create an environment in this folder.
+  ```python
+  # windows/Linux/macOS
+  python3 -m venv env_name
+  ```
+
+  3. Activate the environment.
+  ```
+  # windows
+  {your dir}\env_name\Scripts\activate.bat
+
+  # Linux/macOS
+  source {your dir}/env_name/bin/activate
+  ```
+
+  4. Install Python packages in the environment with pip.
+  ```python
+  pip install xxx
+  ```
+
+  5. Deactivate the environment when finished.
+  ```python
+  # windows/Linux/macOS
+  deactivate
+  ```
+
