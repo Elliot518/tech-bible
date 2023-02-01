@@ -28,3 +28,22 @@ PyTorch provides two high-level features:
 
 - Deep neural networks
   It is built on a tape-based automatic differentiation system
+
+  &nbsp;
+
+### 3. Fundamental Conceptions
+
+- Tensor
+
+_In deep learning, we see tensors everywhere. Google’s framework is called TensorFlow! So what is a tensor?_
+
+>Tensor is a data structure that has three or more dimensions. 
+
+_In Numpy, you may have an array that has three dimensions, right? That is, technically speaking, a tensor._
+
+A scalar (a single number) has zero dimensions.
+A vector has one dimension.
+A matrix has two dimensions.
+A tensor has three or more dimensions.
+
+![image.png](https://upload-images.jianshu.io/upload_images/12347236-4951b08d5478d605.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
