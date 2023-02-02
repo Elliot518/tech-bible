@@ -54,6 +54,10 @@
 
 [Catalog](7_AI/PyTorch/README.md)
 
+### 7.3 Pandas
+
+[Catalog](7_AI/Pandas/README.md)
+
 &nbsp;
 
 ## VIII. Network & Security
