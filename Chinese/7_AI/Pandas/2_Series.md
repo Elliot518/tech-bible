@@ -88,7 +88,7 @@ dtype: int64
 **c) 通过列表创建**
 
 eg1:
-```
+```python
 # create series by list
 sites2 = ["Google", "Runoob", "Wiki"]
 sites2
@@ -97,7 +97,7 @@ series_sites2
 ```
 
 eg2:
-```
+```python
 # 没有规定索引的情况下标签默认为从0开始整数, 依次递增
 s = pd.Series([1,2,3])
 print(s)
