@@ -34,7 +34,9 @@ print(s)
 ```
 
 Output：
+```
 Series([], dtype: float64)
+```
 
 <hr>
 
@@ -48,10 +50,12 @@ s = pd.Series(6,index =['a','b','c'])
 print(s)
 ```
 Output:
+```
 a    6
 b    6
 c    6
 dtype: int64
+```
 
 <hr>
 
@@ -78,10 +82,12 @@ s = pd.Series(arr,index =['a','b','c'])
 print(s)
 ```
 Output:
+```
 a    1
 b    2
 c    3
 dtype: int64
+```
 
 <hr>
 
@@ -103,10 +109,12 @@ s = pd.Series([1,2,3])
 print(s)
 ```
 Output:
+```
 0    1
 1    2
 2    3
 dtype: int64
+```
 
 <hr>
 
@@ -130,10 +138,12 @@ s = pd.Series({'a':1,'b':2,'c':3})
 print(s)
 ```
 Output:
+```
 a    1
 b    2
 c    3
 dtype: int64
+```
 
 <hr>
 
@@ -144,13 +154,13 @@ eg:
 s = pd.Series((1,2,3),index =['a','b','c']) 
 print(s)
 ```
-
 Output:
+```
 a    1
 b    2
 c    3
 dtype: int64
-
+```
 
 
 
