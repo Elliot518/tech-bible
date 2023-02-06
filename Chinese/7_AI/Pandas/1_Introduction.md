@@ -27,3 +27,35 @@ pip install pandas
 # 导入库并取别名
 import pandas as np
 ```
+
+&nbsp;
+
+### 4. 数据结构
+
+Pandas 中有两种数据结构，Series 和 DataFrame，前者是一维的，后者是二维的，DataFrame 就是多个 Series。
+
+- Series
+  >Series类似一维数组，它就像Python中的list或Numpy中的一维的array。
+
+  ![Series](https://upload-images.jianshu.io/upload_images/12347236-af6ed25db3805f6e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+<hr>
+
+- DataFrame
+  >DataFrame 是二维结构，类似于 Excel 表格。
+
+  ![DataFrame](https://upload-images.jianshu.io/upload_images/12347236-a42a6310d6620690.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
