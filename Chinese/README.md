@@ -54,7 +54,7 @@
 
 ## VII. 人工智能
 
-### 7.3 Pandas
+### 7.1 Pandas
 
 [目录](7_AI/Pandas/README.md)
 
