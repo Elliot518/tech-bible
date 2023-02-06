@@ -1,6 +1,6 @@
 [Back](../../README.md)
 
-## 7.3 Pandas
+## 7.1 Pandas
 
 ![image.png](pandas.png)
 

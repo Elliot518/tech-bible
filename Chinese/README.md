@@ -54,6 +54,10 @@
 
 ## VII. 人工智能
 
+### 7.3 Pandas
+
+[目录](7_AI/Pandas/README.md)
+
 &nbsp;
 
 ## VIII. 网络和安全
