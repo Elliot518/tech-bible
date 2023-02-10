@@ -58,6 +58,10 @@
 
 [Catalog](7_AI/Pandas/README.md)
 
+### 7.5 ChatGPT
+
+[Catalog](7_AI/ChatGPT/README.md)
+
 &nbsp;
 
 ## VIII. Network & Security
