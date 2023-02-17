@@ -158,9 +158,69 @@ public class EasyExcelWriteDemo {
 
 - 4-1) 自定义转换器
 
-eg: 将 1、0 转换成男、女
+    eg: 将 1、0 转换成男、女
 
+    ```java
+    import com.alibaba.excel.converters.Converter;
+    import com.alibaba.excel.enums.CellDataTypeEnum;
+    import com.alibaba.excel.metadata.CellData;
+    import com.alibaba.excel.metadata.GlobalConfiguration;
+    import com.alibaba.excel.metadata.property.ExcelContentProperty;
 
+    /**
+    * @author KG
+    * @developer
+    * @description
+    * @date Created in 2023年02月17日 09:10
+    * @modified_by
+    */
+    public class SexConverter implements Converter<Integer> {
+
+        @Override
+        public Class<Integer> supportJavaTypeKey() {
+            return Integer.class;
+        }
+
+        @Override
+        public CellDataTypeEnum supportExcelTypeKey() {
+            return CellDataTypeEnum.STRING;
+        }
+
+        @Override
+        public Integer convertToJavaData(CellData cellData, ExcelContentProperty excelContentProperty, GlobalConfiguration globalConfiguration) throws Exception {
+            return "男".equals(cellData.getStringValue()) ? 1 : 0;
+        }
+
+        @Override
+        public CellData<String> convertToExcelData(Integer integer, ExcelContentProperty excelContentProperty, GlobalConfiguration globalConfiguration) throws Exception {
+            return new CellData<>(integer.equals(1) ? "男" : "女");
+        }
+    }
+    ```
+
+    性别属性注入 SexConverter 转换器：
+    ```java
+    @ExcelProperty(value = "性别", converter = SexConverter.class)
+    private Integer sex;
+    ```
+
+<hr>
+
+- 4-2) 保留两位小数
+
+可通过 @NumberFormat 注解实现:
+```java
+// 会以字符串形式生成单元格，要计算的列不推荐
+@ExcelProperty(value = "体重KG")
+@NumberFormat("0.##") 
+private BigDecimal weight;
+```
+
+另外一种方法是使用 @ContentStyle 注解:
+```java
+@ContentStyle(dataFormat = 2)
+private BigDecimal weight;
+```
 
 <hr>
 
