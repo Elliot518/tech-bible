@@ -152,7 +152,13 @@ public class EasyExcelWriteDemo {
     ****UserData(username=李四, age=23, birthday=Mon May 03 00:00:00 CST 1999)
     读取Excel完毕
 
+&nbsp;
 
+### 4. 其他相关特殊用法
+
+- 4-1) 自定义转换器
+
+eg: 将 1、0 转换成男、女
 
 
 
@@ -160,3 +166,4 @@ public class EasyExcelWriteDemo {
 
 Github代码地址:
 [https://githubfast.com/Elliot518/mcp-jdw/tree/main/1_CoreJava/All/mcp-core-java/Fundamental/excel-demo](https://githubfast.com/Elliot518/mcp-jdw/tree/main/1_CoreJava/All/mcp-core-java/Fundamental/excel-demo)
+
