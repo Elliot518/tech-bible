@@ -208,19 +208,47 @@ public class EasyExcelWriteDemo {
 
 - 4-2) 保留两位小数
 
-可通过 @NumberFormat 注解实现:
-```java
-// 会以字符串形式生成单元格，要计算的列不推荐
-@ExcelProperty(value = "体重KG")
-@NumberFormat("0.##") 
-private BigDecimal weight;
-```
+    可通过 @NumberFormat 注解实现:
+    ```java
+    // 会以字符串形式生成单元格，要计算的列不推荐
+    @ExcelProperty(value = "体重KG")
+    @NumberFormat("0.##") 
+    private BigDecimal weight;
+    ```
 
-另外一种方法是使用 @ContentStyle 注解:
-```java
-@ContentStyle(dataFormat = 2)
-private BigDecimal weight;
-```
+    另外一种方法是使用 @ContentStyle 注解:
+    ```java
+    @ContentStyle(dataFormat = 2)
+    private BigDecimal weight;
+    ```
+
+<hr>
+
+- 4-3) 排除指定 Excel 列
+
+    方式一：类上加注解 @ExcelIgnoreUnannotated，过滤属性没有 @ExcelProperty 注解的字段。
+    ```java
+    @Data
+    @ToString
+    @AllArgsConstructor
+    @NoArgsConstructor  // 一定要有无参构造方法
+    @ExcelIgnoreUnannotated
+    public class UserData {
+        .....
+    }
+    ```
+
+    方式二(推荐)：指定字段加 @ExcelIgnore 注解。
+    ```java
+    // 该字段不生成excel
+    @ExcelIgnore
+    private String remark;
+    ```
+
+    方式三：代码指定过滤字段，通过 excludeColumnFiledNames 方法。
+    ```java
+    EasyExcel.write(fileName, UserData.class).sheet("学生信息表").excludeColumnFiledNames(Arrays.asList("remark")).doWrite(getData());
+    ```
 
 <hr>
 
