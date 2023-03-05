@@ -6,7 +6,7 @@
 
 ### 3.3.1 Apache Kafka
 
-[1. Introduction](1_Introduction.md)
+[1. Introduction](Kafka/1_Introduction.md)
 
 <hr>
 
