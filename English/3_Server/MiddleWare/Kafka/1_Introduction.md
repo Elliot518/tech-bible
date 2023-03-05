@@ -28,46 +28,27 @@
 - **PERMANENT STORAGE**
   Store streams of data safely in a distributed, durable, fault-tolerant cluster.
 
-### 3. xxx
+&nbsp;
 
-- Maven
-```xml
-<properties>
-    <spring.cloud-version>Hoxton.SR8</spring.cloud-version>
-</properties>
-<dependencyManagement>
-    <dependencies>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-dependencies</artifactId>
-            <version>${spring.cloud-version}</version>
-            <type>pom</type>
-            <scope>import</scope>
-        </dependency>
-    </dependencies>
-</dependencyManagement>
-```
-
-- Gradle
-```json
-buildscript {
-  dependencies {
-    classpath "io.spring.gradle:dependency-management-plugin:1.0.10.RELEASE"
-  }
-}
-
-ext {
-  set('springCloudVersion', "Hoxton.SR8")
-}
-
-apply plugin: "io.spring.dependency-management"
-
-dependencyManagement {
-  imports {
-    mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
-  }
-}
-```
+- **HIGH AVAILABILITY**
+  Stretch clusters efficiently over availability zones or connect separate clusters across geographic regions.
 
 &nbsp;
+
+- **BUILT-IN STREAM PROCESSING**
+  Process streams of events with joins, aggregations, filters, transformations, and more, using event-time and exactly-once processing.
+
+&nbsp;
+
+- **CONNECT TO ALMOST ANYTHING**
+  Kafka’s out-of-the-box Connect interface integrates with hundreds of event sources and event sinks including Postgres, JMS, Elasticsearch, AWS S3, and more.
+
+&nbsp;
+
+### 3. Key Concepts
+
+- **Event Streaming**
+  >Event streaming is the practice of capturing data in real-time from event sources like databases, sensors, mobile devices, cloud services, and software applications in the form of streams of events; storing these event streams durably for later retrieval; manipulating, processing, and reacting to the event streams in real-time as well as retrospectively; and routing the event streams to different destination technologies as needed. 
+  
+  Event streaming ensures a continuous flow and interpretation of data so that the right information is at the right place, at the right time.
 
