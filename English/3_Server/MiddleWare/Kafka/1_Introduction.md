@@ -118,4 +118,12 @@ _(Apache Kafka can be started using ZooKeeper or KRaft. To get started with eith
   $ bin/kafka-topics.sh --create --topic quickstart-events --bootstrap-server localhost:9092
   ```
 
+  2> Display the specified topic information
+
+  ```
+  $ bin/kafka-topics.sh --describe --topic quickstart-events --bootstrap-server localhost:9092
+  ```
+  Result:
+  Topic: quickstart-events        TopicId: NPmZHyhbR9y00wMglMH2sg PartitionCount: 1       ReplicationFactor: 1	Configs:
+    Topic: quickstart-events Partition: 0    Leader: 0   Replicas: 0 Isr: 0
 
