@@ -104,3 +104,18 @@ _(Apache Kafka can be started using ZooKeeper or KRaft. To get started with eith
 
   Once the Kafka server has successfully launched, you will have a basic Kafka environment running and ready to use.
 
+##### STEP 3: CREATE A TOPIC TO STORE YOUR EVENTS
+
+- What is events?
+  >Events are something like payment transactions, geolocation updates from mobile phones, shipping orders, sensor measurements from IoT devices or medical equipment, and much more.
+
+  Events are organized and stored in topics.
+
+  1> Create an example topic
+
+  Open another terminal session and run:
+  ```
+  $ bin/kafka-topics.sh --create --topic quickstart-events --bootstrap-server localhost:9092
+  ```
+
+
