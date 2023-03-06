@@ -48,9 +48,13 @@
 
 [目录](3_Server/MQ/README.md)
 
-## IV. 大数据
+## IV. 数据库 & 大数据
 
-### 4.1 数据中台
+### 4.1 NOSQL数据库
+
+[目录](4_Database/NoSql/README.md)
+
+### 4.2 数据中台
 
 [目录](4_BigData/DataMiddlePlatform/README.md)
 
