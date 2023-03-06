@@ -127,3 +127,25 @@ _(Apache Kafka can be started using ZooKeeper or KRaft. To get started with eith
   Topic: quickstart-events        TopicId: NPmZHyhbR9y00wMglMH2sg PartitionCount: 1       ReplicationFactor: 1	Configs:
     Topic: quickstart-events Partition: 0    Leader: 0   Replicas: 0 Isr: 0
 
+##### STEP 4: WRITE SOME EVENTS INTO THE TOPIC
+
+_A Kafka client communicates with the Kafka brokers via the network for writing (or reading) events. Once received, the brokers will store the events in a durable and fault-tolerant manner for as long as you need—even forever._
+
+Run the console producer client to write a few events into your topic
+_(Use Ctrl-C to stop the producer client)_
+```
+$ bin/kafka-console-producer.sh --topic quickstart-events --bootstrap-server localhost:9092
+This is my first event
+This is my second event
+```
+
+##### STEP 5: READ THE EVENTS
+
+Open another terminal session and run the console consumer client to read the events you just created:
+_(Use Ctrl-C to stop the consumer client)_
+```
+$ bin/kafka-console-consumer.sh --topic quickstart-events --from-beginning --bootstrap-server localhost:9092
+```
+Result:
+This is my first event
+This is my second event
