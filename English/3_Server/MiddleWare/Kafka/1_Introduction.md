@@ -69,6 +69,7 @@ $ cd kafka_2.13-3.4.0
 _(Apache Kafka can be started using ZooKeeper or KRaft. To get started with either configuration follow one of the sections below but not both.)_
 
 - **Kafka with ZooKeeper**
+
   1> Start ZK Service
   ```
   # Start the ZooKeeper service
@@ -85,6 +86,7 @@ _(Apache Kafka can be started using ZooKeeper or KRaft. To get started with eith
   <hr>
 
 - **Kafka with KRaft**
+
   1> Generate a Cluster UUID
   ```
   $ KAFKA_CLUSTER_ID="$(bin/kafka-storage.sh random-uuid)"
