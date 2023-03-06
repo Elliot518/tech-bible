@@ -89,4 +89,16 @@ _(Apache Kafka can be started using ZooKeeper or KRaft. To get started with eith
   ```
   $ KAFKA_CLUSTER_ID="$(bin/kafka-storage.sh random-uuid)"
   ```
-    
+
+  2> Format Log Directories
+  ```
+  $ bin/kafka-storage.sh format -t $KAFKA_CLUSTER_ID -c config/kraft/server.properties
+  ```
+
+  3> Start the Kafka Server
+  ```
+  $ bin/kafka-server-start.sh config/kraft/server.properties
+  ```
+
+  Once the Kafka server has successfully launched, you will have a basic Kafka environment running and ready to use.
+
