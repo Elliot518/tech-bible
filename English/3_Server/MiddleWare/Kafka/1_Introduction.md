@@ -52,3 +52,36 @@
   
   Event streaming ensures a continuous flow and interpretation of data so that the right information is at the right place, at the right time.
 
+&nbsp;
+
+### 4. Installation & Quick Start
+
+##### STEP 1: GET KAFKA
+
+[Download](https://www.apache.org/dyn/closer.cgi?path=/kafka/3.4.0/kafka_2.13-3.4.0.tgz) the latest Kafka release and extract it:
+```
+$ tar -xzf kafka_2.13-3.4.0.tgz
+$ cd kafka_2.13-3.4.0
+```
+
+##### STEP 2: START THE KAFKA ENVIRONMENT
+
+_(Apache Kafka can be started using ZooKeeper or KRaft. To get started with either configuration follow one of the sections below but not both.)_
+
+- **Kafka with ZooKeeper**
+  1> Start ZK Service
+  ```
+  # Start the ZooKeeper service
+  $ bin/zookeeper-server-start.sh config/zookeeper.properties
+  ```
+
+  2> Open another terminal session and run:
+  ```
+  # Start the Kafka broker service
+  $ bin/kafka-server-start.sh config/server.properties
+  ```
+  Once all services have successfully launched, you will have a basic Kafka environment running and ready to use.
+
+  <hr>
+
+  
