@@ -149,3 +149,36 @@ $ bin/kafka-console-consumer.sh --topic quickstart-events --from-beginning --boo
 Result:
 This is my first event
 This is my second event
+
+##### STEP 6: IMPORT/EXPORT YOUR DATA AS STREAMS OF EVENTS WITH KAFKA CONNECT
+
+- What is Kafka Connect
+>Kafka Connect allows you to continuously ingest data from external systems(eg: relational databases or traditional messaging systems) into Kafka, and vice versa.
+
+_It is an extensible tool that runs connectors, which implement the custom logic for interacting with an external system._
+
+##### STEP 7: PROCESS YOUR EVENTS WITH KAFKA STREAMS
+
+WordCount Example:
+
+```java
+KStream<String, String> textLines = builder.stream("quickstart-events");
+
+KTable<String, Long> wordCounts = textLines
+            .flatMapValues(line -> Arrays.asList(line.toLowerCase().split(" ")))
+            .groupBy((keyIgnored, word) -> word)
+            .count();
+
+wordCounts.toStream().to("output-topic", Produced.with(Serdes.String(), Serdes.Long()));
+```
+
+##### STEP 8: TERMINATE THE KAFKA ENVIRONMENT
+
+1. Stop the producer and consumer clients with Ctrl-C, if you haven't done so already.
+2. Stop the Kafka broker with Ctrl-C.
+3. Lastly, if the Kafka with ZooKeeper section was followed, stop the ZooKeeper server with Ctrl-C.
+
+If you also want to delete any data of your local Kafka environment including any events you have created along the way, run the command:
+```
+$ rm -rf /tmp/kafka-logs /tmp/zookeeper /tmp/kraft-combined-logs
+```
