@@ -84,4 +84,9 @@ _(Apache Kafka can be started using ZooKeeper or KRaft. To get started with eith
 
   <hr>
 
-  
+- **Kafka with KRaft**
+  1> Generate a Cluster UUID
+  ```
+  $ KAFKA_CLUSTER_ID="$(bin/kafka-storage.sh random-uuid)"
+  ```
+    
