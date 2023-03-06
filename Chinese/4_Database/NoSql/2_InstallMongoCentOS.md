@@ -144,13 +144,15 @@ security:
 &nbsp;
 
 
-####9. 用新的配置文件重启mongodb
+####9. 用新的配置文件重启mongodb & 关机
 ```
-# 关机
-db.shutdownServer();
-
 # 启动
 mongod --fork --config $MONGO_HOME/bin/mongod.cfg
+
+# 关机
+mongo
+use admin
+db.shutdownServer();
 ```
 
 ####9. 远程工具连接(studio 3t)
