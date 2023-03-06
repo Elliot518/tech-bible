@@ -28,7 +28,7 @@
 
 ### 3.3 Middleware
 
-[Catalog](3_Server/Middleware/README.md)
+[Catalog](3_Server/MiddleWare/README.md)
 
 &nbsp;
 
