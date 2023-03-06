@@ -106,7 +106,7 @@ _(Apache Kafka can be started using ZooKeeper or KRaft. To get started with eith
 
 ##### STEP 3: CREATE A TOPIC TO STORE YOUR EVENTS
 
-- What is events?
+- What are events?
   >Events are something like payment transactions, geolocation updates from mobile phones, shipping orders, sensor measurements from IoT devices or medical equipment, and much more.
 
   Events are organized and stored in topics.
