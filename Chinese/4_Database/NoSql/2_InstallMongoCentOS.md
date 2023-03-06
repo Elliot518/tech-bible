@@ -1,3 +1,9 @@
+[Back](README.md)
+
+### MongoDB安装(CentOS)
+
+<hr>
+
 ####1. 解压安装包
 ```
 cd /install_pkg/
