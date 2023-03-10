@@ -18,6 +18,12 @@
   > Kubernetes is a big open source project and ecosystem with a lot of code and
   > a lot of functionality. Kubernetes came out of Google, but joined the Cloud Native Computing Foundation (CNCF) and became the clear leader in the space of container-based applications.
 
+- Why Kubernetes
+  >Modern applications are dispersed across clouds, virtual machines, and servers. Administering apps manually is no longer a viable option.
+  >K8s transforms virtual and physical machines into a unified API surface. A developer can then use the Kubernetes API to deploy, scale, and manage containerized applications.
+
+  It helps manage containers that run the applications and ensures there is no downtime in a production environment. For example, if a container goes down, another container automatically takes its place without the end-user ever noticing.
+
 &nbsp;
 
 ### 2. Capabilities of kubernetes
@@ -112,6 +118,8 @@ The nodes are the worker bees of Kubernetes and they shoulder all the heavy lift
 Usually, all the master components are set up on a single host.
 When considering high-availability scenarios or very large clusters, you will want to have master redundancy.
 
+![Kubernetes Master Node](master_node.png)
+
 &nbsp;
 
 #### 6-4) Pods
@@ -182,6 +190,15 @@ By default, pods in one namespace can access pods and services in other namespac
 _Note that node objects and persistent volumes don't live in a namespace. Kubernetes may schedule pods from different namespaces to run on the same node. Likewise, pods from different namespaces can use the same persistent storage._
 
 &nbsp;
+
+### 7. Kubernetes Architecture and Components
+
+
+- kubectl
+  It is Kubernetes’ default command-line tool.
+
+- etcd
+  It is a Key-Value Stored database where Kubernetes stores the file(an application’s desired state).
 
 #### Architecture diagram of kubernetes
 
