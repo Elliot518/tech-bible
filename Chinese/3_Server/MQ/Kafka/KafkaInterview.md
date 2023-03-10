@@ -55,5 +55,22 @@ partition的分配
 2、将第i个Partition分配到第（i mod n）个Broker上 （这个就是leader）
 3、将第i个Partition的第j个Replica分配到第（(i + j) mode n）个Broker上
 
+<hr>
 
+- leader容灾
 
+controller会在Zookeeper的/brokers/ids节点上注册Watch，一旦有broker宕机，它就能知道。当broker宕机后，controller就会给受到影响的partition选出新leader。controller从zk的/brokers/topics/[topic]/partitions/[partition]/state中，读取对应partition的ISR（in-sync replica已同步的副本）列表，选一个出来做leader。
+选出leader后，更新zk，然后发送LeaderAndISRRequest给受影响的broker，让它们改变知道这事。为什么这里不是使用zk通知，而是直接给broker发送rpc请求，我的理解可能是这样做zk有性能问题吧。
+
+如果ISR列表是空，那么会根据配置，随便选一个replica做leader，或者干脆这个partition就是歇菜。如果ISR列表的有机器，但是也歇菜了，那么还可以等ISR的机器活过来。
+
+<hr>
+
+多副本同步
+
+生产者生产消息的时候，通过request.required.acks参数来设置数据的可靠性。
+| acks | what happen |
+| ---- | ---- |
+| 0 | which means that the producer never waits for an acknowledgement from thebroker-发过去就完事了，不关心broker是否处理成功，可能丢数据。|
+| 1 | which means that the producer gets an acknowledgement after the leader replica has received the data.当写Leader成功后就返回，其他的replica都是通过fetcher去同步的,所以kafka是异步写，主备切换可能丢数据。|
+| -1 | which means that the producer gets an acknowledgement after all in-sync replicas have received the data.要等到isr里所有机器同步成功，才能返回成功，延时取決于最慢的机器。强一致，不会丢数据。|
