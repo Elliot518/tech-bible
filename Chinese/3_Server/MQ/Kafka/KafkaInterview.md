@@ -48,3 +48,12 @@ round-robin来选partition，这些要发往同一个partition的请求按照配
 - partition
 
 当存在多副本的情况下，会尽量把多个副本，分配到不同的broker上。kafka会为partition选出一个leader，之后所有该partition的请求，实际操作的都是leader，然后再同步到其他的follower。当一个broker歇菜后，所有leader在该broker上的partition都会重新选举，选出一个leader。（这里不像分布式文件存储系统那样会自动进行复制保持副本数）
+
+partition的分配
+
+1、将所有Broker（假设共n个Broker）和待分配的Partition排序
+2、将第i个Partition分配到第（i mod n）个Broker上 （这个就是leader）
+3、将第i个Partition的第j个Replica分配到第（(i + j) mode n）个Broker上
+
+
+
