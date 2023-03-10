@@ -138,6 +138,8 @@ Pods provide a great solution for managing groups of closely related containers 
 Any pod storage is destroyed with its pod.
 Each pod gets a unique ID (UID).
 
+![pod](pod.png)
+
 &nbsp;
 
 #### 6-5) Labels
@@ -200,6 +202,33 @@ _Note that node objects and persistent volumes don't live in a namespace. Kubern
 - etcd
   It is a Key-Value Stored database where Kubernetes stores the file(an application’s desired state).
 
+- API Server
+  The API Server is the front-end of the control plane and the only component in the control plane that we interact with directly. Internal system components, as well as external user components, all communicate via the same API.
+
+- Key-Value Store (etcd)
+  The Key-Value Store, also called etcd, is a database Kubernetes uses to back-up all cluster data. It stores the entire configuration and state of the cluster. The Master node queries etcd to retrieve parameters for the state of the nodes, pods, and containers.
+
+- Controller
+  The role of the Controller is to obtain the desired state from the API Server. It checks the current state of the nodes it is tasked to control, and determines if there are any differences, and resolves them, if any.
+
+- Scheduler
+  A Scheduler watches for new requests coming from the API Server and assigns them to healthy nodes. It ranks the quality of the nodes and deploys pods to the best-suited node. If there are no suitable nodes, the pods are put in a pending state until such a node appears.
+
 #### Architecture diagram of kubernetes
 
 ![Architecture diagram of kubernetes](kubernetes_architecture.png)
+
+&nbsp;
+
+### 8. What is Worker Node in Kubernetes Architecture
+
+>Worker nodes listen to the API Server for new work assignments; they execute the work assignments and then report the results back to the Kubernetes Master node.
+
+![Kubernetes Worker Node](master_worker_arch.png)
+
+- Kubelet
+  The kubelet runs on every node in the cluster. It is the principal Kubernetes agent. By installing kubelet, the node’s CPU, RAM, and storage become part of the broader cluster. It watches for tasks sent from the API Server, executes the task, and reports back to the Master. It also monitors pods and reports back to the control panel if a pod is not fully functional. Based on that information, the Master can then decide how to allocate tasks and resources to reach the desired state.
+
+- Container Runtime
+  The container runtime pulls images from a container image registry and starts and stops containers. A 3rd party software or plugin, such as Docker, usually performs this function.
+
