@@ -22,3 +22,6 @@ Kafka对外使用topic的概念，生产者往topic里写消息，消费者从�
 ![kafka data flow](kafka_data_flow.png)
 
 
+##### 图例讲解:
+图中有两个topic，topic 0有两个partition，topic 1有一个partition，三副本备份。可以看到consumer gourp 1中的consumer 2没有分到partition处理，这是有可能出现的。
+
