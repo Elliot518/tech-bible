@@ -66,7 +66,7 @@ controller会在Zookeeper的/brokers/ids节点上注册Watch，一旦有broker�
 
 <hr>
 
-多副本同步
+- 多副本同步
 
 生产者生产消息的时候，通过request.required.acks参数来设置数据的可靠性。
 | acks | what happen |
@@ -74,3 +74,25 @@ controller会在Zookeeper的/brokers/ids节点上注册Watch，一旦有broker�
 | 0 | which means that the producer never waits for an acknowledgement from thebroker-发过去就完事了，不关心broker是否处理成功，可能丢数据。|
 | 1 | which means that the producer gets an acknowledgement after the leader replica has received the data.当写Leader成功后就返回，其他的replica都是通过fetcher去同步的,所以kafka是异步写，主备切换可能丢数据。|
 | -1 | which means that the producer gets an acknowledgement after all in-sync replicas have received the data.要等到isr里所有机器同步成功，才能返回成功，延时取決于最慢的机器。强一致，不会丢数据。|
+
+<hr>
+
+- 消费者
+
+订阅topic是以一个消费组来订阅的，一个消费组里面可以有多个消费者。同一个消费组中的两个消费者，不会同时消费一个partition。换句话来说，就是一个partition，只能被消费组里的一个消费者消费，但是可以同时被多个消费组消费。因此，如果消费组内的消费者如果比partition多的话，那么就会有个别消费者一直空闲。
+订阅topic时，可以用正则表达式，如果有新topic匹配上，那能自动订阅上。
+
+<hr>
+
+- offset的保存
+
+在kafka0.10版前，后一个消费组消费partition，需要保存offset记录消费到哪，以前保存在zk中，由于zk的写性能不好，以前的解决方法都是consumer每隔一分钟上报一次。这里zk的性能严重影响了消费的速度，而且很容易出现重复消费。
+
+在kafka0.10版本后，kafka把这个offset的保存，从zk总剥离，保存在一个名叫__consumeroffsets topic的topic中。写进消息的key由groupid、topic、partition组成，value是偏移量offset。topic配置的清理策略是compact。总是保留最新的key，其余删掉。一般情况下，每个key的offset都是缓存在内存中，查询的时候不用遍历partition，如果没有缓存，第一次就会遍历partition建立缓存，然后查询返回。
+
+确定consumer group位移信息写入__consumers_offsets的哪个partition，具体计算公式：
+```java
+__consumers_offsets partition =
+          Math.abs(groupId.hashCode() % groupMetadataTopicPartitionCount)   
+//groupMetadataTopicPartitionCount由offsets.topic.num.partitions指定，默认是50个分区。
+```
