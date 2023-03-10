@@ -4,6 +4,22 @@
 
 <hr>
 
+### 0. Difference among Traditional/Virtualized/Container Deployments
+
+- Traditional Deployment
+
+![Traditional Deployment](traditional_deplpy.png)
+
+- Virtualized Deployment
+
+![Virtualized Deployment](virtualized_deploy.png)
+
+- Container Deployment
+
+![Container Deployment](virtualized_deploy.png)
+
+&nbsp;
+
 ### 1. What is Kubernetes
 
 - Authoritative Definition
@@ -231,4 +247,7 @@ _Note that node objects and persistent volumes don't live in a namespace. Kubern
 
 - Container Runtime
   The container runtime pulls images from a container image registry and starts and stops containers. A 3rd party software or plugin, such as Docker, usually performs this function.
+
+- Kube-proxy
+  The kube-proxy makes sure that each node gets its IP address, implements local iptables and rules to handle routing and traffic load-balancing.
 
