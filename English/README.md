@@ -93,3 +93,12 @@
 ### 9.1 Kubernetes
 
 [Catalog](9_CloudNative/Kubernetes/README.md)
+
+&nbsp;
+
+## X. PAAS
+
+### 10.1 MuleSoft
+
+[Catalog](10_PAAS/MuleSoft/README.md)
+
