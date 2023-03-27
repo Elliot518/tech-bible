@@ -78,9 +78,21 @@
 
 ## VII. 人工智能
 
-### 7.1 Pandas
+### 7.1 TensorFlow
+
+[目录](7_AI/TensorFlow/Catalog.md)
+
+### 7.2 PyTorch
+
+[目录](7_AI/PyTorch/README.md)
+
+### 7.3 Pandas
 
 [目录](7_AI/Pandas/README.md)
+
+### 7.5 ChatGPT
+
+[目录](7_AI/ChatGPT/README.md)
 
 &nbsp;
 
