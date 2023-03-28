@@ -1,3 +1,7 @@
+[Back](../README.md)
+
+<hr>
+
 ###1. Topics and Partitions
 
 ####Messages in Kafka are categorized into topics.
