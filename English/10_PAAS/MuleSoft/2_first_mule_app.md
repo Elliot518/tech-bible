@@ -38,3 +38,10 @@ Mule Project Structure
 Your Mule Palette should already include the HTTP module. If it doesn’t, you can find the HTTP module by clicking on Add Modules, then dragging and dropping the HTTP module from the right side into the left side of the Mule Palette.
 
 ![Add Mule Module](https://developer.mulesoft.com/content/media/tutorials/getting-started/hello-mule/image3.gif)
+
+#### 2-2) Drag and drop an HTTP Listener from the Mule Palette to the canvas. 
+Anypoint Studio will automatically wrap the connector with a flow once you drag and drop it on the canvas.
+![Add HTTP Listener](https://developer.mulesoft.com/content/media/tutorials/getting-started/hello-mule/image4.gif)
+An HTTP Listener is an HTTP endpoint that listens for an HTTP request to come to the URL you define. When the Listener receives an HTTP request, the contents inside of the flow will execute in the order that you define.
+
+
