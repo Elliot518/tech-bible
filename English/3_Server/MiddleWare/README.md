@@ -8,7 +8,12 @@
 
 [1. Introduction](Kafka/1_Introduction.md)
 
+[2. Core Concepts](Kafka/2_CoreConcepts.md)
+
 <hr>
 
-### 3.3.3 Rabbit MQ
+### 3.3.2 Rabbit MQ
 
+[1. Introduction](RabbitMQ/1_Introduction.md)
+
+[2. Queue Patterns of RabbitMQ](RabbitMQ/2_QueuePatterns.md)

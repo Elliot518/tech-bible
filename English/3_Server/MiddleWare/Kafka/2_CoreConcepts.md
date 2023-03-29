@@ -1,6 +1,10 @@
-###1. Topics and Partitions
+[Back](../README.md)
 
-####Messages in Kafka are categorized into topics.
+<hr>
+
+### 1. Topics and Partitions
+
+#### Messages in Kafka are categorized into topics.
 
 >The closest analogies for a topic are a database table or a folder in a filesystem.
 
@@ -28,15 +32,15 @@ d. Each partition can be hosted on a different server,
 
 &nbsp;
 
-###2. Stream
+### 2. Stream
 
 ####A stream is considered to be a single topic of data, regardless of the number of partitions.
 
 &nbsp;
 
-###3. Producers and Consumers
+### 3. Producers and Consumers
 
-####There are two basic types of kafka clients: producers and consumers.
+#### There are two basic types of kafka clients: producers and consumers.
 
 - Producer
 ```
@@ -62,10 +66,10 @@ a consumer can stop and restart without losing its place.
 
 &nbsp;
 
-###4. Brokers and Clusters
+### 4. Brokers and Clusters
 
 - Broker
-  ####A single Kafka server is called a broker.
+  #### A single Kafka server is called a broker.
   ```
   Producers --send message--> Brokder --respond to--> Consumers
   
@@ -89,12 +93,12 @@ c. Fowllers of the partition
    The additional brokers which replicates the partition is called followers of the partition.
 ```
 
-####partition replication
+#### partition replication
 ![img.png](partition_replication.png)
 
 &nbsp;
 
-###5. Multiple Clusters
+### 5. Multiple Clusters
 
 - MirrorMaker
 
@@ -129,7 +133,7 @@ it is not available to any other.
 
 &nbsp;
 
-###6. Use Cases
+### 6. Use Cases
 
 - Activity tracking
 
