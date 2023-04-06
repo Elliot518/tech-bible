@@ -4,8 +4,14 @@
 
 <hr>
 
-### 1. Famous softwares
+###1. Salesforce
+<img src="https://login.salesforce.com/img/logo214.svg" alt="Salesforce" width="100"/>
 
-- Workday
->Workday is a leading provider of enterprise cloud applications for finance, HR, and planning. Founded in 2005, Workday delivers financial management, human capital management, and analytics applications designed for the world’s largest companies, educational institutions, and government agencies. Organizations ranging from medium-sized businesses to Fortune 50 enterprises have selected Workday.
+- Introduction
+>Salesforce.com, Inc. is an American cloud-based software company headquartered in San Francisco, California. 
+It provides customer relationship management (CRM) service and also provides a complementary suite of enterprise applications focused on customer service, marketing automation, analytics, and application development.
 
+
+- History
+>The company was founded on February 3, 1999 by former Oracle executive Marc Benioff, together with Parker Harris, Dave Moellenhoff, and Frank Dominguez as a software as a service (SaaS) company.
+In June 2004, the company had its initial public offering on the New York Stock Exchange under the stock symbol CRM and raised US$110 million.
