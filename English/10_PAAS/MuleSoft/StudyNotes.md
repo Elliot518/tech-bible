@@ -50,6 +50,10 @@ You can publish assets to the public Exchange, your internal Exchange, or your p
 
     2-6) Click Finish.
 
+![HelloWorld Mule](hello_world_mule.png)
+
+![Import from exchange](new_mule_from_exchange.png)
+
 ##### All the scaffolding added to your API:
 
 - HTTP Listener is ready to receive requests
@@ -61,6 +65,22 @@ You can publish assets to the public Exchange, your internal Exchange, or your p
 - A console, eg: hello-world-console
 
 - The GET request to endpoint /greeting, where we will do the bulk of our configuration.
+
+##### Three different views of the canvas:
+
+- Message Flow view
+    Makes it easy to drag and drop modules, connectors, and other assets and create the relationships between them.
+
+- Global Elements view
+    Makes it easy to specify global elements used in multiple projects.
+
+- Configuration XML view
+    Makes it easy to edit the XML of a project directly.
+
+<hr>
+
+##### 2-3) Configure the API
+
 
 
 
