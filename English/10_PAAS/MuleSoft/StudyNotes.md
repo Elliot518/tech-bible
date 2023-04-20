@@ -102,3 +102,16 @@ You have created a project that contains a simple Mule app which you can deploy 
 
 ##### 2-4) Test the API
 
+1. Right-click anywhere on the canvas and select Run project hello-world.
+
+2. To test the app, open a REST client (Advanced Rest Client) and issue a GET request:
+    http://localhost:8081/api/greeting
+
+    Your REST client should return a 200 OK with the message: Today the greeting is Hello
+
+3. Right-click in the canvas and select Stop project hello-word.
+
+<hr>
+
+##### 2-5) Create a Business Group in Your Organization
+
