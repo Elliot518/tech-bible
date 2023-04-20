@@ -82,8 +82,23 @@ You can publish assets to the public Exchange, your internal Exchange, or your p
 ##### 2-3) Configure the API
 
 
+1. In Message Flow tab of the canvas, scroll down until you see the /greeting endpoint module.
 
+2. Right-click the Transform Message and delete it.
 
+3. In Mule Palette, select Favorites to display a list of core connectors.
 
+4. Click Set Payload to select it, and then drag it into the space where you deleted Transform Message, to the right of the area labeled Source.
 
+5. Specify the logic that displays the data sent in a response from hello-world API:
+
+    a. Click the Set Payload transformer you just added to the flow.
+    b. Below the canvas, in the General tab, click the fx (function) button to deselect it. For this tutorial, we are hard-coding the value.
+    c. Set Value under Settings to Today the greeting is Hello.
+
+You have created a project that contains a simple Mule app which you can deploy to expose your API.
+
+<hr>
+
+##### 2-4) Test the API
 
