@@ -6,6 +6,9 @@
 
 ![Publish API2](publish_api2.png)
 
+<hr>
+
 You can publish assets to the public Exchange, your internal Exchange, or your public developer portal.
 
+![Public Exchange](public_exchange.png)
 
