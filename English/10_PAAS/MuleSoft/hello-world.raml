@@ -1,0 +1,28 @@
+#%RAML 1.0
+title: hello, world
+version: v1
+description: A greeting for the world
+
+types:
+ greeting:
+   properties:
+     todays-greeting: string
+
+/greeting:
+     get:
+       responses:
+         200:
+           body:
+             application/json:
+               type: greeting
+               example:
+                 {todays-greeting: "test-greeting"}
+         404:
+           body:
+             application/json:
+               properties:
+                 message: string
+               example: |
+                 {
+                   "message" : "Greeting not found"
+                 }

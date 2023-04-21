@@ -117,6 +117,38 @@ You have created a project that contains a simple Mule app which you can deploy 
 
 Before you can publish your API to Exchange to share it with others, you must create a Business Group in your trial organization. Assets in Exchange must belong to a Business Group that is not the root Business Group.
 
-Anypoint Platform:
+1. Anypoint Platform:
 Management Center > Access Management
+
 ![Business Group](business_group.png)
+
+2. Click Add Business Group and enter these values:
+
+![Add Business Group](add_business_group.png)
+
+- Business Group name: My Top Business Group
+
+- Owner: Search for your name and select it.
+
+- Select Owner can create environment.
+
+- Leave the default for all other values.
+
+<hr>
+
+##### 2-6) Publish the API to Exchange
+
+1. From the Package Explorer in Studio, right-click the hello-world project.
+
+2. Select Anypoint Platform > Publish to Exchange.
+
+After the project is uploaded to Exchange, you are provided with a direct link to the project:
+![Publish to Exchange](publish_to_exchange.png)
+
+![Publish REST API](published_rest_api_asset.png)
+
+https://anypoint.mulesoft.com/exchange/83af8d60-b8d4-41f2-898b-6304972d7370/hello-world/minor/1.0/pages/home/
+
+![Previous UI of REST Exchange](published_asset_previous.png)
+
+
