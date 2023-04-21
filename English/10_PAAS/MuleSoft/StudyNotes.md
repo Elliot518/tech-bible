@@ -115,3 +115,8 @@ You have created a project that contains a simple Mule app which you can deploy 
 
 ##### 2-5) Create a Business Group in Your Organization
 
+Before you can publish your API to Exchange to share it with others, you must create a Business Group in your trial organization. Assets in Exchange must belong to a Business Group that is not the root Business Group.
+
+Anypoint Platform:
+Management Center > Access Management
+![Business Group](business_group.png)
