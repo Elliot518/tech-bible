@@ -152,3 +152,8 @@ https://anypoint.mulesoft.com/exchange/83af8d60-b8d4-41f2-898b-6304972d7370/hell
 ![Previous UI of REST Exchange](published_asset_previous.png)
 
 
+
+
+
+
+
