@@ -9,3 +9,6 @@
 [2. Build your first Hello Mule application](2_first_mule_app.md)
 
 [3. Simple Mule Design/Develop/Publish Workflow](3_simple_mule_develop_workflow.md)
+
+[4. Add Validation and Error Handling](4_validation_and_error_handling.md)
+
