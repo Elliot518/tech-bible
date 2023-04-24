@@ -12,3 +12,6 @@
 
 [4. Add Validation and Error Handling](4_validation_and_error_handling.md)
 
+[5. Deploy API to CloudHub](5_deploy_to_cloudhub.md)
+
+
