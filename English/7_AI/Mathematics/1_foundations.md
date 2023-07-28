@@ -32,3 +32,18 @@ of the matrix is determined by its row length and column length. If a matrix A h
 
 ![image.png](https://upload-images.jianshu.io/upload_images/12347236-b30a2fe161e01117.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
+&nbsp;
+
+### 4. Tensor
+
+>A tensor is a multidimensional array of numbers. 
+>
+>In fact, vectors and matrixes can be 
+treated as 1-D and 2-D tensors.
+
+```
+For example, an image in RGB is stored in a three-dimensional tensor, 
+where along one dimension we have the horizontal axis and along the other dimension 
+we have the vertical axis and where the third dimension corresponds to the three color 
+channels, namely, red, green, and blue.
+```
