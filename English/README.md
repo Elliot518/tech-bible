@@ -78,6 +78,10 @@
 
 [Catalog](7_AI/ChatGPT/README.md)
 
+### 7.6 Mathematics
+
+[Catalog](7_AI/Mathematics/README.md)
+
 &nbsp;
 
 ## VIII. Network & Security
