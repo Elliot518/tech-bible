@@ -24,8 +24,9 @@ Learning.
     >In unsupervised learning, the training data is unlabeled, the system tries to learn without a teacher.
     ```
     eg:
-    say you have a lot of data about your blog’s visitors. You may want to run a clustering algorithm to try to detect groups of similar visitors. For example, 
-    it might notice that 40% of your visitors are teenagers who love comic books 
+    say you have a lot of data about your blog’s visitors. 
+    You may want to run a clustering algorithm to try to detect groups of similar visitors. 
+    For example, it might notice that 40% of your visitors are teenagers who love comic books 
     and generally read your blog after school, while 20% are adults who enjoy
     sci-fi and who visit during the weekends.
     ```
@@ -34,6 +35,11 @@ Learning.
     Some algorithms can deal with data that’s partially labeled. This is called semi supervised learning.
     ```
     eg:
-    Some photo-hosting services, such as Google Photos, once you upload all your family photos to the service, it automatically recognizes that the same person A shows up in photos 1, 5, and 11, while another person B shows up in photos 2, 5, and 7. This is the unsupervised part of the algorithm (clustering). Now all the system needs is for you to tell it who these people are. Just add one label per person and it is able to name everyone in every photo, which is useful for searching photos.
+    Some photo-hosting services, such as Google Photos, once you upload all your family photos to the service, 
+    it automatically recognizes that the same person A shows up in photos 1, 5, and 11, while another person B shows up in photos 2, 5, and 7. 
+    This is the unsupervised part of the algorithm (clustering). 
+    Now all the system needs is for you to tell it who these people are. 
+    Just add one label per person and it is able to name everyone in every photo, which is useful for searching photos.
     Most semi-supervised learning algorithms are combinations of unsupervised and supervised algorithms.
     ```
+
