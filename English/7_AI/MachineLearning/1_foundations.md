@@ -66,3 +66,18 @@ Learning.
     (DeepMind’s AlphaGo program is also a good example of Reinforcement Learning)
     ![Reinforcement Learning](ml1.png)
 
+<hr>
+
+### Smmary
+
+- Supervised learning
+
+    Labeled Data, Direct feedback, Predict outcome/future
+
+- Unsupervised learning
+
+    No labels, No feedback, Find hidden structure in data
+
+- Reinforcement Learning
+
+    Decision process, Reward system, Learn series of actions
