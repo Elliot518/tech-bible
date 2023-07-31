@@ -86,7 +86,7 @@
 
 ### 7.7 MachingLearning
 
-[Catalog](7_AI/MachingLearning/README.md)
+[Catalog](7_AI/MachineLearning/README.md)
 
 &nbsp;
 
