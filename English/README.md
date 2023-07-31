@@ -84,6 +84,12 @@
 
 &nbsp;
 
+### 7.7 MachingLearning
+
+[Catalog](7_AI/MachingLearning/README.md)
+
+&nbsp;
+
 ## VIII. Network & Security
 
 ### 8.1 Web Scraping
