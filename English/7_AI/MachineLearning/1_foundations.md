@@ -63,5 +63,6 @@ Learning.
     It must then learn by itself whatis the best strategy, called a policy, 
     to get the most reward over time. 
     A policy defines what action the agent should choose when it is in a given situation.
+    (DeepMind’s AlphaGo program is also a good example of Reinforcement Learning)
     ![Reinforcement Learning](ml1.png)
 
