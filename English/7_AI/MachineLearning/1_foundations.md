@@ -36,10 +36,32 @@ Learning.
     ```
     eg:
     Some photo-hosting services, such as Google Photos, once you upload all your family photos to the service, 
-    it automatically recognizes that the same person A shows up in photos 1, 5, and 11, while another person B shows up in photos 2, 5, and 7. 
+    it automatically recognizes that the same person A shows up in photos 1, 5, and 11, 
+    while another person B shows up in photos 2, 5, and 7. 
     This is the unsupervised part of the algorithm (clustering). 
     Now all the system needs is for you to tell it who these people are. 
     Just add one label per person and it is able to name everyone in every photo, which is useful for searching photos.
     Most semi-supervised learning algorithms are combinations of unsupervised and supervised algorithms.
     ```
+- Self-supervised learning
+    >This is generating a fully labeled dataset from a fully unlabeled one. 
+    Once the whole dataset it labeled, any supervised learning algorithm can be used.
+    This approach iscalled self-supervised learning.
+    ```
+    eg:
+    if you have a large dataset of unlabeled images, 
+    you can randomly mask a small part of each image and then train a model 
+    to recover the original image. 
+    During training, the masked images are used as the inputs to the model, 
+    and the original images are used as the labels.
+    ```
+- Reinforcement Learning
+    >Reinforcement Learning is a very different beast. 
+    The learning system, called an agent in this context, can observe the environment, 
+    select and perform actions, 
+    and get rewards in return(or penalties in the form of negative rewards).
+    It must then learn by itself whatis the best strategy, called a policy, 
+    to get the most reward over time. 
+    A policy defines what action the agent should choose when it is in a given situation.
+    ![Reinforcement Learning](ml1.png)
 
