@@ -81,3 +81,17 @@ Learning.
 - Reinforcement Learning
 
     Decision process, Reward system, Learn series of actions
+
+&nbsp;
+
+### 2. Instance-Based Versus Model-Based Learning
+
+- Instance-based learning
+>It is simply to learn by heart.
+>
+>The system learns the examples by heart, then generalizes to new cases by using a similarity measure to compare them to the learned examples
+
+<hr>
+
+- Model-based learning
+>It is to generalize from a set of examples is to build a model of these examples and then use that model to make predictions.
