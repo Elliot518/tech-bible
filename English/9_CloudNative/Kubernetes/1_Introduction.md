@@ -28,6 +28,10 @@
   >
   > It groups containers that make up an application into logical units for easy management and discovery.
 
+  >Kubernetes is like an operating system for computer clusters.
+
+![Kubernetes System](kube_system.png)
+
 - History
   > Kubernetes builds upon 15 years of experience of running production workloads at Google, combined with best-of-breed ideas and practices from the community.
   >
@@ -250,4 +254,21 @@ _Note that node objects and persistent volumes don't live in a namespace. Kubern
 
 - Kube-proxy
   The kube-proxy makes sure that each node gets its IP address, implements local iptables and rules to handle routing and traffic load-balancing.
+
+&nbsp;
+
+### 9. How Kubernetes fits into a computer cluster
+
+![kubernetes control plane](kube_control_plane.png)
+
+
+You start with a fleet of machines that you divide into two groups - the master and the worker nodes. 
+
+The master nodes will run the Kubernetes Control Plane, which represents the brain of your system and controls the cluster,
+
+The rest will run your applications - your workloads - and will therefore represent the Workload Plane.
+
+_(Don’t be confused by the term “plane” either - in this context you can think of it as the “surface” the applications run on.)_
+
+_Non-production clusters can use a single master node, but highly available clusters use at least three physical master nodes to host the Control Plane. The number of worker nodes depends on the number of applications you’ll deploy._
 
