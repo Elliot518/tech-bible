@@ -82,6 +82,9 @@ Learning.
 
     Decision process, Reward system, Learn series of actions
 
+    In sum, reinforcement learning is concerned with learning to choose a series of actions that maximizes the total reward, which could be earned either immediately after taking an action or via delayed
+    feedback.
+
 &nbsp;
 
 ### 2. Instance-Based Versus Model-Based Learning
@@ -95,3 +98,27 @@ Learning.
 
 - Model-based learning
 >It is to generalize from a set of examples is to build a model of these examples and then use that model to make predictions.
+
+&nbsp;
+
+### 3. Machine learning terminology
+
+- Training example
+>A row in a table representing the dataset and synonymous with an observation, record, instance, or sample (in most contexts, sample refers to a collection of training 
+examples).
+
+- Training
+>Model fitting, for parametric models similar to parameter estimation.
+
+- Feature, abbrev. x
+>A column in a data table or data (design) matrix. Synonymous with predictor, variable, input, attribute, or covariate.
+
+- Target, abbrev. y
+Synonymous with outcome, output, response variable, dependent variable, (class) label, and ground truth.
+
+- Loss function
+Often used synonymously with a cost function. Sometimes the loss function is 
+also called an error function. In some literature, the term “loss” refers to the loss measured for 
+a single data point, and the cost is a measurement that computes the loss (average or summed) 
+over the entire dataset.
+
