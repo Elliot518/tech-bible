@@ -119,3 +119,16 @@
 ### 10.2 Famous Softwares
 
 [Catalog](10_PAAS/Famous/README.md)
+
+&nbsp;
+
+## XI. Fundamental Skills
+
+### 11.1 Git
+
+[Catalog](11_FundamentalSkills/Git/README.md)
+
+### 11.2 Regular Expression
+
+[Catalog](11_FundamentalSkills/Regex/README.md)
+
