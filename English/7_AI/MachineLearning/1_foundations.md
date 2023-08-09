@@ -114,11 +114,52 @@ examples).
 >A column in a data table or data (design) matrix. Synonymous with predictor, variable, input, attribute, or covariate.
 
 - Target, abbrev. y
-Synonymous with outcome, output, response variable, dependent variable, (class) label, and ground truth.
+>Synonymous with outcome, output, response variable, dependent variable, (class) label, and ground truth.
 
 - Loss function
-Often used synonymously with a cost function. Sometimes the loss function is 
+>Often used synonymously with a cost function. Sometimes the loss function is 
 also called an error function. In some literature, the term “loss” refers to the loss measured for 
 a single data point, and the cost is a measurement that computes the loss (average or summed) 
 over the entire dataset.
+
+- Overfitting(过拟合)
+>It means that the model performs well on the training data, but it does not generalize well.
+```
+Say you are visiting a foreign country and the taxi driver rips you off. You
+might be tempted to say that all taxi drivers in that country are thieves.
+Overgeneralizing is something that we humans do all too often, and
+unfortunately machines can fall into the same trap if we are not careful.
+```
+
+- Underfitting(欠拟合)
+>Underfitting is the opposite of overfitting, it occurs when your model is too simple to learn the underlying structure of the data.
+```
+For example, a linear model of life satisfaction is prone to underfit; reality
+is just more complex than the model, so its predictions are bound to be
+inaccurate, even on the training examples.
+```
+Solutions:
+```
+1. Select a more powerful model, with more parameters.
+2. Feed better features to the learning algorithm (feature engineering).
+3. Reduce the constraints on the model (e.g., reduce the regularization hyperparameter)
+```
+
+&nbsp;
+
+### 4. Testing and Validating
+
+The only way to know how well a model will generalize to new cases is to
+actually try it out on new cases.
+
+1. put your model in production and monitor how well it performs
+ disadvantage:
+ This works well, but if your model is horribly bad, your users will complain(not the best idea).
+
+ 2. split your data into two sets: the training set and the test set(suggested)
+ You train your model using the training set, and you test it using the test set.
+
+    The error rate on new cases is called the generalization error (or out-of-sample error), and by evaluating your model on the test set, you get an estimate of this error. This value tells you how well your model will perform on instances it has never seen before.
+
+    If the training error is low (i.e., your model makes few mistakes on the training set) but the generalization error is high, it means that your model is overfitting the training data.
 
