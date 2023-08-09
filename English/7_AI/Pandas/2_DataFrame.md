@@ -32,3 +32,12 @@ adult_df.sort_values('education-num').reset_index().iloc[1:32561:3617]
 
 ![dataframe slice by column indexes](https://github.com/Elliot518/mcp-oss-repo/blob/main/data_science/pandas/df_slice_iloc.png?raw=true)
 
+<hr>
+
+### 2-2) .unique() function
+
+>All the possibile values for the column(返回某个列所有的可能值).
+>返回值: 数组
+```
+df_name.column_name.unique()
+```
