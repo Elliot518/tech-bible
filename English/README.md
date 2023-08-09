@@ -54,6 +54,10 @@
 
 [Catalog](5_Front/React/README.md)
 
+### 5.2 Vue3
+
+[Catalog](5_Front/Vue3/README.md)
+
 &nbsp;
 
 ## VI. Mobile Programming
