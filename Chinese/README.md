@@ -124,4 +124,6 @@
 
 [目录](11_FundamentalSkills/Git/README.md)
 
+### 11.2 常用IDE实用技巧
 
+[目录](11_FundamentalSkills/IDE/README.md)
