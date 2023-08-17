@@ -24,7 +24,7 @@ File 选项卡->Class, Interface, Enum
 
 &nbsp;
 
-###2. 方法注释
+### 2. 方法注释
 
 - 根据形参数目自动生成 @param 注解
 - 根据方法是否有返回值智能生成 @Return 注解
@@ -112,7 +112,7 @@ groovyScript("return \"${_1}\" == 'void' ? null : '\\r\\n * @return ' + \"${_1}\
 
 &nbsp;
 
-###3. Q & A
+### 3. Q & A
 
 ```
 （1）为什么模板的 Abbreviation 一定要叫 \* ？Expand with 要保证是 Enter 键？
