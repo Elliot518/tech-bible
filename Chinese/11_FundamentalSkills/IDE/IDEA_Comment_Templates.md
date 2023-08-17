@@ -5,13 +5,12 @@
 <hr>
 
 ### 1. 类注释
-```
 Preference->Editor->File and Code Templates
 
 File 选项卡->Class, Interface, Enum
 
 如果有File Header则修改它，如下:
-
+```
  /**
   * @author: KG
   * @description:
@@ -33,7 +32,7 @@ File 选项卡->Class, Interface, Enum
 这里配置会比较复杂, 需要分几步才能完成。
 
 2-1) 配置Template Group
-```
+
 Preference->Editor->Live Tempaltes
 
 点击最右边的 +
@@ -41,12 +40,12 @@ Preference->Editor->Live Tempaltes
 首先选择 2. Template Group... 来创建一个模板分组
 
 在弹出的对话框内输入MyTemplate
-```
+
 见下图
 ![avatar](https://raw.githubusercontent.com/Elliot518/mcp-oss-repo/main/ide/idea/LiveTemplate1.png)
 
 2-2) 在自定义模板分组下新建Live Template
-```
+
 选中刚刚创建的模板分组 MyTemplate
 然后点击 +
 选择 1. Live Template
@@ -55,7 +54,7 @@ Preference->Editor->Live Tempaltes
 此时就会创建了一个空的模板
 我们修改该模板的 Abbreviation、Description 和 Template text
 需要注意的是，Abbreviation 必须为 *，最后检查下 Expand with 的值是否为 Enter 键。
-```
+
 
 见下图
 ![avatar](https://raw.githubusercontent.com/Elliot518/mcp-oss-repo/main/ide/idea/LiveTemplate2.png)
@@ -71,11 +70,11 @@ Preference->Editor->Live Tempaltes
 
 2-3) 配置参数方法映射
 
-```
+
 还记得我们配置 Template text 时里面包含了类似于 $date$ 这样的参数，
 此时 IDEA 还不认识这些参数是啥玩意，
 下面我们对这些参数进行方法映射，让 IDEA 能够明白这些参数的含义。
-```
+
 
 
 点击 Edit variables 按钮, 见下图
