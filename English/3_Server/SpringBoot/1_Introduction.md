@@ -1,5 +1,7 @@
 [Back](README.md)
 
+## Introduction
+
 <hr>
 
 ### 1. What is Spring Boot
@@ -18,3 +20,15 @@
 
 - History Versions
   ![Versions 2017 - 2022](springboot_history_versions.png)
+
+
+&nbsp;
+
+### 2. Create Spring Boot Skeleton
+
+- How to create a spring boot skeleton
+
+  > We can create a spring boot skeleton by [spring initializr](https://start.spring.io) which is an online official tool.
+
+![spring initializr](https://raw.githubusercontent.com/Elliot518/mcp-oss-repo/main/springboot/spring_initializr.png)
+
