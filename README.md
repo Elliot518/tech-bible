@@ -1,4 +1,5 @@
 # tech-bible
+### _(技术宝典)_
 
 Elliot's technical bible
 
@@ -7,3 +8,4 @@ Elliot's technical bible
 - [中文目录](Chinese/README.md)
 
 - [English Catalog](English/README.md)
+
