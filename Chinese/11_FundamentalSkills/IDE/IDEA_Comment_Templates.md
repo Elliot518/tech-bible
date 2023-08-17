@@ -83,6 +83,7 @@ Preference->Editor->Live Tempaltes
 
 
 为每一个参数设置相对应的 Expression, 见下图
+
 ![avatar](https://raw.githubusercontent.com/Elliot518/mcp-oss-repo/main/ide/idea/LiveTemplate4.png)
 
 param的groovy脚本:
