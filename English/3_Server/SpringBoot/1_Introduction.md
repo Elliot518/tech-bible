@@ -19,7 +19,7 @@
   | 2.7.7 | [Reference Doc](https://docs.spring.io/spring-boot/docs/2.7.7/reference/html/) | [API Doc](https://docs.spring.io/spring-boot/docs/2.7.7/api/) |
 
 - History Versions
-  ![Versions 2017 - 2022](springboot_history_versions.png)
+  ![Versions 2017 - 2022](https://raw.githubusercontent.com/Elliot518/mcp-oss-repo/main/springboot/springboot_history_versions.png)
 
 
 &nbsp;
