@@ -68,4 +68,37 @@ component, useSlots() and useAttrs() for the component’s slots,
 and attrs when using <script setup> instead of the setup() method.
 ```
 
+&nbsp;
 
+### 3. Watch with composition API
+
+normal code:
+
+```
+data() {
+   return {
+    book:{
+      title: 'Vue 3',
+      description: 'Vue 3 is awesome',
+    }
+   }
+},
+watch: {
+ 'book.description': (newValue, oldValue) => { 
+    console.log(`Book's description changed from ${oldValue} to ${newValue}`)
+  }
+}
+```
+
+composition api:
+
+```
+const book = reactive({
+ title: 'Vue 3',
+ description: 'Vue 3 is awesome',
+})
+const bookWatcher = watch(
+ () => book.description,
+ (newValue, oldValue) => console.log(`Book's description changed from ${oldValue} to ${newValue}`)
+);
+```
