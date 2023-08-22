@@ -4,4 +4,6 @@
 
 <hr>
 
-[4. Collection Data Types](4_CollectionDataType.md)
+[Tuple](Tuple.md)
+
+[List](List.md)
