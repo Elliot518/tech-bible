@@ -100,6 +100,12 @@
 
 &nbsp;
 
+### 7.8 Data Science
+
+[Catalog](7_AI/DataScience/README.md)
+
+&nbsp;
+
 ## VIII. Network & Security
 
 ### 8.1 Web Scraping
