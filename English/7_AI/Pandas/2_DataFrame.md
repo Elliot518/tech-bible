@@ -13,8 +13,10 @@
 - Index
 
     > The row labels of a DataFrame are called index.
+    >
+    > If you don’t have a meaningful index, pandas will then automatically create an integer index starting at zero.
 
-
+    ![df index](https://raw.githubusercontent.com/Elliot518/mcp-oss-repo/main/data_science/pandas/df_index.png)
 
 &nbsp;
 
