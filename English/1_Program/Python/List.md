@@ -2,7 +2,7 @@
 
 <hr>
 
-### 1. List
+### 1. What is List
 
 > List is a data type that contains multiple values in an ordered sequence.
 
@@ -89,21 +89,7 @@ Using \* operator to replicate a list.
 [1, 2, 3, 'A', 'B', 'C']
 ```
 
-#### 1-7) Removing values from List
-
-Using the del command to remove values from a list.
-
-```
->>> spam = ['cat', 'bat', 'rat', 'elephant']
->>> del spam[2]
->>> spam
-['cat', 'bat', 'elephant']
->>> del spam[2]
->>> spam
-['cat', 'bat']
-```
-
-#### 1-8) Enumerate a List
+#### 1-7) Enumerate a List
 
 - Using for in range loop to enumerate a list
 
@@ -132,7 +118,7 @@ Index 2 in supplies is: flamethrowers
 Index 3 in supplies is: binders
 ```
 
-#### 1-9) Element in List
+#### 1-8) Element in List
 
 Using in and not in to judge a List containing an element or not.
 
@@ -147,7 +133,7 @@ False
 True
 ```
 
-#### 1-10) Multiple Assignment
+#### 1-9) Multiple Assignment
 
 Smoetimes we need to assign some elements in a list to multiple variables, like below:
 
@@ -163,4 +149,77 @@ But, we can have a more elegant way, like below:
 ```
 >>> cat = ['fat', 'gray', 'loud']
 >>> size, color, disposition = cat
+```
+&nbsp;
+
+### 2. Adding and removing elements in List
+
+#### 2-1) append
+> appended to the end of the list
+
+eg:
+```python
+b_list = ['foo', 'peekaboo', 'baz']
+b_list.append("dwarf")
+b_list
+```
+
+Output:
+```
+ ['foo', 'peekaboo', 'baz', 'dwarf']
+```
+
+#### 2-2) insert
+>  insert an element at a specific location in the list
+
+eg:
+```python
+# insert at the index 1(2nd element)
+b_list.insert(1, "red")
+b_list
+```
+
+Output:
+```
+['foo', 'red', 'peekaboo', 'baz', 'dwarf']
+```
+
+#### 2-3) pop
+> removes and returns an element at a particular index
+
+eg:
+```python
+# pop the element of index 2(3rd element): 'peekaboo'
+b_list.pop(2)
+
+b_list
+```
+
+Output:
+```
+['foo', 'red', 'baz', 'dwarf']
+```
+
+#### 2-4) remove
+> remove locates the first such value and removes it from the list
+
+eg:
+```python
+b_list.append("foo")
+b_list
+```
+
+Output:
+```
+['foo', 'red', 'baz', 'dwarf', 'foo']
+```
+
+```python
+b_list.remove("foo")
+b_list
+```
+
+Output:
+```
+['red', 'baz', 'dwarf', 'foo']
 ```
