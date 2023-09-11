@@ -6,3 +6,4 @@
 
 [Composition API](CompositionAPI.md)
 
+[Routing Hooks](RoutingHooks.md)

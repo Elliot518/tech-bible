@@ -1,6 +1,6 @@
 [Back](README.md)
 
-## Hooks
+## Routing Hooks
 
 <hr>
 
