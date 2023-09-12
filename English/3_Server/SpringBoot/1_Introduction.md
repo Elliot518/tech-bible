@@ -41,9 +41,67 @@
 
 ![spring initializr](https://raw.githubusercontent.com/Elliot518/mcp-oss-repo/main/springboot/spring_initializr.png)
 
+&nbsp;
+
+### 3. Explain Core Conceptions of Spring Boot Skeleton
+
+- @SpringBootApplication
+
+  ```java
+  @SpringBootApplication
+  public class MyApplication {
+    public static void main(String[] args) {
+      SpringApplication.run(MyApplication.class, args);
+    }
+  }
+  ```
+
+  Functionalities provided by this annotation:
+  - component scanning
+
+    Search Spring components and configuration 
+    classes in the package of the application class and all its sub-packages
+
+  -  autoconfiguration
+    Search JAR files in the classpath that it can configure automatically(eg: automatically configure Tomcat as an embedded web server if Tomcat in the classpath)
+
+  - The application class itself becomes a configuration class
+
+<hr>
 
 
+- @Autowired
 
+  Automatically inject a component
+<hr>
 
+- @ComponentScan
 
+  Scan one or more packages to auto-wire components
 
+  eg:
+  ```java
+  @SpringBootApplication
+  @ComponentScan({"com.company.a", "com.company.b" })
+  public class MyApplication {
+    ...
+  }
+  ```
+
+<hr>
+
+-  @Configuration
+
+    It is java-based configuration, we can use it to override Spring Boot’s default configuration or to add our own configuration
+
+```java
+@Configuration
+public class SubscriberApplication {
+  @Bean
+  public xxx someFunc() {
+    ...
+
+    return ...;
+  }
+}
+```
