@@ -92,13 +92,9 @@
 
 [Catalog](7_AI/Mathematics/README.md)
 
-&nbsp;
-
 ### 7.7 MachingLearning
 
 [Catalog](7_AI/MachineLearning/README.md)
-
-&nbsp;
 
 ### 7.8 Data Science
 
