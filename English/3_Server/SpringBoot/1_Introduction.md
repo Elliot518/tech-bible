@@ -105,3 +105,47 @@
       }
     }
     ```
+
+&nbsp;
+
+### 4. What’s new in Spring Boot 3.0
+
+- Observability
+
+  built-in support for distributed tracing to the already existing support for metrics and logging in previous Spring Boot releases, new Observability API in Spring Framework v6.0 and a new module named Micrometer Tracing which is based on Spring Cloud Sleuth.
+
+- Native compilation
+
+  Spring Boot 3.0 supports compiling Spring Boot applications to native images, which are standalone executable files. A native-compiled Spring Boot application starts significantly faster and consumes less memory.
+
+- Virtual threads
+
+  Spring Boot 3.0 supports lightweight threads called virtual threads. Virtual threads are expected to simplify the programming model for developing reactive non-blocking microservices. Virtual threads are currently only available as a preview in Java 19.
+
+&nbsp;
+
+### 5. How to migrate an application from SpringBoot 2 to SpringBoot 3
+
+#### 1) Upgrading Spring Boot 2 applications to the latest v2.7.x(Pivotal's migration guide assumes you are on v2.7)
+
+#### 2) Ensure you have Java 17 or later installed, both in your development and runtime environments. 
+
+#### 3) Remove calls to deprecated methods in Spring Boot 2.x. You can enable the lint:deprecation flag in the Java compiler using (Gradle):
+```gradle
+tasks.withType(JavaCompile) {
+  options.compilerArgs += ['-Xlint:deprecation']
+}
+```
+
+#### 4) Rename all imports of javax packages that are now part of Jakarta EE to jakarta.
+
+#### 5) For libraries that are not managed by Spring, you need to ensure that you are using versions that are Jakarta compliant, that means using jakarta packages.
+
+#### 6) For breaking changes and other important migration information, read through:
+
+https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.0-Migration-Guide
+
+https://docs.spring.io/spring-security/reference/migration/index.html
+
+#### 7) Have end-to-end black-box tests to verify the functionality of your application.
+
