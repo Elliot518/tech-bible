@@ -43,7 +43,7 @@
 
 &nbsp;
 
-### 3. Explain Core Conceptions of Spring Boot Skeleton
+### 3. Explain Core Annotations of Spring Boot Skeleton
 
 - @SpringBootApplication
 
@@ -94,14 +94,14 @@
 
     It is java-based configuration, we can use it to override Spring Boot’s default configuration or to add our own configuration
 
-```java
-@Configuration
-public class SubscriberApplication {
-  @Bean
-  public xxx someFunc() {
-    ...
+    ```java
+    @Configuration
+    public class SubscriberApplication {
+      @Bean
+      public xxx someFunc() {
+        ...
 
-    return ...;
-  }
-}
-```
+        return ...;
+      }
+    }
+    ```
