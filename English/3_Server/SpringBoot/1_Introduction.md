@@ -8,7 +8,16 @@
 
 - Authoritative Definition
 
-  > Spring Boot Extension is Spring's convention-over-configuration solution for creating stand-alone, production-grade Spring-based Applications that you can "just run".Most Spring Boot applications need very little Spring configuration.
+  > Spring Boot Extension is Spring's convention-over-configuration solution for creating stand-alone, production-grade Spring-based Applications that you can "just run".
+  
+  Minimizes the need for initial configuration
+  Most Spring Boot applications need very little Spring configuration.
+
+  Spring Boot also favors a runtime model based 
+  on a standalone JAR file, also known as a fat JAR file.
+
+  Before Spring Boot, the most common way to run a Spring application was to deploy it as a WAR file on a Java EE web server, such as Apache Tomcat. 
+  And WAR file deployment is still supported by Spring Boot.
 
 [Official Site](https://spring.io/projects/spring-boot#overview)
 
@@ -31,4 +40,10 @@
   > We can create a spring boot skeleton by [spring initializr](https://start.spring.io) which is an online official tool.
 
 ![spring initializr](https://raw.githubusercontent.com/Elliot518/mcp-oss-repo/main/springboot/spring_initializr.png)
+
+
+
+
+
+
 
