@@ -5,3 +5,5 @@
 <hr>
 
 [1. Summary Statistics](SummaryStatistics.md)
+
+[2. Supply Chain Forecast](SupplyChainForecast.md)
