@@ -28,6 +28,9 @@
 >
 >However, the slicing function can only be done inside either .loc[] or .iloc[].
 
+- Syntax:
+    #### df.loc[row_selection, column_selection]
+
 eg: slices adult_df to show all of the rows, but only the columns from education to occupation
 ```
 adult_df.loc[:,'education':'occupation']
