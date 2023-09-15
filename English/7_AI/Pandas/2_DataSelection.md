@@ -139,3 +139,12 @@ labels. Use the attribute loc, which stands for location, to specify which rows 
     df.iloc[idx_col_n:idx_col_m, :]
     df.iloc[:idx_col_m, :]
     ```
+
+&nbsp;
+&nbsp;
+
+<hr>
+
+### Source Code:
+
+<a target="_blank" href="https://github.com/Elliot518/data-science/blob/main/jupyter/pandas/dataframe/create_dataframe.ipynb">Data Selection Source</a>

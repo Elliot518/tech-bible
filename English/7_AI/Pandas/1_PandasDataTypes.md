@@ -1,6 +1,6 @@
 [Back](README.md)
 
-## Pandas DataFrame Introduction
+## Pandas and its data types Introduction
 
 <hr>
 

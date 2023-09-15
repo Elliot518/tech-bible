@@ -6,6 +6,6 @@
 
 <hr>
 
-[1. Pandas DataFrame introduction](1_PandasDataFrame.md)
+[1. Pandas and its data types introduction](1_PandasDataTypes.md)
 
 [2. DataFrame Operations - Data Selection](2_DataSelection.md)
