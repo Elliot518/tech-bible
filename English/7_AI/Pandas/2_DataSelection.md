@@ -141,6 +141,34 @@ labels. Use the attribute loc, which stands for location, to specify which rows 
     ```
 
 &nbsp;
+
+### 3. Selecting Data by boolean indexing
+
+
+> Boolean indexing means using a Series or a DataFrame whose elements are all True or False to select a DataFrame. Boolean Series are used to select specific columns and rows of a DataFrame, while boolean DataFrames are used to select specific values across a whole DataFrame.
+
+- example
+    ```
+    tf = df[boolean expression]
+    df.loc[tf, :]
+    ```
+
+&nbsp;
+
+### 4. Selecting by using a MultiIndex
+
+> A MultiIndex is allows you to hierarchically group your data and gives you easy access to subsets of DataFrame.
+
+```
+# create multi index
+df_multi = df.set_index(["col_name1", "col_name2"])
+df_multi = df_multi.sort_index()
+
+# select by multi indexes
+df_multi.loc[("col_name1_value", "col_name2_value"), :]
+```
+
+&nbsp;
 &nbsp;
 
 <hr>
@@ -148,3 +176,4 @@ labels. Use the attribute loc, which stands for location, to specify which rows 
 ### Source Code:
 
 <a target="_blank" href="https://github.com/Elliot518/data-science/blob/main/jupyter/pandas/dataframe/data_selection.ipynb">Data Selection Source</a>
+
