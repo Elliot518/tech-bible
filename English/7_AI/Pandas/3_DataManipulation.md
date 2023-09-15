@@ -14,7 +14,7 @@ labels. Use the attribute loc, which stands for location, to specify which rows 
 
 - 1-1） Select 1 value - Scalar
     ```
-    df.loc[row_num, "col_name"]
+    df.loc[idx_row, "col_name"]
     ```
 
 <hr>
@@ -28,7 +28,7 @@ labels. Use the attribute loc, which stands for location, to specify which rows 
 
 - 1-3) Select 1 row - Series
     ```
-    df.loc[row_num, :]
+    df.loc[idx_row, :]
     ```
 <hr>
 
@@ -41,7 +41,7 @@ labels. Use the attribute loc, which stands for location, to specify which rows 
 
 - 1-5) Select 1 row in an array - DataFrame
     ```
-    df.loc[[row_num], :]
+    df.loc[[idx_row], :]
     ```
 <hr>
 
@@ -51,11 +51,24 @@ labels. Use the attribute loc, which stands for location, to specify which rows 
     ```
 <hr>
 
-- 1-7) Select range of columns - DataFrame 
+
+- 1-7) Select multiple rows - DataFrame 
     ```
-    df.loc[:, "col_name1":"col_namen"]
+    df.loc[[idx_row_n, idx_row_m, ...], :]
+    ```
+
+<hr>
+
+- 1-8) Select range of columns - DataFrame 
+    ```
+    df.loc[:, "col_name_1":"col_name_n"]
     ```
 <hr>
+
+- 1-9) Select range of rows - DataFrame
+    ```
+    df.loc[idx_row_n:idx_row_m, :]
+    ```
 
 &nbsp;
 
@@ -70,5 +83,59 @@ labels. Use the attribute loc, which stands for location, to specify which rows 
     ```
     df.iloc[idx_row, idx_col]
     ```
+<hr>
+
+- 2-2) Select 1 column - Series
+    ```
+    df.iloc[:, idx_col]
+    ```
+
+<hr>
+
+- 2-3) Select 1 row - Series
+    ```
+    df.iloc[idx_row, :]
+    ```
+
+<hr>
+
+- 2-4) Select 1 column in an array - DataFrame
+    ```
+    df.iloc[:, [idx_col]]
+    ```
+<hr>
+
+- 2-5) Select 1 row in an array - DataFrame
+    ```
+    df.iloc[[idx_row], :]
+    ```
+<hr>
 
 
+- 2-6) Select multiple columns - DataFrame 
+    ```
+    df.iloc[:, [idx_col_n, idx_col_m, ...]]
+    ```
+
+<hr>
+
+- 2-7) Select multiple rows - DataFrame 
+    ```
+    df.iloc[[idx_row_n, idx_row_m, ...], :]
+    ```
+
+<hr>
+
+- 2-8) Select range of columns - DataFrame
+    ```
+    df.iloc[:, idx_col_n:idx_col_m]
+    df.iloc[:, :idx_col_m]
+    ```
+
+<hr>
+
+- 2-9) Select range of rows - DataFrame
+    ```
+    df.iloc[idx_col_n:idx_col_m, :]
+    df.iloc[:idx_col_m, :]
+    ```
