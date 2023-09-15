@@ -35,4 +35,53 @@
 
 &nbsp;
 
+### 3. How to create a Series (Manually)
 
+#### 3-1) Create by dictionary
+
+```python
+dict = { key1: value1, ... ,  keyN: valueN }
+series = pd.Series(dict)
+```
+<hr>
+
+#### 3-2) Create by list
+
+```python
+list = [ A, B, ... N ]
+series = pd.Series(list)
+```
+
+<hr>
+
+#### 3-3) Access Series by index
+
+```python
+# single element
+series[idx]
+# multiple elements
+series[idx1, idx2, ... idxN]
+```
+
+&nbsp;
+
+### 4. How to create a DataFrame (Manually)
+
+- Syntax:
+  >pandas.DataFrame(data, index, columns)
+
+- Parameters:
+  - data: dictionary/list
+  - index: row indexes
+  - column: column names
+
+&nbsp;
+&nbsp;
+
+<hr>
+
+### Source Code:
+
+<a target="_blank" href="https://github.com/Elliot518/data-science/blob/main/jupyter/pandas/dataframe/data_selection.ipynb">Create and access Series</a>
+
+<a target="_blank" href="https://github.com/Elliot518/data-science/blob/main/jupyter/pandas/dataframe/create_dataframe.ipynb">Create and access DataFrame</a>
