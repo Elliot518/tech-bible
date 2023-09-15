@@ -147,4 +147,4 @@ labels. Use the attribute loc, which stands for location, to specify which rows 
 
 ### Source Code:
 
-<a target="_blank" href="https://github.com/Elliot518/data-science/blob/main/jupyter/pandas/dataframe/create_dataframe.ipynb">Data Selection Source</a>
+<a target="_blank" href="https://github.com/Elliot518/data-science/blob/main/jupyter/pandas/dataframe/data_selection.ipynb">Data Selection Source</a>
