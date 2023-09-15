@@ -1,6 +1,6 @@
 [Back](README.md)
 
-## Data Manipulation
+## DataFrame Operations - Data Selection
 
 <hr>
 
