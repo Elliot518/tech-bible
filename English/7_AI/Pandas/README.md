@@ -6,9 +6,6 @@
 
 <hr>
 
-[1. Introduction](1_Introduction.md)
+[1. Pandas DataFrame introduction](1_PandasDataFrame.md)
 
-[2. DataFrame](2_DataFrame.md)
-
-[3. DataFrame Operations - Data Selection](3_DataSelection.md)
-
+[2. DataFrame Operations - Data Selection](2_DataSelection.md)
