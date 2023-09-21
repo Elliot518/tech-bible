@@ -1,0 +1,1 @@
+![diagram of transition phases](https://raw.githubusercontent.com/Elliot518/mcp-oss-repo/main/frontend/vue/transition_phases.png)
