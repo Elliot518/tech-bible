@@ -40,6 +40,26 @@ Above excample, ShoppingList is a React component class, or React component type
 
 #### render()
 
+
 The render method returns a description of what you want to see on the screen.
 React takes the description and displays the result.
 In particular, render returns a React element, which is a lightweight description of what to render.
+
+
+&nbsp;
+
+### 3. Related Tools
+
+- Babel REPL
+
+  >  online tool to briefly explore JSX
+
+
+  https://babeljs.io/repl
+
+<hr>
+
+- CodeSandbox
+  > online tool to build a React component
+
+  https://codesandbox.io
