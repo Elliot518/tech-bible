@@ -14,23 +14,28 @@ _The reason is simple: With so many independently developed javascipt libraries,
 
 - Install the latest version
 
-```
-# "node" is an alias for the latest version:
-nvm install node
-```
+    ```
+    # "node" is an alias for the latest version:
+    nvm install node
+    ```
 
 - install by global version
 
-```
-# You can also install a global version of node (will install the latest from that version):
-nvm install 14
-nvm install 12
-nvm install 10
-nvm install 9
-nvm install 8
-nvm install 7
-nvm install 6
-```
+    ```
+    # You can also install a global version of node (will install the latest from that version):
+    nvm install 19
+    nvm install 18
+    nvm install 17
+    nvm install 16
+    nvm install 15
+    nvm install 14
+    nvm install 12
+    nvm install 10
+    nvm install 9
+    nvm install 8
+    nvm install 7
+    nvm install 6
+    ```
 
 - install a very specific version
 
