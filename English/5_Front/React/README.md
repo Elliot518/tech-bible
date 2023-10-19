@@ -9,3 +9,6 @@
 [2. Setup React Developing Environment](2_Environment.md)
 
 [3. First React Example ToDo](3_FirstExampleTodo.md)
+
+[4. Manually create a react skeleton](4_ManualSkeleton.md)
+
