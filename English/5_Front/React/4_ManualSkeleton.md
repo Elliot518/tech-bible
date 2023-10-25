@@ -56,4 +56,114 @@ The React app will be injected into the div element with an id attribute value o
 
 > Install TypeScript into the project.
 
-4-1) Visual Studio Code->Terminal
+4-1) install typescript
+
+Visual Studio Code->Terminal
+```bash
+npm install --save-dev typescript
+```
+
+--save-dev means typescript is installed as a development-only dependency
+- package.json
+```json
+{
+	...
+	"devDependencies": {
+		"typescript": "^4.6.5"
+	}
+}
+```
+
+<hr>
+
+4-2) create a TypeScript configuration file using Babel to do transpilation
+
+- tsconfig.json
+```json
+{
+    "compilerOptions": {
+      "noEmit": true,
+      "lib": [
+        "dom",
+        "dom.iterable",
+        "esnext"
+      ],
+      "moduleResolution": "node",    
+      "allowSyntheticDefaultImports": true,
+      "esModuleInterop": true,
+      "jsx": "react",
+      "forceConsistentCasingInFileNames": true,
+      "strict": true
+    },
+    "include": ["src"],
+    "exclude": ["node_modules", "dist"]
+  }
+  
+```
+
+- explanaton
+```
+1. Setting noEmit to true suppresses the TypeScript compiler from doing any transpilation
+
+2. Setting allowSyntheticDefaultImports and esModuleInterop to true allows 
+React to be imported as a default import, eg:
+	import React from 'react'
+
+3. Setting forceConsistentCasingInFileNames to true enables the type-checking 
+process to check the casing of referenced filenames in import statements are consistent
+```
+
+&nbsp;
+
+### 5. Adding React
+
+5-1) install React
+
+Visual Studio Code->Terminal
+```bash
+npm install react react-dom
+```
+
+- react
+
+	core library
+
+
+- react-dom
+
+	used to build web apps
+
+
+<hr>
+
+5-2) include TypeScript types
+
+```bash
+npm install --save-dev @types/react @types/react-dom
+```
+
+<hr>
+
+
+
+5-3) create root component
+
+create index.tsx in src folder:
+```javascript
+import React, { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
+
+const root = createRoot(document.getElementById('root') as HTMLElement);
+
+function App() {
+  return <h1>My Super React and TypeScript App! {new Date().toString()}</h1>;
+}
+
+root.render(
+  <StrictMode>
+    <App />
+  </StrictMode>,
+);
+```
+
+
