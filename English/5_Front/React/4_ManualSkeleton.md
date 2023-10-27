@@ -166,4 +166,100 @@ root.render(
 );
 ```
 
+&nbsp;
 
+### 6. Adding Babel
+
+> Babel will transpile both React and TypeScript code into JavaScript
+
+6-1) install the core Babel library
+
+Visual Studio Code->Terminal
+```bash
+npm install --save-dev @babel/core
+Or
+npm i -D @babel/core
+```
+Babel is installed as a development dependency because it is only needed during development to transpile code and we don't need it when the app runs
+
+<hr>
+
+6-2) install a Babel plugin that allows the latest JavaScript features to be used
+
+```bash
+npm i -D @babel/preset-env
+```
+
+<hr>
+
+6-3)  install a Babel plugin that enables React code to be transformed into JavaScript
+
+```bash
+npm i -D @babel/preset-react
+```
+
+<hr>
+
+6-4) install a Babel plugin that enables TypeScript code to be transformed into JavaScript
+
+```bash
+npm i -D @babel/preset-typescript
+```
+
+<hr>
+
+6-5) install two plugins to allow the use of the async and await features in JavaScript
+```bash
+npm i -D @babel/plugin-transform-runtime @babel/runtime
+```
+
+<hr>
+
+6-6) configure Babel in a file called .babelrc.json
+
+```json
+{
+	"presets": [
+		"@babel/preset-env",
+		"@babel/preset-react",
+		"@babel/preset-typescript"
+	],
+	"plugins": [
+		[
+			"@babel/plugin-transform-runtime",
+			{
+				"regenerator": true
+			}
+		]
+	]
+}
+```
+The above configuration tells Babel to use the installed plugins
+
+&nbsp;
+
+### 7. Adding webpack
+
+_glue everything together with webpack_
+
+7-1) install webpack
+- install the core webpack library as well as its command-line interface
+
+  ```bash
+  npm i -D webpack webpack-cli
+  ```
+
+<hr>
+
+
+- install webpack’s development server
+  ```bash
+  npm i -D webpack-dev-server
+  ``` 
+
+<hr>
+
+- install a webpack plugin to allow Babel to transpile the React and TypeScript code into JavaScript
+  ```
+  npm i -D babel-loader
+  ```
