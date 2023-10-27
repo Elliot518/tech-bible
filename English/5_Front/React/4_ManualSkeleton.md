@@ -263,3 +263,99 @@ _glue everything together with webpack_
   ```
   npm i -D babel-loader
   ```
+<hr>
+
+- use the index.html file in the src folder as a template to add the React app’s bundle to it
+  ```bash
+  npm i -D html-webpack-plugin
+  ```
+
+&nbsp;
+
+7-2) configuring webpack
+- install a library called ts-node
+
+  ```bash
+  npm i -D ts-node
+  ```
+
+- add the development configuration file webpack.dev.config.ts
+  ```typescript
+  import path from 'path';
+  import HtmlWebpackPlugin from 'html-webpack-plugin';
+  import {
+    Configuration as WebpackConfig,
+    HotModuleReplacementPlugin,
+  } from 'webpack';
+  import { 
+    Configuration as WebpackDevServerConfig 
+  } from 'webpack-dev-server';
+
+  type Configuration = WebpackConfig & {
+    devServer?: WebpackDevServerConfig;
+  }
+
+  const config: Configuration = {
+    mode: 'development',
+    output: {
+      publicPath: '/',
+    },
+    entry: './src/index.tsx',
+    module: {
+      rules: [
+        {
+          test: /\.(ts|js)x?$/i,
+          exclude: /node_modules/,
+          use: {
+            loader: 'babel-loader',
+            options: {
+              presets: ['@babel/preset-env', '@babel/preset-react', '@babel/preset-typescript'],
+            },
+          },
+        },
+      ],
+    },
+    resolve: {
+      extensions: ['.tsx', '.ts', '.js'],
+    },
+    plugins: [
+      new HtmlWebpackPlugin({
+        template: 'src/index.html',
+      }),
+      new HotModuleReplacementPlugin(),
+    ],
+    devtool: 'inline-source-map',
+    devServer: {
+      static: path.join(__dirname, 'dist'),
+      historyApiFallback: true,
+      port: 4000,
+      open: true,
+      hot: true,
+    }
+  };
+
+  export default config;
+  ```
+
+  The devServer property configures the webpack development server. It configures the web server root to be the dist folder and to serve files on port 4000
+
+&nbsp;
+
+### 8. config scripts to run
+
+- package.json
+
+  ```json
+  {
+    ...
+    "scripts": {
+      "start": "webpack serve --config webpack.dev.config.ts"
+    }
+  }
+  ```
+<hr>
+
+- run the application
+  ```
+  npm start
+  ```
