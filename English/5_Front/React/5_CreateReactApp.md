@@ -117,5 +117,33 @@ tools to catch problems early in the development process as code is written.
     5) Install a Prettier VS plugin
         ```
         Visual Studio Code->Extensions->enter "prettier"->Install an extension called Prettier – Code formatter
+
+        Check:
+        Settings->search box enter "format on save"->select the Workspace tab
+        ->make sure the "Format On Save" option is ticked
         ```
+        ![format on save](https://github.com/Elliot518/mcp-oss-repo/blob/main/ide/vscode/format_on_save.png?raw=true)
+        _This setting tells Visual Studio Code to automatically format code in files that are saved_
+
+        - one more setting to set
+
+            make sure "Default Formatter" is set to "Prettier - Code formatter"
+        ![default formatter](https://github.com/Elliot518/mcp-oss-repo/blob/main/ide/vscode/default_formatter.png?raw=true)
+
+&nbsp;
+
+### 4. Starting the app in development mode
+
+```bash
+npm start
+```
+
+_If your app reports Prettier formatting issues, open the file in question and save it. This will correctly format the file and resolve the errors._
+
+result:
+![react](https://github.com/Elliot518/mcp-oss-repo/blob/main/frontend/react/react_start.png?raw=true)
+
+
+
+
 
