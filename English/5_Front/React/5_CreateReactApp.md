@@ -28,4 +28,20 @@ tools to catch problems early in the development process as code is written.
 
     _Fortunately, Create React App has already installed and configured ESLint in project._
 
-2-1) install an ESLint extension into Visual Studio Code
+- install an ESLint extension into Visual Studio Code
+
+    ```
+    Visual Studio Code->Extensions->Search "eslint"
+
+    Check:
+    Settings->search box, enter "eslint: probe"->select the Workspace tab
+    ->Make sure that typescript and typescriptreact are on the list. If not, add them using the Add Item button
+
+    The ESLint extension for Visual Studio Code is now installed and configured in the project!
+    ```
+    For more information about ESLint, see the following link: https://eslint.org/
+
+&nbsp;
+
+### 3. Adding code formatting
+
