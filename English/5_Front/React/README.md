@@ -12,3 +12,4 @@
 
 [4. Manually create a react skeleton](4_ManualSkeleton.md)
 
+[5. Creating a project with Create React App](5_CreateReactApp.md)
