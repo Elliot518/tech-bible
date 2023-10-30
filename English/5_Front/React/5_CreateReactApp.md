@@ -70,7 +70,7 @@ tools to catch problems early in the development process as code is written.
 
     3) Update ESLint configuration to allow Prettier to manage the styling rules
     - Add the Prettier rules to the eslintConfig section in package.json
-        ```bash
+        ```json
         {
             ...,
             "eslintConfig": {
@@ -83,3 +83,39 @@ tools to catch problems early in the development process as code is written.
             ...
         }
         ```
+    <hr>
+
+    4) File to configure prettier
+    - Create a file called .prettierrc.json with the following content in the root folder
+        ```json
+        {
+            "printWidth": 100,
+            "singleQuote": true,
+            "semi": true,
+            "tabWidth": 2,
+            "trailingComma": "all",
+            "endOfLine": "auto"
+        }
+        ```
+        _What we specified the above:_
+   
+    - Lines wrap at 100 characters
+   
+    - String qualifiers are single quotes
+   
+    - Semicolons are placed at the end of statements
+   
+    - The indentation level is two spaces
+   
+    - A trailing comma is added to multi-line arrays and objects
+   
+    - Existing line endings are maintained
+
+        _More information on the configuration options can be found at the following link: https://prettier.io/docs/en/options.html_
+    <hr>
+
+    5) Install a Prettier VS plugin
+        ```
+        Visual Studio Code->Extensions->enter "prettier"->Install an extension called Prettier – Code formatter
+        ```
+
