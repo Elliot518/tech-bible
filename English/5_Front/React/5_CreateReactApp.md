@@ -66,3 +66,20 @@ tools to catch problems early in the development process as code is written.
         npm i -D eslint-config-prettier eslint-plugin-prettier
         ```
         _eslint-config-prettier disables conflicting ESLint rules, and eslint-plugin-prettier is an ESLint rule that formats code using Prettier_
+    <hr>
+
+    3) Update ESLint configuration to allow Prettier to manage the styling rules
+    - Add the Prettier rules to the eslintConfig section in package.json
+        ```bash
+        {
+            ...,
+            "eslintConfig": {
+                "extends": [
+                    "react-app",
+                    "react-app/jest",
+                    "plugin:prettier/recommended"
+                ]
+            },
+            ...
+        }
+        ```
