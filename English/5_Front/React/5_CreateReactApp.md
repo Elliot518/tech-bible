@@ -45,3 +45,24 @@ tools to catch problems early in the development process as code is written.
 
 ### 3. Adding code formatting
 
+> Automatic code formatting ensures code is consistently formatted, which helps its readability.
+
+- Prettier
+    > Prettier is a popular tool capable of formatting React and TypeScript code.
+    
+    _Unfortunately, Create React App doesn’t install and configure it for us._
+    
+    _Prettier is installed as a development dependency because it is only used during development time and not at runtime._
+
+    Take the following steps to install and configure Prettier in the project:
+    1) Install Prettier
+        ```bash
+        npm i -D prettier
+        ```
+    <hr>
+
+    2) Install two libraries to allow Prettier to take responsibility for the styling rules from ESLint
+        ```bash
+        npm i -D eslint-config-prettier eslint-plugin-prettier
+        ```
+        _eslint-config-prettier disables conflicting ESLint rules, and eslint-plugin-prettier is an ESLint rule that formats code using Prettier_
