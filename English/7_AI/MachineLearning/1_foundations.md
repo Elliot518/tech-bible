@@ -5,10 +5,13 @@
 <hr>
 
 ### 1. Categories
->ML systems can be classified according to the amount and type of
+
+> Machine learning can be classified into supervised learning, unsupervised learning, self supervised learning, semi-supervised learning, and Reinforcement Learning.
+
+_ML systems can be classified according to the amount and type of
 supervision they get during training.
-They are: supervised learning, unsupervised learning, self supervised learning, semi-supervised learning, and Reinforcement
-Learning.
+They are: supervised learning, unsupervised learning, self supervised learning, semi-supervised learning, and Reinforcement Learning._
+
 - Supervised learning
     >In supervised learning, the training set you feed to the algorithm includes
     the desired solutions, called labels.
