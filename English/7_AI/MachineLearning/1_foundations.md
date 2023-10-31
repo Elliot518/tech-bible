@@ -92,6 +92,12 @@ They are: supervised learning, unsupervised learning, self supervised learning, 
 
 ### 2. Instance-Based Versus Model-Based Learning
 
+#### 2-1) What is a machine learning Model?
+
+Machine learning models are computer programs that are used to recognize patterns in data or make predictions. Machine learning models are created from machine learning algorithms, which are trained using either labeled, unlabeled, or mixed data.
+
+For example, in natural language processing, machine learning models can parse and recognize the intent behind previously unheard sentences or combinations of words. In image recognition, a machine learning model can be taught to recognize objects - such as cars or dogs. A machine learning model can perform such tasks by having it 'trained' with a large dataset. During training, the machine learning algorithm is optimized to find certain patterns or outputs from the dataset, depending on the task. The output of this process - often a computer program with specific rules and data structures - is called a machine learning model.
+
 - Instance-based learning
 >It is simply to learn by heart.
 >
