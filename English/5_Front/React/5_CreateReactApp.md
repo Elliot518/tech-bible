@@ -146,5 +146,14 @@ result:
 
 
 
+&nbsp;
 
+### 5. Make a production build
+
+run command in terminal
+
+```bash
+npm run build
+```
+_The deployment artifacts are placed in a build folder_
 
