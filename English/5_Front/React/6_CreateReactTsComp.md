@@ -79,3 +79,38 @@ export default App;
 
 &nbsp;
 
+
+### 2. Adding a state type
+
+- Alert.tsx
+```typescript
+const [visible, setVisible] = useState(true);
+if (!visible) {
+  return null;
+}
+```
+
+&nbsp;
+
+### 3. Using React DevTools
+
+> React DevTools is a browser extension available for Chrome and Firefox. The tools allow React apps to be inspected and debugged.
+
+Links to install:
+
+- Chrome
+
+  https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi/
+
+<hr>
+
+- Firefox
+
+  https://addons.mozilla.org/en-GB/firefox/addon/react-devtools/
+
+
+React DevTools adds two panels called Components and Profiler
+
+
+- Components
+  ![components panel](https://github.com/Elliot518/mcp-oss-repo/blob/main/frontend/react/react_dev_tools.png?raw=true)
