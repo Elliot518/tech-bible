@@ -16,4 +16,4 @@
 
 [6. Creating a React and TypeScript component](6_CreateReactTsComp.md)
 
-
+[7. Use the effect Hook](7_UseEffectHook.md)

@@ -1,6 +1,6 @@
 [Back](README.md)
 
-## Using the effect Hook
+## Use the effect Hook
 
 <hr>
 
