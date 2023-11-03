@@ -22,3 +22,33 @@
 
 - An optional array of dependencies
     That cause the effect function to rerun when changed
+
+```javascript
+function SomeComponent() {
+ function someEffect() {
+ console.log("Some effect");
+ }
+ useEffect(someEffect);
+ return ...
+}
+```
+
+or you can use lambda
+```javascript
+function SomeComponent() {
+ useEffect(() => {
+ console.log("Some effect");
+ });
+ return ...
+}
+```
+
+&nbsp;
+
+### 3. The rules of Hooks
+
+- A Hook can only be called at the top level of a function component
+
+    > a Hook can’t be called in a loop or in a nested function such as an event handler
+
+
