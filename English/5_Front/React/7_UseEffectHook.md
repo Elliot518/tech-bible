@@ -52,3 +52,30 @@ function SomeComponent() {
     > a Hook can’t be called in a loop or in a nested function such as an event handler
 
 
+
+- A Hook can’t be called conditionally
+
+- A Hook can only be used in function components and not class components
+
+eg:
+```javascript
+// useEffect has been lifted to the top level and now depends on 
+// the clicked state that is set in 
+the handler function
+
+export function AnotherComponent() {
+	const [clicked, setClicked] = useState(false);
+	useEffect(() => {
+		if (clicked) {
+			console.log("Some effect");
+		}
+	}, [clicked]);
+
+	function handleClick() {
+		setClicked(true);
+	}
+
+	return <button onClick={handleClick}>Cause effect</button>;
+}
+```
+
