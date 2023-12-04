@@ -47,3 +47,18 @@ tasks.named('test') {
     useJUnitPlatform()
 }
 ```
+
+### config comment
+- Plugins
+    > The plugins block defines the Gradle plugins that are used in the project. In the sample block, we have defined the version of Spring Boot. 
+
+- Repositories
+    > The repositories block defines the dependency repositories that are used 
+    to resolve dependencies. In the sample, we are using the Maven Central repository from which Gradle pulls the dependencies. 
+
+- Dependencies
+    > The dependencies block specifies the dependencies that are used in the 
+    project, dependencies are like external libraries and frameworks.
+
+- Tasks
+    > The tasks block defines the tasks that are part of the build process, such as testing.
