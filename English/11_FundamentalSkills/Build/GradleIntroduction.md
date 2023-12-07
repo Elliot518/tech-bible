@@ -65,11 +65,25 @@ tasks.named('test') {
 
 &nbsp;
 
-### Refresh gradle in Eclipse
+### 3. Setup gradle in Eclipse
 
+#### 3-1) Refresh gradle
 After you have updated the build.gradle file, you should update your dependencies by selecting the project in Eclipse’s Project Explorer and right clicking to open the context menu. 
 
 Then, select **Gradle | Refresh Gradle Project**, as shown in the next screenshot:
 
 
 ![refresh gradle](https://github.com/Elliot518/mcp-oss-repo/blob/main/ide/gradle/refresh_gradle.png?raw=true)
+
+<hr>
+
+#### 3-2) Gradle setup(enable automatic project refresh)
+
+You can also enable automatic project refresh by opening the Window | Preferences menu. 
+Go to the Gradle settings and there is an Automatic Project Synchronization checkbox that you can check. 
+Then, your project will be synchronized automatically if you make changes to your build script file. This is recommended and means you don’t have to manually refresh the project when you update your build script.
+
+![gradle setting eclipse](https://github.com/Elliot518/mcp-oss-repo/blob/main/ide/gradle/gradle_setting_eclipse.png?raw=true)
+
+
+
