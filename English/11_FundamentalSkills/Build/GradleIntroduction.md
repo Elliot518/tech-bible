@@ -62,3 +62,14 @@ tasks.named('test') {
 
 - Tasks
     > The tasks block defines the tasks that are part of the build process, such as testing.
+
+&nbsp;
+
+### Refresh gradle in Eclipse
+
+After you have updated the build.gradle file, you should update your dependencies by selecting the project in Eclipse’s Project Explorer and right clicking to open the context menu. 
+
+Then, select **Gradle | Refresh Gradle Project**, as shown in the next screenshot:
+
+
+![refresh gradle](https://github.com/Elliot518/mcp-oss-repo/blob/main/ide/gradle/refresh_gradle.png?raw=true)
