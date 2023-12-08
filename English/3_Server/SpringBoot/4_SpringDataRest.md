@@ -65,3 +65,27 @@ public interface CarRepository extends CrudRepository<Car, Long> {
     > It is a collection of links, and with these links, you can access the car itself or get the owner of the car. 
 
     eg: To access one specific car, the path will be: http://localhost:8080/api/cars/{id}
+
+<hr>
+
+#### 2-3) create customized queries
+
+```json
+{
+	"_links": {
+		"findByBrand": {
+			"href": "http://localhost:8080/api/cars/search/findByBrand{?brand}",
+			"templated": true
+		},
+		"findByColor": {
+			"href": "http://localhost:8080/api/cars/search/findByColor{?color}",
+			"templated": true
+		},
+		"self": {
+			"href": "http://localhost:8080/api/cars/search"
+		}
+	}
+}
+```
+
+
