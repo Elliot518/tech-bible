@@ -70,6 +70,20 @@ public interface CarRepository extends CrudRepository<Car, Long> {
 
 #### 2-3) create customized queries
 
+Query parameters are annotated with the @Param annotation
+
+```java
+@RepositoryRestResource
+public interface CarRepository extends CrudRepository<Car, Long> {
+    // Fetch cars by brand
+    List<Car> findByBrand(@Param("brand") String brand);
+    // Fetch cars by color
+    List<Car> findByColor(@Param("color") String color);
+}
+```
+
+http://localhost:8080/api/cars/search
+
 ```json
 {
 	"_links": {
@@ -88,4 +102,10 @@ public interface CarRepository extends CrudRepository<Car, Long> {
 }
 ```
 
+http://localhost:8080/api/cars/search/findByBrand?brand=Ford
+
+
+&nbsp;
+
+### 3. Documenting a RESTful API
 
