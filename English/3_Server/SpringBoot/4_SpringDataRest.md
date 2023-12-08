@@ -48,3 +48,20 @@ By calling the root endpoint of the service, it returns the resources that are a
 ![](https://github.com/Elliot518/mcp-oss-repo/blob/main/springboot/springdata/spring_data_rest_root_api.png?raw=true)
 
 
+_(We can see that there are links to the entity services. 
+The Spring Data REST service path name is derived from the entity class name. 
+The name will then be pluralized and uncapitalized.)_
+
+If you want to use different path naming, you can use the @RepositoryRestResource annotation in your repository class.
+```java
+@RepositoryRestResource(path="vehicles")
+public interface CarRepository extends CrudRepository<Car, Long> {
+}
+```
+
+
+-  _links attribute
+
+    > It is a collection of links, and with these links, you can access the car itself or get the owner of the car. 
+
+    eg: To access one specific car, the path will be: http://localhost:8080/api/cars/{id}
