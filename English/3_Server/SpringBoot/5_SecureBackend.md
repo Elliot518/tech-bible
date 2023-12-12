@@ -65,3 +65,127 @@ process, session management, and so on.
 
 3-1) Create a new class called SecurityConfig in your application root package
 
+```java
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+@Configuration
+@EnableWebSecurity
+public class SecurityConfig {
+}
+```
+
+<hr>
+
+3-2) Add in-memory users to our application by using Spring Security’s 
+InMemoryUserDetailsManager
+
+```java
+@Configuration
+@EnableWebSecurity
+public class SecurityConfig {
+	@Bean
+	public InMemoryUserDetailsManager userDetailsService() {
+	UserDetails user = User.builder().username("user")
+		.password(passwordEncoder().encode("password"))
+		.roles("USER").build();
+		return new InMemoryUserDetailsManager(user);
+	}
+
+	@Bean
+	public PasswordEncoder passwordEncoder() {
+		return new BCryptPasswordEncoder();
+	}
+}
+```
+
+&nbsp;
+
+### 4. Save users to the database
+
+To save users to the database, you have to create a user entity class and repository.
+
+_Passwords shouldn’t be saved to the database in plaintext format. If a database containing user passwords is hacked, attackers will be able to get the passwords directly in plaintext. Spring Security provides multiple hashing algorithms, such as bcrypt, that you can use to hash passwords._
+
+4-1) Create entity class
+
+AppUser.java
+```java
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity
+public class AppUser {
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(nullable = false, updatable = false)
+	private Long id;
+	@Column(nullable = false, unique = true)
+	private String username;
+	@Column(nullable = false)
+	private String password;
+	@Column(nullable = false)
+	private String role;
+
+	public AppUser() {
+	}
+
+	public AppUser(String username, String password, String role) {
+		super();
+		this.username = username;
+		this.password = password;
+		this.role = role;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public String getRole() {
+		return role;
+	}
+
+	public void setRole(String role) {
+		this.role = role;
+	}
+}
+```
+
+<hr>
+
+4-2) Create repository class
+
+AppUserRepository.java
+```java
+import java.util.Optional;
+
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.rest.core.annotation.RepositoryRestResource;
+
+@RepositoryRestResource(exported = false)
+public interface AppUserRepository extends CrudRepository<AppUser, Long> {
+	Optional<AppUser> findByUsername(String username);
+}
+```
