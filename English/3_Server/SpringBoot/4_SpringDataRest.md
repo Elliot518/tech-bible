@@ -109,3 +109,53 @@ http://localhost:8080/api/cars/search/findByBrand?brand=Ford
 
 ### 3. Documenting a RESTful API
 
+> A RESTful API should be properly documented so that developers who are consuming it understand its functionality and behavior. The documentation should include what endpoints are available, what data formats are accepted, and how to interact with the API.
+
+
+- OpenAPI 3 library for Spring Boot 
+	>  The OpenAPI(https://springdoc.org) Specification (formerly Swagger Specification) is an API description format for RESTful APIs.
+	
+	_It can generate documentation automatically_
+
+	#### Other alternatives: RAML(https://raml.org/)
+
+-  How to generate RESTful API documentation using OpenAPI 3
+	1) add the OpenAPI library to our Spring Boot application
+
+		Add the following dependency to your build.gradle file:
+		```groovy
+		implementation group: 'org.springdoc', name: 'springdoc-openapi-starter-webmvc-ui', version: '2.0.2'
+		```
+
+	2) create a configuration class called OpenApiConfig for our documentation
+		```java
+		import org.springframework.context.annotation.Bean;
+		import org.springframework.context.annotation.Configuration;
+		import io.swagger.v3.oas.models.OpenAPI;
+		import io.swagger.v3.oas.models.info.Info;
+		@Configuration
+		public class OpenApiConfig {
+			@Bean
+			public OpenAPI myDatabaseOpenAPI() {
+				return new OpenAPI()
+					.info(new Info()
+					.title("My REST API")
+					.description("My server api")
+					.version("1.0"));
+			}
+		}
+		```
+
+	3) define the path for our documentation and enable Swagger UI in application.properties file
+		```java
+		springdoc.api-docs.path=/api-docs
+		springdoc.swagger-ui.path=/swagger-ui.html
+		springdoc.swagger-ui.enabled=true
+		```
+		tool for visualizing RESTful APIs that are documented using the OpenAPI Specification (https://swagger.io/tools/swagger-ui/)
+	
+	4) check the documentation in Swagger UI
+
+		When your application is running, navigate to http://localhost:8080/swagger-ui.html and you will see the documentation
+
+		 The documentation is also available in JSON format at http://localhost:8080/api-docs
