@@ -296,3 +296,6 @@ public class CardatabaseApplication implements CommandLineRunner {
 
 Now you will get a 401 Unauthorized error if you try to send a GET request to the http://localhost:8080/api path without authentication. 
 You must authenticate to be able to send a successful request.
+
+Use basic auth in header, input username and password
+![basic auth of spring security](https://github.com/Elliot518/mcp-oss-repo/blob/main/backend/springsecurity/basic_auth.png?raw=true)
