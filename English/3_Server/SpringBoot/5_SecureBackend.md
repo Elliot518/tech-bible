@@ -229,3 +229,70 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 	}
 }
 ```
+
+<hr>
+
+4-4) Define a password hashing algorithm in the configureGlobal method of SecurityConfig class
+
+SecurityConfig.java
+```java
+@Configuration
+@EnableWebSecurity
+public class SecurityConfig {
+	private final UserDetailsServiceImpl userDetailsService;
+
+	public SecurityConfig(UserDetailsServiceImpl userDetailsService) {
+		this.userDetailsService = userDetailsService;
+	}
+
+	public void configureGlobal(AuthenticationManagerBuilder auth) 
+        throws Exception {
+		auth.userDetailsService(userDetailsService).passwordEncoder(
+            new BCryptPasswordEncoder());
+	}
+    
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
+    }
+```
+
+<hr>
+
+4-5) Save a couple of test users to the database using the CommandLineRunner
+
+
+CardatabaseApplication.java
+```java
+@SpringBootApplication
+public class CardatabaseApplication implements CommandLineRunner {
+	private final AppUserRepository userRepository;
+
+	public CardatabaseApplication(AppUserRepository userRepository) {
+		this.userRepository = userRepository;
+	}
+
+	public static void main(String[] args) {
+		SpringApplication.run(CardatabaseApplication.class, args);
+	}
+
+	@Override
+	public void run(String... args) throws Exception {
+		...
+
+		// Username: user, password: user
+		userRepository.save(
+            new AppUser("user", "$2a$10$NVM0n8ElaRgg7zWO1CxUdei7vWoPg91Lz2aYavh9.f9q0e4bRadue", "USER"));
+		// Username: admin, password: admin
+		userRepository.save(
+            new AppUser("admin","$2a$10$8cjz47bjbR4Mn8GMg9IZx.vyjhLXR/SKKMSZ9.mP9vpMu0ssKi8GW", "ADMIN"));
+	}
+}
+```
+
+<hr>
+
+4-6) Check
+
+Now you will get a 401 Unauthorized error if you try to send a GET request to the http://localhost:8080/api path without authentication. 
+You must authenticate to be able to send a successful request.
