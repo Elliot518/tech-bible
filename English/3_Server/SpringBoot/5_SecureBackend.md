@@ -58,7 +58,7 @@ Type user into the Username field and copy the generated password from the conso
 
 &nbsp;
 
-### 3. Customize Spring Security
+### 3. Customize Spring Security(basic authentication)
 
 To configure how Spring Security behaves, we have to add a new configuration class for Spring Security. You can also define the authentication mechanism, the login 
 process, session management, and so on.
@@ -299,3 +299,61 @@ You must authenticate to be able to send a successful request.
 
 Use basic auth in header, input username and password
 ![basic auth of spring security](https://github.com/Elliot518/mcp-oss-repo/blob/main/backend/springsecurity/basic_auth.png?raw=true)
+
+&nbsp;
+
+### 5. Securing backend with JWT
+
+- Drawbacks of basic authentication 
+
+	It doesn’t provide a way to handle tokens or manage sessions. When a user logs 
+	in, the credentials are sent with each request, which can cause session management challenges and potential security risks.
+
+<hr>
+
+-  JSON Web Token (JWT)
+
+	> JWTs (https://jwt.io/) are commonly used in RESTful APIs for authentication and authorization purposes. They are a compact way to implement authentication in modern web applications. A JWT is really small in size and can therefore be sent in the URL, in the POST parameter, or inside the header. It also contains all the necessary information about the user, such as their username and role.
+
+	- Elements of JWT
+	
+		1. Header: The first part is the header, which defines the type of token and the hashing algorithm
+
+		2. Payload: The second part is the payload, which, typically, in the case of authentication, contains user information
+
+		3. Signature: The third part is the signature, which is used to verify that the token hasn’t been changed along the way
+
+	_(eg: Header.Payload.Signature)_
+
+#### How to implement JWT in SpringBoot
+
+#### 5-1) add jwt dependencies
+
+build.gradle
+```groovy
+dependencies {
+	...
+	implementation 'io.jsonwebtoken:jjwt-api:0.11.5'
+	runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.11.5', 'io.jsonwebtoken:jjwt-jackson:0.11.5'
+}
+```
+
+_We will use jjwt (https://github.com/jwtk/jjwt), which is the JWT library for Java and Android for creating and parsing JWTs._
+
+
+<hr>
+
+#### 5-2) create a class that generates and verifies a signed JWT
+
+JwtService.java
+```java
+import org.springframework.stereotype.Component;
+
+@Component
+public class JwtService {
+	// 1 day in ms. Should be shorter in production
+	static final long EXPIRATIONTIME = 86400000; 
+	
+	static final String PREFIX = "Bearer";
+}
+```
