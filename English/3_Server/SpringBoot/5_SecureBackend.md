@@ -434,9 +434,6 @@ public record AccountCredentials(String username, String password)
 
 _Login is done by calling the /login endpoint using the POST method and sending the username and password inside the request body._
 
-
-#### implement the getToken method that handles the login functionality
-
 LoginController.java
 ```java
 import org.springframework.http.HttpHeaders;
@@ -468,6 +465,10 @@ public class LoginController {
 }
 ```
 
+<hr>
+
+#### implement the getToken method that handles the login functionality
+
 ```java
 /*
 	Get a JSON object from the request body that contains the username and password. 
@@ -492,3 +493,29 @@ public ResponseEntity<?> getToken(@RequestBody AccountCredentials credentials) {
 ```
 
 
+<hr>
+
+#### 5-6) add AuthenticationManager in  SecurityConfig class
+
+```java
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
+
+...
+
+@Configuration
+@EnableWebSecurity
+public class SecurityConfig {
+
+	...
+
+
+	@Bean
+	public AuthenticationManager uthenticationManager(AuthenticationConfiguration authConfig) 
+		throws Exception {
+		return authConfig.getAuthenticationManager();
+	}
+ }
+```
