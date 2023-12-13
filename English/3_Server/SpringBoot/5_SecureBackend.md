@@ -357,3 +357,78 @@ public class JwtService {
 	static final String PREFIX = "Bearer";
 }
 ```
+
+A JWT is sent in the Authorization header and the content of the header looks like the following when using the Bearer schema:
+```json
+Authorization: Bearer <token>
+```
+
+<hr>
+
+#### 5-3) create a secret key using the jjwt library’s secretKeyFor method
+
+
+_This is only for demonstration purposes. In a production environment, you should read your secret key from the application configuration._
+
+
+
+```java
+/**
+	The getToken method then generates and returns the token. The getAuthUser method gets the token from the response Authorization header. 
+	Then, we will use the parserBuilder method provided by the jjwt library to create a JwtParserBuilder instance. The setSigningKey method is used to specify a secret key for token verification. The parseClaimsJws method removes the Bearer prefix from the Authorization header. Finally, we will use the getSubject method to get the username.
+ */
+public class JwtService {
+	...
+
+	// Generate secret key. Only for demonstration purposes.
+ 	// In production, you should read it from the application configuration.
+ 	static final Key key = Keys.secretKeyFor (SignatureAlgorithm.HS256);
+
+ 	// Generate signed JWT token
+	public String getToken(String username) {
+		String token = Jwts.builder()
+			.setSubject(username)
+			.setExpiration(new Date(System.currentTimeMillis() +
+			EXPIRATIONTIME))
+			.signWith(key)
+			.compact(); 
+	
+		return token;
+	}
+
+	// Get a token from request Authorization header,
+	// verify the token, and get username
+	public String getAuthUser(HttpServletRequest request) {
+		String token = request.getHeader(HttpHeaders.AUTHORIZATION);
+
+		if (token != null) {
+			String user = Jwts.parserBuilder()
+				.setSigningKey(key)
+				.build()
+				.parseClaimsJws(token.replace(PREFIX, ""))
+				.getBody()
+				.getSubject();
+
+			if (user != null)
+				return user;
+		}
+
+		return null;
+	}
+}
+```
+
+<hr>
+
+#### 5-4) add a new class to store credentials for authentication
+
+_We can use a Java record, which was introduced in Java 14. A record is a good choice if you need a class that only holds data.The record has two fields: username and password, and we don’t have to write getters and setters when using it._
+```java
+public record AccountCredentials(String username, String password) 
+{}
+```
+
+<hr>
+
+#### 5-5) implement the controller class for login
+
