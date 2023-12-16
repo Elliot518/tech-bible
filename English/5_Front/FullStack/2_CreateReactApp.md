@@ -19,7 +19,7 @@ _(There are excellent React frameworks available, like Next.js or Remix, that ca
 
 ### 2. Create react app by vite
 
-2-1） creating a Vite project by installing create-vite package
+2-1） Installing create-vite package
 
 
 #### Open terminal and move to a folder where you want to create your project
@@ -31,4 +31,50 @@ npm create vite@latest
 npm create vite@4.3
 ```
 
+<hr>
+
+2-2) Type project name and select the React framework
+![select the React framework](https://github.com/Elliot518/mcp-oss-tech/blob/main/frontend/vite/vite_react1.png?raw=true)
+
+<hr>
+
+2-3)  Select JavaScript or TypeScript variant
+![select variant](https://github.com/Elliot518/mcp-oss-tech/blob/main/frontend/vite/vite_react2.png?raw=true)
+
+<hr>
+
+2-4) Install dependencies
+
+Use VS Code to open the app folder just created by you, go to Terminal->New Terminal
+```
+npm install
+```
+
+<hr>
+
+2-5) Run your app
+
+In your terminal
+```shell
+npm run dev
+```
+
+If everything goes well, you'll see below in your terminal
+```shell
+> react-vite-app@0.0.0 dev
+> vite
+
+
+  VITE v5.0.10  ready in 371 ms
+
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: use --host to expose
+  ➜  press h + enter to show help
+```
+
+Open your browser and navigate to the URL:  http://localhost:5173/
+
+and you'll see below effect:
+
+![vite + react](https://github.com/Elliot518/mcp-oss-tech/blob/main/frontend/vite/vite_react3.png?raw=true)
 
