@@ -58,6 +58,17 @@ _(Installation for Windows is done with the MSI installer)_
 
     - Useful extensions
     1) Reactjs code snippets
-        > It has multiple code snippets available for React.js apps, which makes the development process faster.
+        > It has multiple code snippets available for React.js apps, which makes the development process faster.
 
-    
+    2) ESLint
+        > ESLint (https://eslint.org/) is an open-source linter for JavaScript, and it helps you to find typos and syntax errors quickly, fix problems in your source code and makes formatting source code easier.
+
+        _(ESLint highlights errors and warnings, errors and warnings are shown in red or yellow underlines, and if you hover over these lines, you can see information about the specific error or warning. VS Code also provides a Problems panel that shows all ESLint errors and warnings.)_ 
+        
+        ESLint can be configured using the **.eslintrc** file, in the file you can define which rules are enabled and at what error level.
+
+    3) Prettier
+        > Prettier is a code formatter. With the Prettier extension, you can get automatic code formatting.
+
+        formatted automatically by [File | Preferences | Settings -> Format On Save]
+
