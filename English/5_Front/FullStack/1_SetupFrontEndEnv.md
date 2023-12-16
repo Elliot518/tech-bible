@@ -38,3 +38,14 @@ If you are using the Windows 10 operating system, you can get the Node.js MSI in
 &nbsp;
 
 ### 3. Installing Visual Studio Code
+
+> Visual Studio Code (VS Code) is an open-source code editor for multiple programming languages. 
+It was developed by Microsoft.
+
+_(There are many other alternative code editors available, such as Atom and Sublime)_
+
+
+VS Code is available for Windows, macOS, and Linux, and you can download it from 
+https://code.visualstudio.com/ 
+
+_(Installation for Windows is done with the MSI installer)_
