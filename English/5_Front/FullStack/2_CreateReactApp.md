@@ -78,3 +78,22 @@ and you'll see below effect:
 
 ![vite + react](https://github.com/Elliot518/mcp-oss-tech/blob/main/frontend/vite/vite_react3.png?raw=true)
 
+&nbsp;
+
+### 3. Debugging a React app
+
+3-1) Install React Developer Tools
+
+_(available for Chrome, Firefox, and Edge browsers)_
+
+- Chrome Web Store (https://chrome.google.com/webstore/category/extensions)
+
+- Firefox add-ons site (https://addons.mozilla.org)
+
+<hr>
+
+![chrome react tool](https://github.com/Elliot518/mcp-oss-tech/blob/main/frontend/chrome/chrome_react_tool.png?raw=true)
+
+<hr>
+
+![chrome react tool2](https://github.com/Elliot518/mcp-oss-tech/blob/main/frontend/chrome/chrome_react_tool2.png?raw=true)
