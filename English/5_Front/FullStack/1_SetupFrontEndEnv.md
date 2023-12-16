@@ -49,3 +49,15 @@ VS Code is available for Windows, macOS, and Linux, and you can download it from
 https://code.visualstudio.com/ 
 
 _(Installation for Windows is done with the MSI installer)_
+
+<hr>
+
+- VS Code extensions
+
+    VS Code provide a lot of extensions available for different programming languages and frameworks.
+
+    - Useful extensions
+    1) Reactjs code snippets
+        > It has multiple code snippets available for React.js apps, which makes the development process faster.
+
+    
