@@ -107,3 +107,32 @@ function App() {
 }
 ```
 
+&nbsp;
+
+### 4. Create first React app
+
+
+Use create-vite to create a react app, see [Create React Vite](2_CreateReactApp.md)
+- main.jsx
+
+    ```javascript
+    import React from 'react'
+    import ReactDOM from 'react-dom/client'
+    import App from './App.jsx'
+    import './index.css'
+
+    ReactDOM.createRoot(document.getElementById('root')).render(
+    <React.StrictMode>
+        <App />
+    </React.StrictMode>,
+    )
+    ```
+
+- The react-dom package provides DOM-specific methods for us
+    > To render the React component to the DOM, we can use the render method from the react-dom package.
+
+- React.StrictMode
+    > React.StrictMode is used to find potential problems in your React app and these are printed in the browser console.
+    
+    _Strict Mode only runs in development mode and renders your components extra time, so it has time to find bugs._
+
