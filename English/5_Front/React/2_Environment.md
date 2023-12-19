@@ -12,6 +12,8 @@ But I highly recommended you install by [NVM(Node Version Manager](https://githu
 
 _The reason is simple: With so many independently developed javascipt libraries, each having many different versions dependencies on the Node version, things can get out of hand real quick if we just stick to one Node version, but NVM can help us switch to differrnt Node versions very easily.Work could become easier._
 
+See [Install NVM](../../11_FundamentalSkills/Build/InstallNvm.md)
+
 - Install the latest version
 
     ```
