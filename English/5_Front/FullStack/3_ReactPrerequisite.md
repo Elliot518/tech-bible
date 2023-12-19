@@ -176,4 +176,74 @@ export default App
 
 _There can only be one export default statement per file, but there can be multiple named export statements. Default exports are commonly used to export React components. Named exports are commonly used to export specific functions or objects from a module._
 
+#### Example of export and import a component:
+
+- Export
+```javascript
+export default React // Default export
+export { name } // Named export
+```
+
+<hr>
+
+- Import
+```javascript
+import React from 'react' // Import default value
+import { name } from … // Import named value
+```
+
+
+&nbsp;
+
+### 5. ES6 features
+
+> ES6 was released in 2015, and it introduced a lot of new features.
+
+_ECMAScript is a standardized scripting language, and JavaScript is one implementation of it._
+
+
+#### 5-1) Constants and variables
+
+- Constants
+    ```javascript
+    const PI = 3.14159;
+    ```
+    _You will get an error if you try to reassign the PI value_
+
+<hr>
+
+#### The const is block-scoped
+_This means that the const variable can only be used inside the block in which it is defined._
+```javascript
+let count = 10;
+if (count > 5) {
+    const total = count * 2;
+    console.log(total); // Prints 20 to console
+}
+console.log(total); // Error, outside the scope
+```
+
+<hr>
+
+#### If const is an object, its properties or elements can be updated
+```javascript
+const myObj = {foo: 3};
+myObj.foo = 5; // This is ok
+```
+
+<hr>
+
+#### 5-2) Arrow functions
+
+- traditional function
+    ```javascript
+    function(x) {
+        return x * 2;
+    }
+    ```
+
+
+
+
+
 
