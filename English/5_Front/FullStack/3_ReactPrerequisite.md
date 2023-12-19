@@ -242,8 +242,86 @@ myObj.foo = 5; // This is ok
     }
     ```
 
+- ES6 arrow function
+    ```javascript
+    x => x * 2
+    ```
+
+    _The function is a so-called anonymous function, and we can’t call it. Anonymous 
+    functions are often used as an argument for other functions. In JavaScript, functions are first-class citizens and you can store functions in variables._
+    ```javascript
+    const calc = x => x * 2
+
+    // Now, you can use the variable name to call the function, returns 10
+    calc(5);
+    ```
+
+    _When you have more than one argument, you have to wrap the arguments in parentheses /pəˈrenθəsiːz/ and separate the arguments with a comma to use the arrow function effectively._
+    ```javascript
+    const calcSum = (x, y) => x + y
+    // function call, returns 5
+    calcSum(2, 3);
+    ```
+
+    _Multiple lines in the function body, you have to use curly brackets and a return statement_
+    ```javascript
+    const calcSum = (x, y) => {
+        console.log('Calculating sum');
+        return x + y;
+    }
+    ```
 
 
+    _If the function doesn’t have any arguments, then you should use empty parentheses_
+    ```javascript
+    const sayHello = () => "Hello"
+    ```
 
+ <hr>
+
+ #### 5-3) Template literals
+> Template literals can be used to concatenate strings.
+
+- traditional way to concatenate strings(use the + operator)
+
+    ```javascript
+    let person = {firstName: 'John', lastName: 'Johnson'};
+    let greeting = "Hello " + ${person.firstName} + " " + ${person.lastName};
+    ```
+
+- template literals(use backticks ``)
+    ```javascript
+    let person = {firstName: 'John', lastName: 'Johnson'};
+    let greeting = `Hello ${person.firstName} ${person.lastName}`;
+    ```
+
+<hr>
+
+#### 5-4) Object destructuring
+
+> The object destructuring feature allows you to extract values from an object and assign them to a variable.
+
+_An object_
+```javascript
+const person = {
+    firstName: 'John',
+    lastName: 'Johnson',
+    email: 'j.johnson@mail.com'
+};
+```
+
+- example without object destructuring
+    ```javascript
+    const firstName = person.firstName;
+    const lastName = person.lastName;
+    const email = person.email;
+    ```
+
+- example with object destructuring
+    ```javascript
+    // creates three variables, firstName, lastName, and email, 
+    // which get their values from the person object
+    const { firstName, lastName, email } = person;
+    ```
 
 
