@@ -136,3 +136,44 @@ Use create-vite to create a react app, see [Create React Vite](2_CreateReactApp.
     
     _Strict Mode only runs in development mode and renders your components extra time, so it has time to find bugs._
 
+- The root API is used to render React components inside a browser DOM node
+    >  The root calls the render method to render an element to the root.
+
+    _The container in the root API is the ```<div id="root"></div>``` element, which can be found in the index.html_
+```javascript
+import ReactDOM from 'react-dom/client';
+import App from './App';
+const container = document.getElementById('root');
+// Create a root
+const root = ReactDOM.createRoot(container);
+// Render an element to the root
+root.render(<App />);
+```
+
+<hr>
+
+- App.jsx
+```javascript
+import { useState } from 'react'
+import reactLogo from './assets/react.svg'
+import viteLogo from '/vite.svg'
+import './App.css'
+
+function App() {
+  const [count, setCount] = useState(0)
+
+  return (
+    <>
+      ...
+    </>
+  )
+}
+
+export default App
+```
+
+#### At the end of the source code, there is an export default statement that exports the component, after exporting it can be made available to other components by using the import statement.
+
+_There can only be one export default statement per file, but there can be multiple named export statements. Default exports are commonly used to export React components. Named exports are commonly used to export specific functions or objects from a module._
+
+
