@@ -324,4 +324,23 @@ const person = {
     const { firstName, lastName, email } = person;
     ```
 
+<hr>
 
+#### 5-5) Classes and inheritance
+
+> Class definition in ES6 is similar to other object-oriented languages such as Java or C#.
+
+ ES6 class:
+ ```javascript
+ class Person {
+    constructor(firstName, lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+}
+```
+
+Inheritance is performed with an extends keyword
+```javascript
+
+```
