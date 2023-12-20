@@ -354,6 +354,21 @@ class Employee extends Person {
 
 Babel is a JavaScript compiler that is used to compile ES6 (or newer versions) to an older version that is compatible with all browsers. You can test the compiler on the Babel website (https://babeljs.io).
 
+&nbsp;
+
+### 6. JSX and styling
+
+> JavaScript XML (JSX) is the syntax extension for JavaScript.
+
+_It is not mandatory to use JSX with React, but there are some benefits that make development easier. For example, JSX prevents injection attacks because all values are escaped in JSX before they are rendered. The most useful feature is that you can embed JavaScript expressions in JSX by wrapping them with curly brackets.JSX is compiled into regular JavaScript 
+by Babel._
+
+- JSX Example
+```javascript
+function App(props) {
+	return <h1>Hello World {props.user}</h1>;
+}
+```
 
 
 
