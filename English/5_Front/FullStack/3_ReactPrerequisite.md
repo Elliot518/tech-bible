@@ -342,5 +342,18 @@ const person = {
 
 Inheritance is performed with an extends keyword
 ```javascript
-
+class Employee extends Person {
+	constructor(firstName, lastName, title, salary) {
+		super(firstName, lastName);
+		this.title = title;
+		this.salary = salary;
+	}
+}
 ```
+
+
+Babel is a JavaScript compiler that is used to compile ES6 (or newer versions) to an older version that is compatible with all browsers. You can test the compiler on the Babel website (https://babeljs.io).
+
+
+
+
