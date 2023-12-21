@@ -370,5 +370,26 @@ function App(props) {
 }
 ```
 
+#### Styling
 
+- inline styling
+    ```html
+    <div style={{ height: 20, width: 200 }}>
+        Hello
+    </div>
+    ```
 
+- use a style object
+    ```javascript
+    const divStyle = { color: 'red', height: 30 };
+    const MyComponent = () => (
+        <div style={divStyle}>Hello</div>
+    );
+    ```
+
+- reference classes from an external CSS file
+    ```javascript
+    import './App.js';
+    ...
+    <div className="App-header"> This is my app</div>
+    ```
