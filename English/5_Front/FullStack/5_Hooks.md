@@ -122,3 +122,27 @@ _Before hooks, you had to write class components if states or complex component 
 
     export default App;
     ```
+
+- flushSync
+    > use the react-dom library’s flushSync API to avoid batching
+
+    Scenario: update some state before updating the next one
+    ```javascript
+    import { flushSync } from "react-dom";
+
+    const increment = () => {
+        flushSync( () => {
+            // No batch update
+            setCount(count + 1); 
+        });
+    }
+    ```
+    _<span style="color: red;">You should use flushSync only if it is needed, because it can affect the performance of your React app.</span>_
+
+&nbsp;
+
+### 3. useEffect
+
+
+
+
