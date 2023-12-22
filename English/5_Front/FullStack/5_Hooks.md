@@ -49,7 +49,7 @@ _Before hooks, you had to write class components if states or complex component 
     ```
 
     <hr>
-    
+
     2-2) Next, we render a button element that increments the state by 1. <br>
         We use the onClick event attribute to call the setCount function, and the new value is the current value plus 1. <br>
         We also render the counter state value using {{ counter }}.
@@ -72,3 +72,19 @@ _Before hooks, you had to write class components if states or complex component 
     export default Counter;
     ```
 
+- Important things need to pay attention to
+
+    **<span style="color: red;">Never call hook function directly in the event handler!!!!</span>**
+
+    _Note that the function must be passed to an event handler, and then React will call the function only when the user clicks the button.<br>
+    We use an arrow function in the example because it is more compact to write and it improves code readability. <br>
+    If you call the function directly in the event handler, then the function is called when the component is rendered, which can cause an infinite loop._
+
+    ```javascript
+    // Correct -> Function is called when button is pressed
+    <button onClick={() => setCount(count + 1)}>
+
+    // Wrong -> Function is called in render -> Infinite loop
+    <button onClick={setCount(count + 1)}>
+    ```
+    
