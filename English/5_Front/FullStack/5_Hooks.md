@@ -30,6 +30,9 @@ _Before hooks, you had to write class components if states or complex component 
 
     We will create an example counter that contains a button, and when it is pressed, the counter is increased by 1.
     ![counter component](https://github.com/Elliot518/mcp-oss-tech/blob/main/frontend/react/counter_component.png?raw=true)
+    _When the state is updated, React re-renders the component and we can see the new count value._
+
+    <hr>
 
     2-1) First, we create a Counter component and declare a state called count with the initial value 0. The value of the counter state can be updated using the setCount function.
     ```javascript
@@ -45,6 +48,8 @@ _Before hooks, you had to write class components if states or complex component 
     export default Counter;
     ```
 
+    <hr>
+    
     2-2) Next, we render a button element that increments the state by 1. <br>
         We use the onClick event attribute to call the setCount function, and the new value is the current value plus 1. <br>
         We also render the counter state value using {{ counter }}.
