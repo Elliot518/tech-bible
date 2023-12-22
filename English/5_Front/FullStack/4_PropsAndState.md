@@ -182,3 +182,40 @@ other events._
     return <div>Hello {name.firstName}, {name.lastName}</div>;
     ```
 
+<hr>
+
+#### Stateless components
+
+> The React stateless component is just a pure JavaScript function that takes props as an argument and returns a React element.
+
+```javascript
+function HeaderText(props) {
+    return (
+        <h1>
+            {props.text}
+        </h1>
+    )
+}
+export default HeaderText;
+```
+
+<hr>
+
+#### Conditional rendering
+
+> You can use a conditional statement to render different UIs if a condition is true or false.
+
+```javascript
+function MyComponent(props) {
+    const isLoggedin = props.isLoggedin;
+    if (isLoggedin) {
+        return (
+            <Logout />
+        )
+    }
+
+    return (
+        <Login />
+    )
+}
+···
