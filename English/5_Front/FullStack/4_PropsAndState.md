@@ -223,13 +223,13 @@ function MyComponent(props) {
 ```
 
 - using ternary expression
-```javascript
-function MyComponent(props) {
-	const isLoggedin = props.isLoggedin;
-	return (
-		<>
-			{ isLoggedin ? <Logout /> : <Login /> }
-		</>
-	);
-}
-```
+    ```javascript
+    function MyComponent(props) {
+        const isLoggedin = props.isLoggedin;
+        return (
+            <>
+                { isLoggedin ? <Logout /> : <Login /> }
+            </>
+        );
+    }
+    ```
