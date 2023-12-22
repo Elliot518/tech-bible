@@ -87,4 +87,38 @@ _Before hooks, you had to write class components if states or complex component 
     // Wrong -> Function is called in render -> Infinite loop
     <button onClick={setCount(count + 1)}>
     ```
-    
+
+&nbsp;
+
+### 3. Batching
+
+> React uses batching in state updates to reduce re-renders.
+
+- example of batching
+    ```javascript
+    import { useState } from 'react';
+
+
+    function App() {
+        const [count, setCount] = useState(0);
+        const [count2, setCount2] = useState(0);
+
+        // here we created a batching
+        const increment = () => {
+            // No re-rendering yet
+            setCount(count + 1); 
+
+            // Component re-renders after all state updates
+            setCount2(count2 + 1);
+        }
+
+        return (
+            <>
+                <p>Counters: {count} {count2}</p>
+                <button onClick={increment}>Increment</button>
+            </>
+        );
+    };
+
+    export default App;
+    ```
