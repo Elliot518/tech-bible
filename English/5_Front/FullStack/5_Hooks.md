@@ -143,6 +143,75 @@ _Before hooks, you had to write class components if states or complex component 
 
 ### 3. useEffect
 
+> The useEffect hook function can be used to perform side effects in the React function component(eg: a fetch request). It is called after every render.
 
+#### syntax
+**<span style="color: green;"><useEffect(callback, [dependencies])</span>**
 
+_[dependencies] is an optional array of dependencies._
+
+- Scenario 1: Add the useEffect hook to the previous counter example
+
+    Expecrted result: <br>
+    When the button is pressed, the count state value increases, and the component is 
+    re-rendered. <br>
+    After each render, the useEffect callback function is invoked and we can see Hello 
+    from useEffect in the console. <br>
+    ```javascript
+    import { useState, useEffect } from 'react';
+
+    function Counter() {
+        const [count, setCount] = useState(0);
+
+        // Called after every render
+        useEffect(() => {
+            console.log('Hello from useEffect')
+        });
+
+        return (
+            <>
+                <p>{count}</p>
+                <button onClick={() => setCount(count + 1)}>
+                    Increment
+                </button>
+            </>
+        );
+    };
+
+    export default Counter;
+    ```
+    ![effect](https://github.com/Elliot518/mcp-oss-tech/blob/main/frontend/react/use_effect_hook.png?raw=true)
+
+- Scenario 2: The useEffect hook has a second optional argument (a dependency array) that you can use to prevent it from running in every render.
+
+```javascript
+// Runs when count value is changed and component is re-rendered
+useEffect(() => {
+ console.log('Counter value is now ' + count);
+}, [count]);
+```
+
+<hr>
+
+_If you pass an empty array as the second argument, the useEffect callback function runs only after the first render_
+```javascript
+// Runs only after the first render
+useEffect(() => {
+ console.log('Hello from useEffect')
+}, []);
+```
+
+<hr>
+
+#### The useEffect function can also return a cleanup function that will run before every effect
+_It is useful when you are setting up subscriptions, timers, or any resource that needs to be cleaned up to prevent unexpected behavior._
+```javascript
+useEffect(() => {
+	console.log('Hello from useEffect');
+	return () => {
+		console.log('Clean up function');
+	});
+}, [count]);
+```
+![clean up](https://github.com/Elliot518/mcp-oss-tech/blob/main/frontend/react/effect_clean_up.png?raw=true)
 
