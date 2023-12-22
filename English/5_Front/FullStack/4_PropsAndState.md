@@ -206,6 +206,8 @@ export default HeaderText;
 > You can use a conditional statement to render different UIs if a condition is true or false.
 
 ```javascript
+// if props.isLoggedin is true., will render the <Logout /> component; 
+// otherwise, we render the <Login /> component
 function MyComponent(props) {
     const isLoggedin = props.isLoggedin;
     if (isLoggedin) {
@@ -218,4 +220,16 @@ function MyComponent(props) {
         <Login />
     )
 }
-···
+```
+
+- using ternary expression
+```javascript
+function MyComponent(props) {
+	const isLoggedin = props.isLoggedin;
+	return (
+		<>
+			{ isLoggedin ? <Logout /> : <Login /> }
+		</>
+	);
+}
+```
