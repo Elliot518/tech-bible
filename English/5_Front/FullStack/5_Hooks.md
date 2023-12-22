@@ -146,7 +146,7 @@ _Before hooks, you had to write class components if states or complex component 
 > The useEffect hook function can be used to perform side effects in the React function component(eg: a fetch request). It is called after every render.
 
 #### syntax
-**<span style="color: green;"><useEffect(callback, [dependencies])</span>**
+**<span style="color: green;">useEffect(callback, [dependencies])</span>**
 
 _[dependencies] is an optional array of dependencies._
 
