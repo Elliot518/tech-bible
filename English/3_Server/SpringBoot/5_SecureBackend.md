@@ -552,3 +552,8 @@ and that requests to all other endpoints require authentication
 
 #### 5-8) Test login functionality
 
+Open Postman and make a POST request to the URL: http://localhost:8080/login 
+![](https://github.com/Elliot518/mcp-oss-tech/blob/main/backend/springboot/security/jwt_login.png?raw=true)
+
+_If all goes well you should see an Authorization header in the response that contains 
+the signed JWT_
