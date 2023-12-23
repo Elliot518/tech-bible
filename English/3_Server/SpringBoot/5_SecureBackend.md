@@ -519,3 +519,36 @@ public class SecurityConfig {
 	}
  }
 ```
+
+<hr>
+
+#### 5-7) Add the filterChain method to the SecurityConfig class
+
+> Spring Security’s SecurityFilterChain bean defines which paths are secured and which are not.
+
+- eg: POST method request to the /login endpoint is allowed without authentication 
+and that requests to all other endpoints require authentication
+	```java
+	// SecurityConfig.java
+	// Add the following import
+	import org.springframework.security.web.SecurityFilterChain;
+
+	// Add filterChain method
+	@Bean
+	public SecurityFilterChain filterChain(HttpSecurity http) 
+		throws Exception {
+		http.csrf((csrf) -> csrf.disable())
+			.sessionManagement((sessionManagement) -> sessionManagement.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+			.authorizeHttpRequests((authorizeHttpRequests) -> authorizeHttpRequests.requestMatchers(HttpMethod.POST,
+			"/login").permitAll().anyRequest().authenticated());
+		
+		return http.build();
+	}
+	```
+
+	_PS: We define that Spring Security will never create a session, and therefore we can disable cross-site request forgery (csrf). JWTs are designed to be stateless, which reduces the risk of session-related vulnerabilities._
+
+<hr>
+
+#### 5-8) Test login functionality
+
