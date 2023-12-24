@@ -52,3 +52,50 @@ and you'll see below effect:
 
 ![vite + react](https://github.com/Elliot518/mcp-oss-tech/blob/main/frontend/vite/vite_react3.png?raw=true)
 
+&nbsp;
+
+
+### 3. Customize homepage of application
+
+Open App.tsx file, remove default content with below:
+```javascript
+import AppBar from '@mui/material/AppBar';
+import Toolbar from '@mui/material/Toolbar';
+import Typography from '@mui/material/Typography';
+import Container from '@mui/material/Container';
+import CssBaseline from '@mui/material/CssBaseline';
+
+function App() {
+  return (
+    <Container maxWidth="xl">
+      <CssBaseline />
+      <AppBar position="static">
+        <Toolbar>
+          <Typography variant="h6">
+            MCP Shop
+          </Typography>
+        </Toolbar>
+      </AppBar>
+    </Container>
+  );
+}
+
+export default App;
+```
+
+_We wrap the AppBar component inside the MUI Container component, which is a basic layout component that centers your app content horizontally. We can use the position prop to define the positioning behavior of the app bar. The value static means that the app bar is not fixed to the top when the user scrolls.<br>
+The maxWidth prop defines the maximum width of our app, and we have used the largest 
+value. We have also used the MUI CssBaseline component, which is used to fix inconsistencies across browsers, ensuring that the React app’s appearance is uniform across 
+different browsers. It is typically included at the top level of your application to ensure 
+that its styles are applied globally._
+
+Remove index.css from main.tsx 
+```javascript
+import './index.css'
+```
+
+<hr>
+
+Run the project, it looks like below
+
+![react app](https://github.com/Elliot518/mcp-oss-tech/blob/main/frontend/react/first_app.png?raw=true)
