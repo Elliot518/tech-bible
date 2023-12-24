@@ -37,3 +37,18 @@ Install React Query v4 and Axios, which we will use for networking in our fronte
 npm install @tanstack/react-query@4
 npm install axios
 ```
+
+<hr>
+
+Run project
+```shell
+npm run dev
+```
+
+<hr>
+
+pen your browser and navigate to the URL:  http://localhost:5173/
+and you'll see below effect:
+
+![vite + react](https://github.com/Elliot518/mcp-oss-tech/blob/main/frontend/vite/vite_react3.png?raw=true)
+
