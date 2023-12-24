@@ -22,6 +22,6 @@
 
 [5. React Hooks](5_Hooks.md)
 
-
+[6. A Complete React Front End Demo](6_CompleteFrontEnd.md)
 
 

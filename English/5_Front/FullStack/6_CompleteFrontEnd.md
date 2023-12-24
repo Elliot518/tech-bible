@@ -1,6 +1,6 @@
 [Back](README.md)
 
-## A Complete Front End Demo
+## A Complete React Front End Demo
 
 <hr>
 
