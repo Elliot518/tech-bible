@@ -156,4 +156,37 @@ else {
 }
 ```
 
+<hr>
 
+### 2-6) Import and render the Carlist component in our App.tsx
+
+- App.tsx
+
+```javascript
+...
+import Carlist from './components/Carlist';
+
+...
+
+function App() {
+  return (
+    <Container maxWidth="xl">
+      ...
+      <QueryClientProvider client={queryClient}>
+        <Carlist />
+      </QueryClientProvider>
+    </Container>
+  );
+}
+
+export default App;
+```
+
+<hr>
+
+### 2-7) Run application
+```shell
+Start server app
+npm run dev
+```
+![react rest api](https://github.com/Elliot518/mcp-oss-tech/blob/main/frontend/react/front_rest_api.png?raw=true)
