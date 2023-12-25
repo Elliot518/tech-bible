@@ -122,3 +122,38 @@ function Carlist() {
 export default Carlist;
 ```
 
+<hr>
+
+
+### 2-5) Use conditional rendering to render UI by fetching result
+
+_Use the map function to transform car objects into table rows_
+```javascript
+if (!isSuccess) {
+    return <span>Loading...</span>
+}
+else if (error) {
+    return <span>Error when fetching data...</span>
+}
+else {
+    return (
+        <table>
+            <tbody>
+            {
+                data.map((car: CarResponse) => 
+                <tr key={car._links.self.href}>
+                    <td>{car.brand}</td>
+                    <td>{car.model}</td>
+                    <td>{car.color}</td> 
+                    <td>{car.registrationNumber}</td> 
+                    <td>{car.modelYear}</td>
+                    <td>{car.price}</td>
+                </tr>)
+            }
+            </tbody>
+        </table>
+    );
+}
+```
+
+
