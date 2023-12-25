@@ -1,6 +1,6 @@
 [Back](README.md)
 
-## Add CRUD Functionalities
+## CRUD Functionalities(Simple Query)
 
 <hr>
 
