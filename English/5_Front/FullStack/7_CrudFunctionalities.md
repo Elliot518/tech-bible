@@ -74,3 +74,11 @@ export type CarResponse = {
 
 <hr>
 
+### 2-3) Create a function that fetches data from backend
+
+_fetches cars from our backend by sending a GET request to the http://localhost:8080/api/cars endpoint_
+
+_The function returns a promise that contains an array of CarResponse objects that we defined in our types.ts file._
+
+
+
