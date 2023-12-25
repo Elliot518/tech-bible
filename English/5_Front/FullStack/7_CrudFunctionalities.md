@@ -80,5 +80,45 @@ _fetches cars from our backend by sending a GET request to the http://localhost:
 
 _The function returns a promise that contains an array of CarResponse objects that we defined in our types.ts file._
 
+```javascript
+import { CarResponse } from '../types';
+import axios from 'axios';
 
+function Carlist() {
+    const getCars = async (): Promise<CarResponse[]> => {
+        const response = await axios.get("http://localhost:8080/api/cars");
+        return response.data._embedded.cars;
+    }
+
+    return(
+        <></>
+    );
+}
+
+export default Carlist;
+```
+
+<hr>
+
+### 2-4) Use the useQuery hook to fetch data
+
+```javascript
+import { useQuery } from '@tanstack/react-query';
+...
+
+function Carlist() {
+    ...
+
+    const { data, error, isSuccess } = useQuery({
+        queryKey: ["cars"], 
+        queryFn: getCars
+    })
+    
+    return(
+        <></>
+    );
+}
+
+export default Carlist;
+```
 
