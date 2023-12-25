@@ -84,10 +84,7 @@ export default App;
 ```
 
 _We wrap the AppBar component inside the MUI Container component, which is a basic layout component that centers your app content horizontally. We can use the position prop to define the positioning behavior of the app bar. The value static means that the app bar is not fixed to the top when the user scrolls.<br>
-The maxWidth prop defines the maximum width of our app, and we have used the largest 
-value. We have also used the MUI CssBaseline component, which is used to fix inconsistencies across browsers, ensuring that the React app’s appearance is uniform across 
-different browsers. It is typically included at the top level of your application to ensure 
-that its styles are applied globally._
+The maxWidth prop defines the maximum width of our app, and we have used the largest value. We have also used the MUI CssBaseline component, which is used to fix inconsistencies across browsers, ensuring that the React app’s appearance is uniform across different browsers. It is typically included at the top level of your application to ensure that its styles are applied globally._
 
 Remove index.css from main.tsx 
 ```javascript

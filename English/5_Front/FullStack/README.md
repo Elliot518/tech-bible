@@ -24,4 +24,4 @@
 
 [6. A Complete React Front End Demo](6_CompleteFrontEnd.md)
 
-
+[7. Add CRUD Functionalities](7_CrudFunctionalities.md)
