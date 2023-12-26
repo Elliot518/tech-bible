@@ -7,9 +7,36 @@
 
 > Items can be deleted from the database by sending the DELETE method request to the http://localhost:8080/api/cars/{carId} endpoint.
 
-_We can see that each data object contains a link to itself, which can be accessed from the _links.self.href node. Since we already used the link field in the previous section to set a unique ID for every row in the grid, that row ID can be used in deletion._
+*We can see that each data object contains a link to itself, which can be accessed from the _links.self.href node. Since we already used the link field in the previous section to set a unique ID for every row in the grid, that row ID can be used in deletion.*
 
 
 ### 1. Create a button for each row in the MUI DataGrid
 
+Use the renderCell column property to define how a cell’s contents are rendered
+_Show an alert with the ID when a button is pressed to test that the button is working properly_
 
+- Carlist.tsx
+```typescript
+...
+// Import GridCellParams
+import { DataGrid, GridColDef, GridCellParams } from '@mui/x-data-grid';
+
+// Add delete button column to columns
+const columns: GridColDef[] = [
+    ...
+    {
+        field: 'delete',
+        headerName: '',
+        width: 90,
+        sortable: false,
+        filterable: false,
+        disableColumnMenu: true,
+        renderCell: (params: GridCellParams) => (
+            <button onClick={() => alert(params.row._links.car.href)}>
+                Delete
+            </button>
+        ),
+    },
+];
+```
+![mock delete](https://github.com/Elliot518/mcp-oss-tech/blob/main/frontend/react/mock_delete.png?raw=true)
