@@ -57,3 +57,51 @@ Use the MUI DataGrid component to get paging, filtering, and sorting features
 npm install @mui/x-data-grid
 ```
 
+<hr>
+
+#### 2-2) Import the DataGrid, GridColDef components to Carlist.tsx
+
+```javascript
+import { DataGrid, GridColDef } from '@mui/x-data-grid';
+```
+
+_The grid columns are defined in the columns variable, which has the type GridColDef[],  the headerName prop can be used to set the title of the columns. We can also set the width of the columns._
+
+- Carlist.tsx
+```typescript
+const columns: GridColDef[] = [
+    {field: 'brand', headerName: 'Brand', width: 200},
+    {field: 'model', headerName: 'Model', width: 200},
+    {field: 'color', headerName: 'Color', width: 200},
+    {field: 'registrationNumber', headerName: 'Reg.nr.', width: 150},
+    {field: 'modelYear', headerName: 'Model Year', width: 150},
+    {field: 'price', headerName: 'Price', width: 150},
+];
+```
+
+
+<hr>
+
+#### 2-3) Replace table and data map with DataGrid component
+_Also remove the unused CarResponse import that we used in the map function._
+
+We now simply set the data source of the data grid as the data, which contains fetched cars and is defined using the rows prop. The DataGrid component requires all rows to have a unique ID property that is defined using the getRowId prop. We can use the link field of the car object because that contains the unique car ID (_links.self.
+href).
+```typescript
+if (!isSuccess) {
+    ...
+}
+else if (error) {
+    ...
+}
+else {
+    return (
+        <DataGrid
+            rows={data}
+            columns={columns}
+            getRowId={row => row._links.self.href}
+        />
+    );
+}
+```
+
