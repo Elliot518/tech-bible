@@ -41,3 +41,19 @@ export const getCars = async (): Promise<CarResponse[]> => {
 #### 1-3) Refactor
 
 Remove the getCars function and unused axios import from the Carlist.tsx file and import it from the carapi.ts file
+
+
+
+
+
+&nbsp;
+
+### 2. Add paging, filtering, and sorting
+
+Use the MUI DataGrid component to get paging, filtering, and sorting features
+
+#### 2-1) Install the MUI data grid community version
+```shell
+npm install @mui/x-data-grid
+```
+
