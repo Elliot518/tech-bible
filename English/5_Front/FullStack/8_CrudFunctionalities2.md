@@ -105,3 +105,4 @@ else {
 }
 ```
 
+![data grid](https://github.com/Elliot518/mcp-oss-tech/blob/main/frontend/react/data_grid.png?raw=true)
