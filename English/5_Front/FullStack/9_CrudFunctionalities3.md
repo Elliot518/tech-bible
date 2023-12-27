@@ -60,18 +60,45 @@ _A DELETE request to the backend returns a deleted car object_
 ### 3. Use the React Query useMutation hook to call deleteCar function in page
 
 - Carlist.tsx
-```typescript
-import { useQuery, useMutation } from '@tanstack/react-query';
-import { getCars, deleteCar } from '../api/carapi';
-...
+    ```typescript
+    import { useQuery, useMutation } from '@tanstack/react-query';
+    import { getCars, deleteCar } from '../api/carapi';
+    ...
 
-// Add the useMutation hook, which calls our deleteCar function
-const { mutate } = useMutation(deleteCar, {
-    onSuccess: () => {
-        // Car deleted
-    },
-    onError: (err) => {
-        console.error(err);
-    },
-});
-```
+    // Add the useMutation hook, which calls our deleteCar function
+    const { mutate } = useMutation(deleteCar, {
+        onSuccess: () => {
+            // Car deleted
+        },
+        onError: (err) => {
+            console.error(err);
+        },
+    });
+    ```
+
+&nbsp;
+
+### 4. Call mutate in our delete button and pass the car link as an argument
+
+- Carlist.tsx
+    ```typescript
+    {
+        ...
+        renderCell: (...) => (
+            <button onClick={() => mutate(params.row._links.car.href)}>
+                Delete
+            </button>
+        )
+    }
+    ```
+
+&nbsp;
+
+### 5. Start the app and press the delete button
+
+_If you start the app and press the delete button, the car is deleted from the database, but it still exists in the frontend. You can manually refresh the browser, after which the car disappears from the table._
+
+&nbsp;
+
+### 6. Refresh the frontend automatically when a car is deleted
+
