@@ -40,3 +40,38 @@ const columns: GridColDef[] = [
 ];
 ```
 ![mock delete](https://github.com/Elliot518/mcp-oss-tech/blob/main/frontend/react/mock_delete.png?raw=true)
+
+&nbsp;
+
+### 2. Implement the deleteCar function
+
+_A DELETE request to the backend returns a deleted car object_
+- carapi.ts
+    ```typescript
+    export const deleteCar = async (link: string): Promise<CarResponse> => {
+    const response = await axios.delete(link);
+    return response.data
+    }
+    ```
+
+
+&nbsp;
+
+### 3. Use the React Query useMutation hook to call deleteCar function in page
+
+- Carlist.tsx
+```typescript
+import { useQuery, useMutation } from '@tanstack/react-query';
+import { getCars, deleteCar } from '../api/carapi';
+...
+
+// Add the useMutation hook, which calls our deleteCar function
+const { mutate } = useMutation(deleteCar, {
+    onSuccess: () => {
+        // Car deleted
+    },
+    onError: (err) => {
+        console.error(err);
+    },
+});
+```
