@@ -1,6 +1,6 @@
 [Back](../../README.md)
 
-## 11.3 Anaconda
+## 11.5 IDE
 
 <hr>
 
