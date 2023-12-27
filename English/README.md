@@ -153,3 +153,7 @@
 
 [Catalog](11_FundamentalSkills/Build/README.md)
 
+### 11.5 IDE
+
+[Catalog](11_FundamentalSkills/IDE/README.md)
+
