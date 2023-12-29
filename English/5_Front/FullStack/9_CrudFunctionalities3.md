@@ -49,8 +49,8 @@ _A DELETE request to the backend returns a deleted car object_
 - carapi.ts
     ```typescript
     export const deleteCar = async (link: string): Promise<CarResponse> => {
-    const response = await axios.delete(link);
-    return response.data
+        const response = await axios.delete(link);
+        return response.data
     }
     ```
 
@@ -106,3 +106,32 @@ _In React Query, the fetched data is saved to a cache that the query client hand
 
 
 #### 6-1) Import and call the useQueryClient hook function
+- Carlist.tsx
+    ```typescript
+    import { ..., useQueryClient } from '@tanstack/react-query';
+    ...
+    function Carlist() {
+        const queryClient = useQueryClient();
+
+        ...
+    }
+    ```
+
+#### 6-2) Call invalidateQueries method to re-fetch our data after successful deletion
+pass the key of the query that you want to re-fetch
+- Carlist.tsx
+    ```typescript
+    ...
+
+    const { mutate } = useMutation(deleteCar, {
+        onSuccess: () => {
+            queryClient.invalidateQueries({ queryKey: ['cars'] });
+        },
+        ...
+    });
+    ```
+    #### Effect:
+
+    Every time a car is deleted, all the cars are fetched again. The car disappears from the list when the Delete button is pressed.
+
+
