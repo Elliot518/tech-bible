@@ -29,3 +29,6 @@
 [8. CRUD Functionalities(Advanced Query)](8_CrudFunctionalities2.md)
 
 [9. CRUD Functionalities(Delete)](9_CrudFunctionalities3.md)
+
+[10. CRUD Functionalities(Insert)](10_CrudFunctionalities4.md)
+
