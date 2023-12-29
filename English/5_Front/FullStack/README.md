@@ -27,3 +27,5 @@
 [7. CRUD Functionalities(Simple Query)](7_CrudFunctionalities1.md)
 
 [8. CRUD Functionalities(Advanced Query)](8_CrudFunctionalities2.md)
+
+[9. CRUD Functionalities(Delete)](9_CrudFunctionalities3.md)
