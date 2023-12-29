@@ -139,7 +139,7 @@ pass the key of the query that you want to re-fetch
 ### 7. Display a toast message
 
 > Toast message is to show the user some feedback in the case of a successful deletion, or if there are any errors.
-
+![toast message](https://github.com/Elliot518/mcp-oss-tech/blob/main/frontend/react/toast_message.png?raw=true)
 _Use the MUI Snackbar component_
 #### 7-1) Import the Snackbar component
 
@@ -196,11 +196,35 @@ function Carlist() {
 
 #### 7-3) Set the open state to true after the successful deletion in our useMutation hook
 - Carlist.tsx
-```typescript
-const { mutate } = useMutation(deleteCar, {
-    onSuccess: () => {
-      setOpen(true);
-      ...
+    ```typescript
+    const { mutate } = useMutation(deleteCar, {
+        onSuccess: () => {
+        setOpen(true);
+        ...
+        },
+    }); 
+    ```
+
+&nbsp;
+
+### 8. Add a confirmation dialog window
+
+To avoid accidental deletion of a car, it would be useful to have a confirmation dialog after the Delete button has been pressed.
+![confirm dialog](https://github.com/Elliot518/mcp-oss-tech/blob/main/frontend/react/confirm_dialog.png?raw=true)
+
+- Carlist.tsx
+    ```typescript
+    {
+        ...
+        renderCell: (params: GridCellParams) => (
+        <button onClick={() => {
+            if (window.confirm(`Are you sure you want to delete ${params.row.brand} ${params.row.model}?`)) {
+                mutate(params.row._links.car.href);
+            } 
+        }}       
+        >
+            Delete
+        </button>
+        ),
     },
-  }); 
-```
+    ```
