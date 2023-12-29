@@ -134,4 +134,73 @@ pass the key of the query that you want to re-fetch
 
     Every time a car is deleted, all the cars are fetched again. The car disappears from the list when the Delete button is pressed.
 
+&nbsp;
 
+### 7. Display a toast message
+
+> Toast message is to show the user some feedback in the case of a successful deletion, or if there are any errors.
+
+_Use the MUI Snackbar component_
+#### 7-1) Import the Snackbar component
+
+- Carlist.tsx
+```typescript
+import Snackbar from '@mui/material/Snackbar';
+```
+
+<hr>
+
+#### 7-2) Import the useState hook and define a state called open to handle the visibility of our Snackbar component
+_The Snackbar component’s open prop value is a boolean, and if it is true, the component is shown; otherwise, it is hidden.The initial value is false because 
+the message is shown only after the deletion._
+- Carlist.tsx
+```typescript
+import { useState } from 'react';
+...
+
+function Carlist() {
+    const [open, setOpen] = useState(false);
+
+    ...
+}
+```
+
+<hr>
+
+#### 7-2) Add the Snackbar component in the return statement after the MUI DataGrid component
+- Carlist.tsx
+    ```typescript
+    if (!isSuccess) {
+        return <span>Loading...</span>
+    }
+    else if (error) {
+        return <span>Error when fetching data...</span>
+    }
+    else {
+        return (
+            <>
+                <DataGrid
+                    rows={data}
+                    columns={columns}
+                    getRowId={row => row._links.self.href} />
+                
+                <Snackbar
+                    open={open}
+                    autoHideDuration={2000}
+                    onClose={() => setOpen(false)}
+                    message="Data deleted" />
+            </>
+        );
+    ```
+<hr>
+
+#### 7-3) Set the open state to true after the successful deletion in our useMutation hook
+- Carlist.tsx
+```typescript
+const { mutate } = useMutation(deleteCar, {
+    onSuccess: () => {
+      setOpen(true);
+      ...
+    },
+  }); 
+```
