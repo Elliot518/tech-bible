@@ -102,3 +102,7 @@ _If you start the app and press the delete button, the car is deleted from the d
 
 ### 6. Refresh the frontend automatically when a car is deleted
 
+_In React Query, the fetched data is saved to a cache that the query client handles. The QueryClient has a query invalidation feature that we can use to fetch data again._
+
+
+#### 6-1) Import and call the useQueryClient hook function
