@@ -88,4 +88,116 @@ The handleClose and handleOpen functions set the value of the open state, which 
         setOpen(false);
     };    
     ```
+&nbsp;
 
+### 5. Add the Dialog component inside the AddCar component’s return statement
+
+- AddCar.tsx
+```typescript
+...
+const handleChange = (event : React.ChangeEvent<HTMLInputElement>) => {
+    setCar({...car, [event.target.name]: event.target.value});
+}
+
+return(
+    <>
+        <button onClick={handleClickOpen}>New Car</button>
+        <Dialog open={open} onClose={handleClose}>
+            <DialogTitle>New car</DialogTitle>
+            <DialogContent>
+                <input placeholder="Brand" name="brand"
+                    value={car.brand} onChange={handleChange}/><br/>
+                <input placeholder="Model" name="model"
+                    value={car.model} onChange={handleChange}/><br/>
+                <input placeholder="Color" name="color"
+                    value={car.color} onChange={handleChange}/><br/>
+                <input placeholder="Year" name="modelYear"
+                    value={car.modelYear} onChange={handleChange}/><br/>
+                <input placeholder="Reg.nr" name="registrationNumber"
+                    value={car.registrationNumber} onChange={handleChange}/><br/>
+                <input placeholder="Price" name="price"
+                    value={car.price} onChange={handleChange}/><br/>
+            </DialogContent>
+            <DialogActions>
+                <button onClick={handleClose}>Cancel</button>
+                <button onClick={handleClose}>Save</button>
+            </DialogActions>
+        </Dialog>
+    </>
+);
+```
+
+&nbsp;
+
+### 6. Implement the addCar function
+
+In the carapi.ts file, we use the Axios post method to send the POST request to the backend api/cars endpoint
+- carapi.ts
+    ```typescript
+    import { ..., Car} from '../types';
+
+    // Add a new car
+    export const addCar = async (car: Car): Promise<CarResponse> => {
+        const response = await axios.post(`${import.meta.env.VITE_API_URL}/api/cars`, car, {
+            headers: {
+                'Content-Type': 'application/json',
+            }, 
+        });
+
+        return response.data;
+    }
+    ```
+
+&nbsp;
+
+### 7. Use the React Query useMutation hook, just like in the delete functionality
+
+Invalidate the cars query after the car has been added successfully
+- AddCar.tsx
+```typescript
+...
+import { useMutation, useQueryClient } from '@tanstack/react-query';
+import { addCar } from '../api/carapi';
+
+// Add inside the AddCar component function
+const queryClient = useQueryClient();
+
+const { mutate } = useMutation(addCar, {
+    onSuccess: () => {
+        queryClient.invalidateQueries(["cars"]);
+    },
+    onError: (err) => {
+        console.error(err);
+    },
+});  
+```
+
+&nbsp;
+
+### 8. Import the AddCar component into the Carlist.tsx file
+- Carlist.tsx
+    ```typescript
+    ...
+    import AddCar from './AddCar';
+    ```
+&nbsp;
+
+### 9. Add the AddCar component to the Carlist.tsx file’s return statement
+- Carlist.tsx
+    ```typescript
+    ...
+
+    // Render the AddCar component 
+    return (
+    <>
+        <AddCar />
+        ...
+    </>
+    ```
+
+&nbsp;
+
+### 10. Start app to see the model form result
+
+_If you press the New Car button, it should open the modal form_
+![add car](https://github.com/Elliot518/mcp-oss-tech/blob/main/frontend/react/new_car.png?raw=true)
