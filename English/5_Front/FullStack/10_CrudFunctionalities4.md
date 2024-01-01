@@ -189,10 +189,11 @@ const { mutate } = useMutation(addCar, {
 
     // Render the AddCar component 
     return (
-    <>
-        <AddCar />
-        ...
-    </>
+        <>
+            <AddCar />
+            ...
+        </>
+    );
     ```
 
 &nbsp;
@@ -201,3 +202,113 @@ const { mutate } = useMutation(addCar, {
 
 _If you press the New Car button, it should open the modal form_
 ![add car](https://github.com/Elliot518/mcp-oss-tech/blob/main/frontend/react/new_car.png?raw=true)
+
+&nbsp;
+
+### 11. Create a function called handleSave in the AddCar.tsx file to save a new car
+- AddCar.tsx
+    ```typescript
+    const handleSave = () => {
+        // Save car and close modal form
+        mutate(car);
+        setCar({ brand: '', model: '', color: '', registrationNumber: '', modelYear: 0, price: 0 });
+        handleClose();
+    }  
+    ```
+
+&nbsp;
+
+### 12. change the AddCar component’s onClick save button to call the handleSave function
+
+- AddCar.tsx
+    ```typescript
+    <DialogActions>
+        ...
+        <button onClick={handleSave}>Save</button>
+    </DialogActions>
+    ```
+
+&nbsp;
+
+### 13. Save data test
+_After saving, the list page is refreshed, and the new car can be seen in the list_
+
+![add car1](https://github.com/Elliot518/mcp-oss-tech/blob/main/frontend/react/add_car1.png?raw=true)
+
+<hr>
+
+![add car2](https://github.com/Elliot518/mcp-oss-tech/blob/main/frontend/react/add_car2.png?raw=true)
+
+&nbsp;
+
+### 14. code refactoring for edit functionality
+
+_When we start to implement the edit functionality, we will actually need the same fields in the Edit form as in the New Car form._
+
+**We split the conetnt(all text fields) into a new component, which can then be used in both the New Car and Edit forms. To do that, we create a new file called CarDialogContent.tsx in the components folder.**
+
+1) Create a new type called DialogFormProps in CarDialogContent.tsx file
+
+2) Move our DialogContent component from the AddCar component to the 
+CarDialogContent component
+
+- CarDialogContent.tsx
+    ```typescript
+    import DialogContent from '@mui/material/DialogContent';
+    import { Car } from '../types';
+
+    type DialogFormProps = {
+    car: Car;
+    handleChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+    }
+
+    function CarDialogContent({ car, handleChange }: DialogFormProps) {
+    return (
+        <>
+        <DialogContent>
+            <input placeholder="Brand" name="brand"
+            value={car.brand} onChange={handleChange}/><br/>
+            <input placeholder="Model" name="model"
+            value={car.model} onChange={handleChange}/><br/>
+            <input placeholder="Color" name="color"
+            value={car.color} onChange={handleChange}/><br/>
+            <input placeholder="Year" name="modelYear"
+            value={car.modelYear} onChange={handleChange}/><br/>
+            <input placeholder="Reg.nr." name="registrationNumber"
+            value={car.registrationNumber} onChange={handleChange}/><br/>
+            <input placeholder="Price" name="price"
+            value={car.price} onChange={handleChange}/><br/>
+        </DialogContent>  
+        </>
+    );
+    }
+    export default CarDialogContent;
+    ```
+
+3) Import the CarDialogContent to the AddCar component, pass the car state and the handleChange function to the component using props,  remove the unused MUI DialogContent import from the AddCar component
+- AddCar.tsx
+    ```typescript
+    ...
+    //import DialogContent from '@mui/material/DialogContent';
+    import CarDialogContent from './CarDialogContent';
+    ...
+
+    function AddCar() {
+        ...
+
+        return(
+            <>
+                ...
+                <Dialog open={open} onClose={handleClose}>
+                    ...
+                    <CarDialogContent car={car} handleChange={handleChange} />
+                    ...
+                </Dialog>
+            </>
+        );
+    }
+
+    ...
+    ```
+    Test the refacored code to see it works as before!
+
