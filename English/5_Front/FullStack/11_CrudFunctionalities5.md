@@ -22,6 +22,8 @@ We have to define a FormProps type for our props, and this can be defined inside
     }
     
     function EditCar({ cardata }: FormProps) {
+        const [open, setOpen] = useState(false);
+
         const [car, setCar] = useState<Car>({
         brand: '',
         model: '',
@@ -149,5 +151,29 @@ to the car state. We pass in the car state and the handleChange function using t
 
 - Carlist.tsx
 ```typescript
+...
+import EditCar from './EditCar';
 
+// Add a new column
+const columns: GridColDef[] = [
+    ...
+    {field: 'price', headerName: 'Price', width: 150},
+    {
+        field: 'edit',
+        headerName: '',
+        width: 90,
+        sortable: false,
+        filterable: false,
+        disableColumnMenu: true,
+        renderCell: (params: GridCellParams) =>
+            <EditCar cardata={params.row} />
+    },
+    ...
+]; 
 ```
+
+&nbsp;
+
+### 6. Test the Edit button
+![edit car](https://github.com/Elliot518/mcp-oss-tech/blob/main/frontend/react/edit_car.png?raw=true)
+
