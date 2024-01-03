@@ -33,3 +33,5 @@
 [10. CRUD Functionalities(Insert)](10_CrudFunctionalities4.md)
 
 [11. CRUD Functionalities(Edit)](11_CrudFunctionalities5.md)
+
+[12. Export the data to CSV](12_ExportFunctionality.md)
