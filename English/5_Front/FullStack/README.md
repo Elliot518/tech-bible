@@ -32,3 +32,4 @@
 
 [10. CRUD Functionalities(Insert)](10_CrudFunctionalities4.md)
 
+[11. CRUD Functionalities(Edit)](11_CrudFunctionalities5.md)
