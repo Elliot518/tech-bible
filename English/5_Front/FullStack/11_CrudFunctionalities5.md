@@ -177,3 +177,99 @@ const columns: GridColDef[] = [
 ### 6. Test the Edit button
 ![edit car](https://github.com/Elliot518/mcp-oss-tech/blob/main/frontend/react/edit_car.png?raw=true)
 
+&nbsp;
+
+### 7. Implement the update request that sends an updated car to the backend
+_Send a PUT request to the http://localhost:8080/api/cars/{carid} URL_
+
+In React Query, the mutation function can only take one parameter, but in our case, we have to send the car object (Car type) and its link. We can solve that by passing an object that contains both values.
+
+- types.ts
+    ```typescript
+    export type CarEntry = {
+    car: Car;
+    url: string;
+    }
+    ```
+
+&nbsp;
+
+### 8. Create the function to update the car and export it
+- carapi.ts
+    ```typescript
+    import { ..., CarEntry } from '../types';
+
+    // Add updateCar function
+    export const updateCar = async (carEntry: CarEntry): Promise<CarResponse> => {
+        const response = await axios.put(carEntry.url, carEntry.car, {
+            headers: {
+                'Content-Type': 'application/json'
+            },
+        });
+
+        return response.data;
+    }
+    ```
+&nbsp;
+
+### 9. Import the updateCar function into the EditCar component and use the useMutation hook to send a request
+
+_You've got to invalidate the cars query to re-fetch the list after a successful edit; therefore, you also have to get the query client_
+
+- EditCar.tsx
+```typescript
+...
+import { updateCar } from '../api/carapi';
+import { useMutation, useQueryClient } from '@tanstack/react-query';
+
+...
+
+function EditCar({ cardata }: FormProps) {
+    // Get query client
+    const queryClient = useQueryClient();
+
+    ...
+
+    // Use useMutation hook
+    const { mutate } = useMutation(updateCar, {
+        onSuccess: () => {
+            queryClient.invalidateQueries(["cars"]);
+        },
+        onError: (err) => {
+            console.error(err);
+        }
+    });
+}
+```
+&nbsp;
+
+### 10. Call mutate in the handleSave function
+
+_As mutate only accepts one parameter, and we have to pass the car object and URL, therefore, we create an object that contains both values and pass the object._
+
+- EditCar.tsx
+```typescript
+function EditCar({ cardata }: FormProps) {
+
+    ...
+
+    const handleSave = () => {
+        const url = cardata._links.self.href;
+        const carEntry: CarEntry = {car, url}
+        mutate(carEntry);
+        setCar({ brand: '', model: '', color: '', registrationNumber: '', modelYear: 0, price: 0 });    
+        setOpen(false);
+    }
+
+    ...
+}
+```
+
+&nbsp;
+
+### 11. Test the save function
+
+![edit car1](https://github.com/Elliot518/mcp-oss-tech/blob/main/frontend/react/edit_car1.png?raw=true)
+<hr>
+
+![edit car2](https://github.com/Elliot518/mcp-oss-tech/blob/main/frontend/react/edit_car2.png?raw=true)
