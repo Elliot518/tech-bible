@@ -79,3 +79,71 @@ grid. MUI provides pre-built SVG icons that we have to install by using the foll
 ```shell
 npm install @mui/icons-material
 ```
+
+We can find a list of icons available in the MUI documentation (https://mui.com/material-ui/material-icons/)
+
+#### 2-1) Use an icon called DeleteIcon in the Carlist.tsx file
+- Carlist.tsx
+    ```typescript
+    import IconButton from '@mui/material/IconButton';
+    import DeleteIcon from '@mui/icons-material/Delete';
+
+    ...
+
+    const columns: GridColDef[] = [
+        
+        ...
+
+        {
+            ...
+            renderCell: (...) => (
+                <IconButton aria-label="delete" size="small"
+                    onClick={() => {
+                        ...
+                    }}
+                >
+                    <DeleteIcon fontSize="small" />
+                </IconButton>        
+            )
+        }
+    ];
+    ```
+<hr>
+
+#### 2-2) Verify delete button
+
+![verify delete button](https://github.com/Elliot518/mcp-oss-tech/blob/main/frontend/react/mui_delete.png?raw=true)
+
+
+<hr>
+
+#### 2-3) Implement the EDIT button using the IconButton component
+
+- EditCar.tsx
+```typescript
+import IconButton from '@mui/material/IconButton';
+import EditIcon from '@mui/icons-material/Edit';
+```
+
+<hr>
+
+#### 2-4) Render the IconButton and EditIcon in the return statement
+
+- EditCar.tsx
+```typescript
+return(
+    <>
+        <IconButton aria-label="edit" size="small" onClick={handleClickOpen}>
+            <EditIcon fontSize= "small" />
+        </IconButton>      
+        ...
+    </>
+);
+```
+
+<hr>
+
+#### 2-5) See both buttons are rendered as icons
+
+![icon button](https://github.com/Elliot518/mcp-oss-tech/blob/main/frontend/react/icon_buttons.png?raw=true)
+
