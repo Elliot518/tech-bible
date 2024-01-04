@@ -177,3 +177,49 @@ We can find a list of icons available in the MUI documentation (https://mui.com/
 
 ![tooltip](https://github.com/Elliot518/mcp-oss-tech/blob/main/frontend/react/tooltip.png?raw=true)
 
+&nbsp;
+
+
+### 3. Use the MUI TextField component
+
+#### 3-1) Add the TextField and Stack import statements to the CarDialogContent.tsx file
+
+_Stack is a one-dimensional MUI layout component that we can use to set spaces between text fields_
+
+- CarDialogContent.tsx
+    ```typescript
+    import TextField from '@mui/material/TextField';
+    import Stack from '@mui/material/Stack';
+    ```
+
+<hr>
+
+#### 3-2) Change the input elements to the TextField components in the add and edit forms
+
+- CarDialogContent.tsx
+```typescript
+return (
+    <>
+        <Stack spacing={2} mt={1}>
+        <TextField label="Brand" name="brand"
+            value={car.brand} onChange={handleChange}/>
+        <TextField label="Model" name="model"
+            value={car.model} onChange={handleChange}/>
+        <TextField label="Color" name="color"
+            value={car.color} onChange={handleChange}/>
+        <TextField label="Year" name="modelYear"
+            value={car.modelYear} onChange={handleChange}/>
+        <TextField label="Reg.nr." name="registrationNumber"
+            value={car.registrationNumber} onChange={handleChange}/>
+        <TextField label="Price" name="price"
+            value={car.price} onChange={handleChange}/>
+        </Stack>  
+    </>
+);
+```
+
+<hr>
+
+#### 3-3) Test effection after the modifications
+
+![edit car](https://github.com/Elliot518/mcp-oss-tech/blob/main/frontend/react/stack_field.png?raw=true)
