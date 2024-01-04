@@ -120,30 +120,60 @@ We can find a list of icons available in the MUI documentation (https://mui.com/
 #### 2-3) Implement the EDIT button using the IconButton component
 
 - EditCar.tsx
-```typescript
-import IconButton from '@mui/material/IconButton';
-import EditIcon from '@mui/icons-material/Edit';
-```
+    ```typescript
+    import IconButton from '@mui/material/IconButton';
+    import EditIcon from '@mui/icons-material/Edit';
+    ```
 
 <hr>
 
 #### 2-4) Render the IconButton and EditIcon in the return statement
 
 - EditCar.tsx
-```typescript
-return(
-    <>
-        <IconButton aria-label="edit" size="small" onClick={handleClickOpen}>
-            <EditIcon fontSize= "small" />
-        </IconButton>      
-        ...
-    </>
-);
-```
+    ```typescript
+    return(
+        <>
+            <IconButton aria-label="edit" size="small" onClick={handleClickOpen}>
+                <EditIcon fontSize= "small" />
+            </IconButton>      
+            ...
+        </>
+    );
+    ```
 
 <hr>
 
 #### 2-5) See both buttons are rendered as icons
 
 ![icon button](https://github.com/Elliot518/mcp-oss-tech/blob/main/frontend/react/icon_buttons.png?raw=true)
+
+&nbsp;
+
+
+### 2. Add tooltips to our edit and delete icon buttons using the Tooltip component
+
+#### 2-1) Import to your EditCar component
+
+- EditCar.tsx
+    ```typescript
+    import Tooltip from '@mui/material/Tooltip';
+    ```
+<hr>
+
+#### 2-2) Use the Tooltip component to wrap the IconButton component
+
+- EditCar.tsx
+    ```typescript
+    <Tooltip title="Edit car">
+        <IconButton />
+            ...
+        </IconButton>
+    </Tooltip>
+    ```
+<hr>
+
+
+#### 2-3) Now if you hover your mouse over the edit button, you will see a tooltip
+
+![tooltip](https://github.com/Elliot518/mcp-oss-tech/blob/main/frontend/react/tooltip.png?raw=true)
 
