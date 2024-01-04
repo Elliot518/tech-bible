@@ -35,3 +35,5 @@
 [11. CRUD Functionalities(Edit)](11_CrudFunctionalities5.md)
 
 [12. Export the data to CSV](12_ExportFunctionality.md)
+
+[13. Styling the Frontend with MUI](13_StyleWithMUI.md)
