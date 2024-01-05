@@ -60,8 +60,6 @@
 
 [Catalog](5_Front/Vue3/README.md)
 
-&nbsp;
-
 ### 5.3 FullStack
 
 [Catalog](5_Front/FullStack/README.md)
