@@ -606,42 +606,42 @@ authenticated user.
 
 Inject the AuthenticationFilter class that we've just implemented to the SecurityConfig class
 - SecurityConfig.java
-```java
-public class SecurityConfig {
-	...
-
-	private final AuthenticationFilter authenticationFilter;
-
-	public SecurityConfig(UserDetailsServiceImpl userDetailsService, AuthenticationFilter authenticationFilter) {
+	```java
+	public class SecurityConfig {
 		...
-		this.authenticationFilter = authenticationFilter;
-	}
 
-}
-```
+		private final AuthenticationFilter authenticationFilter;
+
+		public SecurityConfig(UserDetailsServiceImpl userDetailsService, AuthenticationFilter authenticationFilter) {
+			...
+			this.authenticationFilter = authenticationFilter;
+		}
+
+	}
+	```
 
 <hr>
 
 #### 6-3) Modify the filterChain method in the SecurityConfig class and add core filtering logic
 - SecurityConfig.java
-```java
-public class SecurityConfig {
-	...
-
-	@Bean
-	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+	```java
+	public class SecurityConfig {
 		...
 
-		http.csrf((csrf) -> csrf.disable()).cors(withDefaults())
-				...
-				.authorizeHttpRequests(...)
-				.addFilterBefore(authenticationFilter, UsernamePasswordAuthenticationFilter.class);
-		
-		return http.build();
-	}
+		@Bean
+		public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+			...
 
-}
-```
+			http.csrf((csrf) -> csrf.disable()).cors(withDefaults())
+					...
+					.authorizeHttpRequests(...)
+					.addFilterBefore(authenticationFilter, UsernamePasswordAuthenticationFilter.class);
+			
+			return http.build();
+		}
+
+	}
+	```
 
 <hr>
 
@@ -708,15 +708,15 @@ _Inject your AuthEntryPoint class just implemented into the SecurityConfig class
 #### 7-3) Modify the filterChain method add exception handler
 
 - SecurityConfig.java
-```java
-public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-	http.csrf((csrf) -> csrf.disable())
-		...
-		.exceptionHandling((exceptionHandling) -> exceptionHandling.authenticationEntryPoint(exceptionHandler));
+	```java
+	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+		http.csrf((csrf) -> csrf.disable())
+			...
+			.exceptionHandling((exceptionHandling) -> exceptionHandling.authenticationEntryPoint(exceptionHandler));
 
-	return http.build();
-}
-```
+		return http.build();
+	}
+	```
 
 - Test the effect
 
@@ -724,4 +724,50 @@ public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 	Unauthorized status in the response and an error message in the body_
 
 	![unauthorized error](https://github.com/Elliot518/mcp-oss-tech/blob/main/backend/springboot/security/unauthorized_error.png?raw=true)
+
+&nbsp;
+
+### 8. Adding a CORS filter
+
+> CORS is cross-origin resource sharing, CORS introduces certain headers that help the client and server decide if cross-origin requests should be allowed or denied.
+
+
+_The CORS filter is needed for the frontend, which is sending 
+requests from the other origin. The CORS filter intercepts requests, and if these are identified as cross-origin, it adds proper headers to the request. For that, we will use Spring Security’s CorsConfigurationSource interface._
+
+#### 8-1) Add corsConfigurationSource bean method to SecurityConfig class
+
+- SecurityConfig.java
+```java
+@Bean
+public CorsConfigurationSource corsConfigurationSource() {
+	UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+	CorsConfiguration config = new CorsConfiguration();
+	config.setAllowedOrigins(Arrays.asList("*"));
+	config.setAllowedMethods(Arrays.asList("*"));
+	config.setAllowedHeaders(Arrays.asList("*"));
+	config.setAllowCredentials(false);
+	config.applyPermitDefaultValues();
+	source.registerCorsConfiguration("/**", config);
+	return source;
+}
+```
+
+<hr>
+
+#### 8-2) Add the cors() function to the filterChain method
+
+- SecurityConfig.java
+```java
+@Bean
+public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+	http.csrf((csrf) -> csrf.disable())
+		.cors(withDefaults())
+
+	...
+
+	return http.build();
+}
+```
+
 
