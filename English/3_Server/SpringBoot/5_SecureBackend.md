@@ -557,3 +557,103 @@ Open Postman and make a POST request to the URL: http://localhost:8080/login
 
 _If all goes well you should see an Authorization header in the response that contains 
 the signed JWT_
+
+&nbsp;
+
+### 6. Securing the other requests
+
+> Let's move on to handling authentication for the rest of the incoming requests.
+
+In the authentication process, we use filters that allow us to perform some operations before a request goes to the controller or before a response is sent to a client.
+
+#### 6-1) Use a filter class to authenticate all other incoming requests
+
+Create a new class called AuthenticationFilter which extends Spring Security’s OncePerRequestFilter interface, the interface provides a doFilterInternal method where we could implement our authentication.
+
+We inject a JwtService instance into the filter class to verify a token from the 
+request. The SecurityContextHolder is where Spring Security stores the details of the 
+authenticated user.
+- AuthenticationFilter.java
+	```java
+	public class AuthenticationFilter extends OncePerRequestFilter {
+		private final JwtService jwtService;
+
+		public AuthenticationFilter(JwtService jwtService) {
+			this.jwtService = jwtService;
+		}
+
+		@Override
+		protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
+				throws ServletException, java.io.IOException {
+			// Get token from the Authorization header
+			String jws = request.getHeader(HttpHeaders.AUTHORIZATION);
+			if (jws != null) {
+				// Verify token and get user
+				String user = jwtService.getAuthUser(request);
+				// Authenticate
+				Authentication authentication = new UsernamePasswordAuthenticationToken(user, null,
+						java.util.Collections.emptyList());
+				SecurityContextHolder.getContext().setAuthentication(authentication);
+			}
+			filterChain.doFilter(request, response);
+		}
+	}
+	```
+
+<hr>
+
+#### 6-2) Add our filter class to the Spring Security configuration
+
+Inject the AuthenticationFilter class that we've just implemented to the SecurityConfig class
+- SecurityConfig.java
+```java
+public class SecurityConfig {
+	...
+
+	private final AuthenticationFilter authenticationFilter;
+
+	public SecurityConfig(UserDetailsServiceImpl userDetailsService, AuthenticationFilter authenticationFilter) {
+		...
+		this.authenticationFilter = authenticationFilter;
+	}
+
+}
+```
+
+<hr>
+
+#### 6-3) Modify the filterChain method in the SecurityConfig class and add core filtering logic
+- SecurityConfig.java
+```java
+public class SecurityConfig {
+	...
+
+	@Bean
+	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+		...
+
+		http.csrf((csrf) -> csrf.disable()).cors(withDefaults())
+				...
+				.authorizeHttpRequests(...)
+				.addFilterBefore(authenticationFilter, UsernamePasswordAuthenticationFilter.class);
+		
+		return http.build();
+	}
+
+}
+```
+
+<hr>
+
+#### 6-4) Verify log in by calling the /login endpoint with the POST method
+After a successful login, we will receive a JWT in the Authorization header
+
+_Remember to add a valid user inside the body and set the Content-Type header to application/json if it is not done automatically by Postman_
+
+![login request](https://github.com/Elliot518/mcp-oss-tech/blob/main/backend/springboot/security/jwt_login_request.png?raw=true)
+
+<hr>
+
+#### 6-5) Call the other RESTful service endpoints by sending the JWT that was received from the login in the Authorization header
+
+![call with jwt](https://github.com/Elliot518/mcp-oss-tech/blob/main/backend/springboot/security/call_api_jwt.png?raw=true)
