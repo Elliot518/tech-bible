@@ -657,3 +657,71 @@ _Remember to add a valid user inside the body and set the Content-Type header to
 #### 6-5) Call the other RESTful service endpoints by sending the JWT that was received from the login in the Authorization header
 
 ![call with jwt](https://github.com/Elliot518/mcp-oss-tech/blob/main/backend/springboot/security/call_api_jwt.png?raw=true)
+
+&nbsp;
+
+### 7. Handling exceptions
+
+We should also handle exceptions in the authentication. At the moment, if you try to log in using the wrong password, you get a 403 Forbidden status without any further clarification.
+
+
+**Spring Security provides an AuthenticationEntryPoint interface that can be used to handle exceptions**
+
+#### 7-1) Create a new class named AuthEntryPoint in the root package that implements AuthenticationEntryPoint interface
+
+
+We implement the commence method, which gets an exception as a parameter. In the case of an exception, we set the response status to 401 Unauthorized and write an exception message to the response body.
+
+- AuthEntryPoint.java
+	```java
+	public class AuthEntryPoint implements AuthenticationEntryPoint {
+		@Override
+		public void commence(HttpServletRequest request, HttpServletResponse response,
+				AuthenticationException authException) throws IOException, ServletException {
+			response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+			response.setContentType(MediaType.APPLICATION_JSON_VALUE);
+			PrintWriter writer = response.getWriter();
+			writer.println("Error: " + authException.getMessage());
+		}
+	}
+	```
+
+<hr>
+
+#### 7-2) Configure Spring Security for the exception handling
+
+_Inject your AuthEntryPoint class just implemented into the SecurityConfig class_
+
+- SecurityConfig.java
+	```java
+	...
+	private final AuthEntryPoint exceptionHandler;
+
+	public SecurityConfig(..., AuthEntryPoint exceptionHandler) {
+		...
+		this.exceptionHandler = exceptionHandler;
+	}
+	```
+
+<hr>
+
+#### 7-3) Modify the filterChain method add exception handler
+
+- SecurityConfig.java
+```java
+public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+	http.csrf((csrf) -> csrf.disable())
+		...
+		.exceptionHandling((exceptionHandling) -> exceptionHandling.authenticationEntryPoint(exceptionHandler));
+
+	return http.build();
+}
+```
+
+- Test the effect
+
+	_If you send a login POST request with the wrong credentials, you will get a 401 
+	Unauthorized status in the response and an error message in the body_
+
+	![unauthorized error](https://github.com/Elliot518/mcp-oss-tech/blob/main/backend/springboot/security/unauthorized_error.png?raw=true)
+
