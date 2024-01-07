@@ -37,3 +37,5 @@
 [12. Export the data to CSV](12_ExportFunctionality.md)
 
 [13. Styling the Frontend with MUI](13_StyleWithMUI.md)
+
+[15. Secure Your Application](15_SecureTheApp.md)
