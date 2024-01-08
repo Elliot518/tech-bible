@@ -198,3 +198,137 @@ _Renders the Login component if the isAuthenticated state is false, or the Carli
 If you log in using the credentials(eg: user/user or admin/admin) that we have inserted into the database, you should see the car list page. If you open the developer tools' Application tab, you can see that the token is now saved to session storage
 
 ![first login](https://github.com/Elliot518/mcp-oss-tech/blob/main/frontend/secure/first_login.png?raw=true)
+
+
+&nbsp;
+
+### 3. Implementing REST API calls
+
+#### 3-1) Fetch cars with token
+
+In the file carapi.ts, we first read the token from session storage and then add the Authorization header with the token value to the GET request.
+- carapi.ts
+    ```typescript
+    export const getCars = async (): Promise<CarResponse[]> => {
+        const token = sessionStorage.getItem("jwt");
+        const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/cars`, {
+            headers: { 'Authorization' : token }
+        });
+
+        return response.data._embedded.cars;
+    }
+    ```
+<hr>
+
+#### 3-2) Check the data and the header
+
+If you log in to your frontend, you should see the car list populated with cars from the database, and if you check the request content from header tab of the developer tools, you can see that it contains the Authorization header with the token value
+![](https://github.com/Elliot518/mcp-oss-tech/blob/main/frontend/secure/reqeust_with_header.png?raw=true)
+
+<hr>
+
+#### 3-3) Modify the other CRUD functionalities in the same way so they work correctly
+
+- carapi.ts (deleteCar)
+    ```typescript
+    export const deleteCar = async (link: string): Promise<CarResponse> =>
+    {
+        const token = sessionStorage.getItem("jwt");
+        const response = await axios.delete(link, {
+            headers: { 'Authorization': token }
+        })
+
+        return response.data
+    }
+    ```
+
+- carapi.ts (addCar)
+    ```typescript
+    export const addCar = async (car: Car): Promise<CarResponse> => {
+        const token = sessionStorage.getItem("jwt");
+        const response = await axios.post(`${import.meta.env.VITE_API_URL}/api/cars` car, {
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': token
+            },
+        });
+
+        return response.data;
+    }
+    ```
+
+- carapi.ts (updateCar)
+    ```typescript
+    export const updateCar = async (carEntry: CarEntry): Promise<CarResponse> => {
+        const token = sessionStorage.getItem("jwt");
+        const response = await axios.put(carEntry.url, carEntry.car, {
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': token
+            },
+        });
+
+        return response.data;
+    }
+    ```
+
+&nbsp;
+
+### 4. Refactoring duplicate code
+
+We can do some refactoring to avoid repeating the same code and make our code easier to maintain, for example, to make it commmon where we retrieve our token from session storage.
+
+#### 4-1) Create a function that retrieves the token from session storage
+
+**creates a configuration object for Axios requests that contains headers with the token**
+
+_Axios provides the AxiosRequestConfig interface, which can be used to configure requests we send using Axios_
+
+- carapi.ts
+    ```typescript
+    ...
+    import axios, { AxiosRequestConfig } from 'axios';
+    ...
+
+    const getAxiosConfig = (): AxiosRequestConfig => {
+        const token = sessionStorage.getItem("jwt");
+        return {
+            headers: {
+                'Authorization': token,
+                'Content-Type': 'application/json',
+            },
+        };
+    };
+    ```
+<hr>
+
+#### 4-2) Use the getAxiosConfig() function without retrieving a token in each function
+
+Remove the configuration object and call the getAxiosConfig() function 
+instead
+- carapi.ts
+```typescript
+export const getCars = async (): Promise<CarResponse[]> => {
+  const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/cars`, getAxiosConfig());
+  return response.data._embedded.cars;
+}
+
+export const deleteCar = async (link: string): Promise<CarResponse> => {
+  const response = await axios.delete(link, getAxiosConfig());
+  return response.data
+}
+
+export const addCar = async (car: Car): Promise<CarResponse> => {
+  const response = await axios.post(`${import.meta.env.VITE_API_URL}/api/cars`, car, getAxiosConfig());
+  return response.data;
+}
+
+export const updateCar = async (carEntry: CarEntry): Promise<CarResponse> => {
+  const response = await axios.put(carEntry.url, carEntry.car, getAxiosConfig());
+  return response.data;
+}
+```
+
+Run the front app and you'll find it is the same as before, we can fetch cat list correctly
+
+
