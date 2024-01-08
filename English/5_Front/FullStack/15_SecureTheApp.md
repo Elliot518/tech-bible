@@ -307,28 +307,97 @@ _Axios provides the AxiosRequestConfig interface, which can be used to configure
 Remove the configuration object and call the getAxiosConfig() function 
 instead
 - carapi.ts
-```typescript
-export const getCars = async (): Promise<CarResponse[]> => {
-  const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/cars`, getAxiosConfig());
-  return response.data._embedded.cars;
-}
+    ```typescript
+    export const getCars = async (): Promise<CarResponse[]> => {
+    const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/cars`, getAxiosConfig());
+        return response.data._embedded.cars;
+    }
 
-export const deleteCar = async (link: string): Promise<CarResponse> => {
-  const response = await axios.delete(link, getAxiosConfig());
-  return response.data
-}
+    export const deleteCar = async (link: string): Promise<CarResponse> => {
+    const response = await axios.delete(link, getAxiosConfig());
+        return response.data
+    }
 
-export const addCar = async (car: Car): Promise<CarResponse> => {
-  const response = await axios.post(`${import.meta.env.VITE_API_URL}/api/cars`, car, getAxiosConfig());
-  return response.data;
-}
+    export const addCar = async (car: Car): Promise<CarResponse> => {
+    const response = await axios.post(`${import.meta.env.VITE_API_URL}/api/cars`, car, getAxiosConfig());
+        return response.data;
+    }
 
-export const updateCar = async (carEntry: CarEntry): Promise<CarResponse> => {
-  const response = await axios.put(carEntry.url, carEntry.car, getAxiosConfig());
-  return response.data;
-}
-```
+    export const updateCar = async (carEntry: CarEntry): Promise<CarResponse> => {
+    const response = await axios.put(carEntry.url, carEntry.car, getAxiosConfig());
+        return response.data;
+    }
+    ```
 
 Run the front app and you'll find it is the same as before, we can fetch cat list correctly
 
+&nbsp;
+
+### 5. Displaying an error message
+
+We are going to implement an error message that is shown to a user if authentication fails and we will use the Snackbar MUI component to show the message.
+
+#### 5-1) Import Snackbar to the Login.tsx file
+
+- Login.tsx
+    ```typescript
+    import Snackbar from '@mui/material/Snackbar';
+    ```
+
+
+
+<hr>
+
+#### 5-2) Add a new state called open to control the visibility of the Snackbar
+
+- Login.tsx
+    ```typescript
+    const [open, setOpen] = useState(false);
+    ```
+
+<hr>
+
+#### 5-3) Add the Snackbar component to the return statement
+
+Add the Snackbar inside the stack just under the Button component. The Snackbar component is used to show toast messages. The component is shown if the open prop value is true. The autoHideDuration defines the number of milliseconds to wait before the onClose function is called.
+
+
+- Login.tsx
+    ```typescript
+    <Snackbar
+        open={open}
+        autoHideDuration={3000}
+        onClose={() => setOpen(false)}
+        message="Login failed: Check your username and password"
+    />
+    ```
+
+<hr>
+
+#### 5-4) Set the open state value to true
+
+Open the Snackbar component if authentication fails by setting the open state value to true
+
+- Login.tsx
+    ```typescript
+    const handleLogin = () => {
+        axios.post(import.meta.env.VITE_API_URL + "/login", user, {
+            ...
+        })
+        .then(res => {
+            ...
+        })
+        .catch(() => setOpen(true));
+    }  
+    ```
+<hr>
+
+#### 5-5) Check logging in with the wrong credentials
+You will see the following message in the bottom-left corner of the screen
+
+![login fail](https://github.com/Elliot518/mcp-oss-tech/blob/main/frontend/secure/login_fail.png?raw=true)
+
+&nbsp;
+
+### 6. Logging out
 
