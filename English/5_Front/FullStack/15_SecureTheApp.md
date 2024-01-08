@@ -401,3 +401,89 @@ You will see the following message in the bottom-left corner of the screen
 
 ### 6. Logging out
 
+The logout button is rendered on the car list page. The Carlist component is a child component of the Login component; therefore, we can pass the logout function to the car list using the props.
+
+
+
+
+#### 6-1) Create a handleLogout() function for the Login component
+
+We updates the isAuthenticated state to false and clears the token from session storage
+
+- Login.tsx
+    ```typescript
+    const handleLogout = () => {
+        setAuth(false);
+        sessionStorage.setItem("jwt", "");
+    }
+    ```
+
+<hr>
+
+#### 6-2) Pass the handleLogout function to the Carlist component using the props
+
+- Login.tsx
+    ```typescript
+    if (isAuthenticated) {
+        return <Carlist logOut={handleLogout} />;
+    }
+    else {
+        ...
+    }
+    ```
+
+<hr>
+
+#### 6-3) Create a new type for the props that we receive in the Carlist component
+
+The prop name is logOut, which is a function that takes no arguments, and we mark this prop as optional
+
+- Carlist.tsx
+    ```typescript
+    type CarlistProps = {
+        logOut?: () => void;
+    }
+    function Carlist({ logOut }: CarlistProps) {
+        const [open, setOpen] = useState(false);
+        ...
+    }
+    ```
+<hr>
+
+#### 6-3) Add the logout button
+
+- Carlist.tsx
+```typescript
+import Button from '@mui/material/Button';
+import Stack from '@mui/material/Stack';
+
+...
+
+if (!isSuccess) {
+    ...
+}
+else if (error) {
+    ...
+}
+else {
+    return (
+        <>
+            <Stack direction="row" alignItems="center" justifyContent="space-between">
+                <AddCar />
+                <Button onClick={logOut}>Log out</Button>
+            </Stack>
+
+            ...
+        </>
+    );
+}
+```
+<hr>
+
+- Test Logout functionality
+
+![logout](https://github.com/Elliot518/mcp-oss-tech/blob/main/frontend/secure/logout.png?raw=true)
+
+
+
+
