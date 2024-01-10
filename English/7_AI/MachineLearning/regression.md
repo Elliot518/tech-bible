@@ -86,3 +86,9 @@ We need to know what kind of data we have and whether it is useful. We do this w
 
     It is a library for working with tabular data. It can read data from any
     source, be it a CSV file, a JSON file, or a database.
+
+- Seaborn
+
+    It is another tool for plotting that is built on top of Matplotlib
+    and makes it easier to draw charts.
+
