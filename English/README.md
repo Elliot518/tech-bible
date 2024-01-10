@@ -155,3 +155,7 @@
 
 [Catalog](11_FundamentalSkills/IDE/README.md)
 
+### 11.6 AI
+
+[Catalog](11_FundamentalSkills/AI/README.md)
+
