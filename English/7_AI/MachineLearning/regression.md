@@ -45,3 +45,44 @@ We have multiple options for doing this:
 
 2. Use the Kaggle command-line interface (CLI), which is a tool for programmatic access to all datasets available via Kaggle(recommend)
 
+
+    ```shell
+    kaggle datasets download -d CooperUnion/cardataset
+    ```
+    Unzip the file, inside, there’s one file: data.csv
+
+
+&nbsp;
+
+
+### 3. Exploratory data analysis
+
+We need to know what kind of data we have and whether it is useful. We do this with exploratory data analysis (EDA)
+
+- The distribution of the target variable
+- The features in this dataset 
+- The distribution of values in these features
+- The quality of the data
+- The number of missing values
+
+#### 3-1) Exploratory data analysis toolbox
+
+> The main tools for this analysis are Jupyter Notebook, Matplotlib, and Pandas
+
+- Jupyter Notebook 
+
+    It is a tool for interactive execution of Python code. It allows us
+    to execute a piece of code and immediately see the outcome. In addition, we
+    can display charts and add notes with comments in free text. It also supports
+    other languages such as R or Julia (hence the name: Jupyter stands for Julia,
+    Python, R), but we will use it only for Python.
+
+- Matplotlib 
+
+    It is a library for plotting. It is very powerful and allows you to create
+    different types of visualizations, such as line charts, bar charts, and histograms.
+
+- Pandas 
+
+    It is a library for working with tabular data. It can read data from any
+    source, be it a CSV file, a JSON file, or a database.
