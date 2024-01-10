@@ -252,3 +252,8 @@ Use Seaborn to plot the histogram
 ```python
 sns.histplot(df.msrp, bins=40)
 ```
+
+![histgram](https://github.com/Elliot518/mcp-oss-tech/blob/main/ai/ml/mrsp_histogram.png?raw=true)
+
+
+
