@@ -246,3 +246,9 @@ For us, the most interesting column here is the last one: MSRP (manufacturer’s
 
 
 
+One of the first steps of exploratory data analysis should always be to look at what the values of y look like. We typically do this by checking the distribution of y: a visual description of what the possible values of y can be and how often they occur. This type of visualization is called a histogram.
+
+Use Seaborn to plot the histogram
+```python
+sns.histplot(df.msrp, bins=40)
+```
