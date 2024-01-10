@@ -159,5 +159,90 @@ df.columns = df.columns.str.lower().str.replace(' ', '_')
 
 Lowercases and replaces spaces with underscores for values in all string columns of the DataFrame
 ```python
-
+for col in string_columns:
+	df[col] = df[col].str.lower().str.replace(' ', '_')
 ```
+
+- compare before and after the code
+![compare df](https://github.com/Elliot518/mcp-oss-tech/blob/main/ai/ml/df_compare.png?raw=true)
+
+<hr>
+
+Analysis of the dataset:
+
+- make: 
+    
+    make of a car (BMW, Toyota, and so on)
+
+- model: 
+
+    model of a car
+
+- year: 
+
+    year when the car was manufactured
+
+- engine_fuel_type: 
+
+    type of fuel the engine needs (diesel, electric, and so on)
+
+- engine_hp: 
+
+    horsepower of the engine
+
+- engine_cylinders: 
+
+    number of cylinders in the engine
+
+- transmission_type: 
+
+    type of transmission (automatic or manual)
+
+- driven_wheels: 
+
+    front, rear, all
+
+- number_of_doors: 
+
+    number of doors a car has
+
+- market_category: 
+
+    luxury, crossover, and so on
+
+- vehicle_size: 
+
+    compact, midsize, or large
+
+- vehicle_style: 
+
+    sedan or convertible
+
+- highway_mpg: 
+
+    miles per gallon (mpg) on the highway
+
+- city_mpg: 
+
+    miles per gallon in the city
+
+- popularity: 
+
+    number of times the car was mentioned in a Twitter stream
+
+- msrp: 
+
+    manufacturer’s suggested retail price
+
+For us, the most interesting column here is the last one: MSRP (manufacturer’s suggested retail price, or simply the price of a car). We will use this column for predicting the prices of a car.
+
+<hr>
+
+#### 3-4) Target variable analysis
+
+> The MSRP column contains the important information — it’s our target variable, the y, which is the value that we want to learn to predict.
+
+
+
+
+
