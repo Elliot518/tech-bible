@@ -92,3 +92,72 @@ We need to know what kind of data we have and whether it is useful. We do this w
     It is another tool for plotting that is built on top of Matplotlib
     and makes it easier to draw charts.
 
+
+<hr>
+
+#### 3-2) Install Jupyter Notebook and import libraries
+
+```shell
+pip install notebook
+pip install numpy
+pip install pandas
+pip install matplotlib
+pip install seaborn
+
+jupyter notebook
+```
+
+- import libraries
+    ```python
+    import numpy as np 
+    import pandas as pd 
+    from matplotlib import pyplot as plt 
+    import seaborn as sns
+
+    %matplotlib inline
+    ```
+
+    %matplotlib inline in line e tells Jupyter to expect plots in the notebook, so it will be able to render them when we need them
+
+
+<hr>
+
+#### 3-3) Reading and preparing data
+
+We can use the read_csv function from Pandas for reading our dataset
+```python
+df = pd.read_csv('data.csv')
+```
+
+check how many rows there are
+```python
+len(df)
+```
+
+check the first five rows of our DataFrame
+```python
+df.head()
+```
+
+- Problem
+
+    We can already see that there are some inconsistencies in this dataset: the column names sometimes have spaces, and sometimes have underscores (_). 
+    The same is true for feature values: sometimes they’re capitalized, and sometimes they are short strings with spaces. This is inconvenient and confusing.
+
+
+
+- Solution
+
+    We can solve this by normalizing them — replacing all spaces with underscores and lowercase all letters.
+
+<hr>
+
+Lowercases all the column names, and replaces spaces with underscores
+```python
+df.columns = df.columns.str.lower().str.replace(' ', '_')
+```
+
+Lowercases and replaces spaces with underscores for values in all string columns of the DataFrame
+```python
+
+```
