@@ -255,5 +255,20 @@ sns.histplot(df.msrp, bins=40)
 
 ![histgram](https://github.com/Elliot518/mcp-oss-tech/blob/main/ai/ml/mrsp_histogram.png?raw=true)
 
+We can have a closer look by zooming in a bit and looking at values below $100,000
+```python
+sns.histplot(df.msrp[df.msrp < 100000])
+```
+
+<hr>
+
+#### Use log transformation to see the distribution
+```python
+log_price = np.log1p(df.msrp)
+sns.histplot(log_price)
+```
+As we see, this transformation removes the long tail, and now the distribution resembles a bell-shaped curve.
+
+**The normal distribution, also known as Gaussian, follows the bell-shaped curve, which is symmetrical and has a peak in the center**
 
 
