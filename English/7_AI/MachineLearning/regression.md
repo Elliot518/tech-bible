@@ -272,3 +272,88 @@ As we see, this transformation removes the long tail, and now the distribution r
 **The normal distribution, also known as Gaussian, follows the bell-shaped curve, which is symmetrical and has a peak in the center**
 
 
+&nbsp;
+
+### 4. Checking for missing values
+
+This step is important because, typically,machine learning models cannot deal with missing values automatically. We need to know whether we need to do anything special to handle those values.
+
+Pandas has a convenient function that checks the summary for missing values:
+```python
+df.isnull().sum()
+```
+
+We need to deal with missing values later when we train the model, so we should
+keep this problem in mind.
+
+&nbsp;
+
+### 5. Validation framework
+
+It’s important to set up the validation framework as early as possible to make sure that the models we train are good and can generalize — that is, that the model can be applied to new, unseen data.
+
+**To do that, we put aside some data and train the model only on one part. Then we use the held-out dataset — the one we didn’t use for training — to make sure that the predictions of the model make sense.**
+
+
+This step is important because we train the model by using optimization methods
+that fit the function g(X) to the data X. Sometimes these optimization methods pick up spurious patterns — patterns that appear to be real patterns to the model but in reality are random fluctuations. If we have a small training dataset in which all BMW cars cost only $10,000, for example, the model will think that this is true for all BMW cars in the world.
+
+To ensure that this doesn’t happen, we use validation. Because the validation dataset is not used for training the model, the optimization method did not see this data. When we apply the model to this data, it emulates the case of applying the model to new data that we’ve never seen. If the validation dataset has BMW cars with prices higher than $10,000, but our model will predict $10,000 on them, we will notice that the model doesn’t perform well on these examples.
+
+<hr>
+
+#### We need to split the dataset into three parts: train, validation, and test
+
+- 20% of data goes to validation
+- 20% goes to test
+- The remaining 60% goes to train
+
+
+#### Splitting Data into validation, test, and training sets
+```python
+# Gets the number of rows in the DataFrame
+n = len(df)
+
+# Calculates how many rows should go to train, validation, and test
+n_val = int(0.2 * n) 
+n_test = int(0.2 * n) 
+n_train = n - (n_val + n_test)
+
+# Fixes the random seed to make sure that the results are reproducible
+np.random.seed(2) 
+
+# Creates a NumPy array with indices from 0 to (n–1), and shuffles it
+idx = np.arange(n) 
+np.random.shuffle(idx)
+
+# Uses the array with indices to get a shuffled DataFrame
+df_shuffled = df.iloc[idx]
+
+# Splits the shuffled DataFrame into train, validation, and test
+df_train = df_shuffled.iloc[:n_train].copy() 
+df_val = df_shuffled.iloc[n_train:n_train+n_val].copy() 
+df_test = df_shuffled.iloc[n_train+n_val:].copy()
+
+y_train_orig = df_train.msrp.values
+y_val_orig = df_val.msrp.values
+y_test_orig = df_test.msrp.values
+
+# apply the log transformation
+y_train = np.log1p(df_train.msrp.values)
+y_val = np.log1p(df_val.msrp.values)
+y_test = np.log1p(df_test.msrp.values)
+
+# To avoid accidentally using the target variable later, let’s remove it from the dataframes
+del df_train['msrp']
+del df_val['msrp']
+del df_test['msrp']
+```
+
+**When the validation split is done, we can go to the next step: training a model**
+
+
+
+
+
+
+
