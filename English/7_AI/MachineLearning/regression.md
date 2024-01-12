@@ -352,8 +352,33 @@ del df_test['msrp']
 **When the validation split is done, we can go to the next step: training a model**
 
 
+&nbsp;
 
+### 6. Machine learning for regression
 
+> After performing the initial data analysis, we are ready to train a model. The problem we are solving is a regression problem: the goal is to predict a number — the price of a car. For this project we will use the simplest regression model: linear regression.
 
+#### 6-1) Linear regression
 
+_Linear regression is a perfect model because it’s relatively simple and can be implemented with just a few lines of NumPy code._
+
+$
+g(x_i) = w_0 + x_i^Tw
+$
+
+- $w_0$ is the bias term
+- $w$ is the n-dimensional vector of weights
+
+$x_1 = (1, x_{11}, x_{12}, ... x_{1n})$
+<br>
+...<br>
+$x_i = (1, x_{i1}, x_{i2}, ... x_{in})$
+<br>
+...<br>
+$x_m = (1, x_{m1}, x_{m2}, ... x_{mn})$
+<br>
+
+#### We can put these vectors together as rows of a matrix. Let’s call this matrix X
+
+![matrix of regression](https://github.com/Elliot518/mcp-oss-tech/blob/main/ai/ml/matrix_regression.png?raw=true)
 
