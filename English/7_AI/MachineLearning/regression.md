@@ -382,3 +382,50 @@ $x_m = (1, x_{m1}, x_{m2}, ... x_{mn})$
 
 ![matrix of regression](https://github.com/Elliot518/mcp-oss-tech/blob/main/ai/ml/matrix_regression.png?raw=true)
 
+<hr>
+
+#### 6-2) Training linear regression model
+
+The weight vector w can be computed with the following formula: <br>
+$
+w = (X^TX)^{-1}X^Ty
+$
+<br>
+
+It’s quite easy to translate to NumPy:
+- $X^T$ is the transpose of X. In NumPy, it’s X.T
+- $X^TX$ is a matrix–matrix multiplication, which we can do with the dot method
+from NumPy: X.T.dot(X)
+- $X^{–1}$ is the inverse of X. We can use np.linalg.inv function to calculate the
+inverse
+<br>
+
+So the formula above translates directly to: <br>
+**inv(X.T.dot(X)).dot(X.T).dot(y)**
+
+```python
+def train_linear_regression(X, y):
+    # adding the dummy column
+    # Creates an array that contains only ones
+    ones = np.ones(X.shape[0])
+
+    # Adds the array of 1s as the first column of X 
+    X = np.column_stack([ones, X]) 
+
+    # normal equation formula
+    # Computes X^TX
+    XTX = X.T.dot(X) 
+
+    # Computes the inverse of X^TX
+    XTX_inv = np.linalg.inv(XTX) 
+
+    # Computes the rest of the normal equation
+    w = XTX_inv.dot(X.T).dot(y) 
+
+    # Splits the weights vector into the bias and the rest of the weights
+    return w[0], w[1:]
+ ```
+
+&nbsp;
+
+### 7. Predicting the price
