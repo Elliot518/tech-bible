@@ -429,3 +429,109 @@ def train_linear_regression(X, y):
 &nbsp;
 
 ### 7. Predicting the price
+
+> We now have a function for training a linear regression model at our
+disposal, so let’s use it to build a simple baseline solution
+
+#### 7-1) Baseline solution
+
+We have already prepared the y, but we still don’t have the X: what
+we have right now is a data frame, not a matrix. So we need to extract some features from our dataset to create this matrix X.
+
+Let’s select the features from the data frame and write them to a new variable, df_num:
+
+```python
+base = ['engine_hp', 'engine_cylinders', 'highway_mpg', 'city_mpg',  'popularity']
+df_num = df_train[base]
+```
+
+
+As the dataset has missing values. We need to do something because the linear regression model cannot deal with missing values automatically.
+
+Dropping all the rows that contain at least one missing value will lose the information that we have in the other columns.
+
+Filling the missing values with some other value don’t lose the information in other columns and still can make predictions. We fill the missing values with zeros. 
+
+We can use the fillna method from Pandas:
+```python
+df_num = df_num.fillna(0)
+```
+
+For example, we have five features, so the formula is: <br>
+$
+g(x_i) = w_0 + x_{i1}w_1 + x_{i2}w_2 + x_{i3}w_3 + x_{i4}w_4 + x_{i5}w_5
+$
+
+If feature three is missing, and we fill it with zero, xi3 becomes zero: <br>
+$
+g(x_i) = w_0 + x_{i1}w_1 + x_{i2}w_2 + x_{i4}w_4 + x_{i5}w_5
+$
+
+Now we need to convert this DataFrame to a NumPy array. The easiest way to do it is to use its values property: <br>
+
+```python
+# X_train is a matrix — a two-dimensional NumPy array
+# We can use it as input to our linear_regresson function
+X_train = df_num.values
+
+w_0, w = train_linear_regression(X_train, y_train)
+
+# We have just trained the first model! 
+# Now we can apply it to the training data to see how well it predicts
+y_pred = w_0 + X_train.dot(w)
+
+# To see how good the predictions are, use histplot to plot the predicted values
+# and compare them with the actual prices
+sns.histplot(y_pred, label='prediction')
+sns.histplot(y_train, label='target')
+plt.legend()
+```
+
+![base line](https://github.com/Elliot518/mcp-oss-tech/blob/main/ai/ml/base_line.png?raw=true)
+
+<hr>
+
+
+#### 7-2) RMSE: Evaluating model quality
+
+> We can use many metrics to evaluate how well a regression model behaves. The most commonly used one is root mean squared error — RMSE for short.
+
+RMSE tells us how large the errors are that our model makes. It’s computed with
+the following formula: <br>
+$
+RSME = \sqrt{\frac{1}{m}\sum_{i=1}^m(g(x_i) - y_i)^2}
+$
+
+$(g(x_i) - y_i)^2$ is the difference between the prediction we make for the observation and the
+actual target value for that observation.
+Then we use the square of the difference, which gives a lot more weight to larger differences. If we predict 9.5, for example, and the actual value is 9.6, the difference is
+0.1, so its square is 0.01, which is quite small. But if we predict 7.3, and the actual value
+is 10.3, the difference is 3, and the square of the difference is 9. <br>
+This is the SE part (squared error) of RMSE. 
+
+Next, we have a sum: <br>
+$\sum_{i=1}^m(g(x_i) - y_i)^2$ <br>
+
+This summation goes over all m observations and puts all the squared errors together into a single number.
+
+If we divide this sum by m, we get the mean squared error: <br>
+$\frac{1}{m}\sum_{i=1}^m(g(x_i) - y_i)^2$
+
+Finally, we take the square root of that: <br>
+$
+RSME = \sqrt{\frac{1}{m}\sum_{i=1}^m(g(x_i) - y_i)^2}
+$
+
+#### The implementation of root mean squared error
+
+```python
+def rmse(y, y_pred):
+    # Computes the difference between the prediction and the target
+    error = y_pred - y 
+
+    # Computes MSE: first computes the squared error, and then calculates its mean
+    mse = (error ** 2).mean() 
+
+    # Takes the square root to get RMSE
+    return np.sqrt(mse)
+```
