@@ -35,3 +35,85 @@ The syntax for useState is as follows:
 ```typescript
 const [state, setState] = useState(initialState);
 ```
+
+A simeple useState demo:
+```typescript
+import React, { useState } from 'react';
+
+function Example() {
+  const [count, setCount] = useState(0);
+
+  return (
+    <div>
+      <p>You clicked {count} times</p>
+      <button onClick={() => setCount(count + 1)}>
+        Click me
+      </button>
+    </div>
+  );
+}
+```
+<hr>
+
+#### Advanced useState hooks
+
+#### 2-1) Add useState to the React import statement
+- PersonScore.tsx
+    ```typescript
+    import { ..., useState } from 'react';
+    ```
+
+<hr>
+
+#### 2-2) Add state definitions
+eg: for name, score, and loading at the top of the component function
+- PersonScore.tsx
+    ```typescript
+    export function PersonScore() {
+        const [name, setName] = useState<string | undefined>();
+        const [score, setScore] = useState(0);
+        const [loading, setLoading] = useState(true);
+
+        ...
+    }
+    ```
+    _The score state is initialized to 0 and loading is initialized to true_
+<hr>
+
+#### 2-3) Change the effect function to set the loading and name state values after the person data has been fetched
+
+- PersonScore.tsx
+    ```typescript
+    export function PersonScore() {
+        ...
+
+        useEffect(() => {
+        getPerson().then((person) => {
+            setLoading(false);
+            setName(person.name);
+        });
+        }, []);
+    }
+    ```
+    _After the person has been fetched, loading is set to false, and name is set to the person’s name_
+<hr>
+
+#### 2-4) Add the following if statement in between the useEffect call and the return statement
+- PersonScore.tsx
+    ```typescript
+    export function PersonScore() {
+        useEffect( ... );
+
+        if (loading) {
+            return <div>Loading ...</div>;
+        }
+
+        return ...
+    }
+    ```
+
+    _This displays a loading indicator when the loading state is true_
+
+<hr>
+
+#### 2-5) Change the component’s return statement from outputting nothing to outputting the followin
