@@ -4,5 +4,8 @@
 
 <hr>
 
-[1. IntelliJ IDEA Tips](IDEA_tips.md)
+
+[1. IntelliJ IDEA Basic Settings](IDEA_Settings.md)
+
+[2. IntelliJ IDEA Tips](IDEA_tips.md)
 
