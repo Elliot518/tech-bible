@@ -36,3 +36,19 @@ File(IntelliJ IDEA)–>Settings–>Editor–>General->Editor Tabs
 
 &nbsp;
 
+### 5. Serialize UID
+
+![serializable uid 1](https://github.com/Elliot518/mcp-oss-tech/blob/main/ide/idea/serializable_uid1.png?raw=true)
+<hr>
+
+![serializable uid 2](https://github.com/Elliot518/mcp-oss-tech/blob/main/ide/idea/serializable_uid2.png?raw=true)
+
+- After code generated
+    ```java
+    @Serial
+    private static final long serialVersionUID = -4177903380418012864L;
+    ```
+&nbsp;
+
+
+
