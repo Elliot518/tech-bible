@@ -117,3 +117,27 @@ eg: for name, score, and loading at the top of the component function
 <hr>
 
 #### 2-5) Change the component’s return statement from outputting nothing to outputting the followin
+- PersonScore.tsx
+```typescript
+export function PersonScore() {
+    ...
+
+    if (loading) {
+        ...
+    }
+
+    return (
+        <div>
+            <h3>
+                {name}, {score}
+            </h3>
+            <button onClick={() => setScore(score + 1)}>Add</button>
+            <button onClick={() => setScore(score - 1)}>Subtract</button>
+            <button onClick={() => setScore(0)}>Reset</button>
+        </div>
+    );
+}
+```
+&nbsp;
+
+### 3. Understanding useReducer
