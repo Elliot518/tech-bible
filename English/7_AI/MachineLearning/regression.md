@@ -535,3 +535,51 @@ def rmse(y, y_pred):
     # Takes the square root to get RMSE
     return np.sqrt(mse)
 ```
+
+<hr>
+
+#### 7-3) Validating the model
+
+The model will be used to predict the price of cars that it didn’t see before. For that purpose, we set aside a validation dataset. We intentionally don’t use it for training and keep it for validating the model.
+
+We have already split our data into multiple parts: df_train, df_val, and df_test. We have also created a matrix X_train from df_train and used X_train and y_train to train the model. Now we need to do the same steps to get X_val — a matrix with features computed from the validation dataset. Then we can apply the model to X_val to get predictions and compare them with y_val.
+
+
+```python
+# converting a validation DataFrame into a matrix
+X_val = prepare_X(df_val)
+
+# Applies the model to the validation dataset
+y_pred = w_0 + X_val.dot(w)
+
+# check rsme of validation dataset
+rmse(y_val, y_pred)
+```
+<hr>
+
+#### 7-5) Simple feature engineering
+
+We already have a simple baseline model with simple features. To improve our model further, we can add more features to the model: we create others and add them to the existing features. This process is called feature engineering. <br>
+**Our aim is to improve the RMSE calculated on the validation data**
+
+```python
+# we don’t want to repeat the feature extraction code multiple times
+# put this logic into the prepare_X function
+def prepare_X(df):
+    # Creates a copy of the input parameter to prevent side effects
+    df = df.copy()
+
+    # Creates a copy of the base list with the basic features
+    features = base.copy()
+
+    # Computes the age feature(because the dataset was created in 2017)
+    df['age'] = 2017 - df.year
+
+    # Appends age to the list of feature names we use for the model
+    features.append('age')
+
+    df_num = df[features]
+    df_num = df_num.fillna(0)
+    X = df_num.values
+    return X
+```
