@@ -583,3 +583,19 @@ def prepare_X(df):
     X = df_num.values
     return X
 ```
+
+Let’s test if adding the feature “age” leads to any improvements:
+```python
+X_train = prepare_X(df_train)
+w_0, w = train_linear_regression(X_train, y_train)
+
+y_pred = w_0 + X_train.dot(w)
+print('train', rmse(y_train, y_pred))
+
+X_val = prepare_X(df_val)
+y_pred = w_0 + X_val.dot(w)
+print('validation', rmse(y_val, y_pred))
+```
+
+#### The validation error is 0.517, which is a good improvement from 0.76 — the value we had in the baseline solution. Thus, we conclude that adding “age” is indeed helpful when making predictions.
+
