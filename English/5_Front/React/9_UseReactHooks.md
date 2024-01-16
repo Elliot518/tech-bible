@@ -88,10 +88,10 @@ eg: for name, score, and loading at the top of the component function
         ...
 
         useEffect(() => {
-        getPerson().then((person) => {
-            setLoading(false);
-            setName(person.name);
-        });
+            getPerson().then((person) => {
+                setLoading(false);
+                setName(person.name);
+            });
         }, []);
     }
     ```
@@ -141,3 +141,149 @@ export function PersonScore() {
 &nbsp;
 
 ### 3. Understanding useReducer
+
+> useReducer is an alternative method of managing state. It uses a reducer function for state changes, which takes in the current state value and returns the new state value.
+
+
+- syntax
+```typescript
+const [state, dispatch] = useReducer(reducer, initialState);
+```
+
+useReducer takes in a reducer function and the initial state value as parameters. It then returns a tuple containing the current state value and a function to dispatch state changes.
+
+```typescript
+function reducer(state: State, action: Action): State {
+    switch (action.type) {
+        case 'add':
+            return { ...state, total: state.total + action.amount };
+        case ...
+            ...
+        default:
+            return state;
+    }
+}
+```
+
+<hr>
+
+```typescript
+const [state, dispatch] = useReducer<Reducer<State, Action>>(
+    reducer,
+    initialState
+);
+```
+
+_Reducer is a standard React type that has generic parameters for the type of state and the type of action_
+
+useReducer is more complex than useState because state changes go through a reducer function that we must implement. This benefits complex state objects with related properties or when a state change depends on the previous state value.
+
+<hr>
+
+#### 3-1) Import useReducer instead of useState from React
+
+```typescript
+import { ..., useReducer } from 'react';
+```
+
+<hr>
+
+#### 3-2) Define a type for the state
+
+```typescript
+type State = {
+    name: string | undefined;
+    score: number;
+    loading: boolean;
+};
+```
+
+<hr>
+
+#### 3-3) Define types for all the action objects
+
+```typescript
+type Action =
+    | {
+        type: 'initialize';
+        name: string;
+    }
+    | {
+        type: 'increment';
+    }
+    | {
+        type: 'decrement';
+    }
+    | {
+        type: 'reset';
+    };
+```
+<hr>
+
+#### 3-4) Define reducer function
+
+```typescript
+function reducer(state: State, action: Action): State {
+    switch (action.type) {
+        case 'initialize':
+            return { name: action.name, score: 0, loading: false };
+        case 'increment':
+            return { ...state, score: state.score + 1 };
+        case 'decrement':
+            return { ...state, score: state.score - 1 };
+        case 'reset':
+            return { ...state, score: 0 };
+        default:
+            return state;
+    }
+}
+```
+<hr>
+
+#### 3-5) Replace the useState calls with the useReducer call
+- useState demo
+    ```typescript
+    const [name, setName] = useState<string | undefined>();
+    const [score, setScore] = useState(0);
+    const [loading, setLoading] = useState(true);
+    ```
+
+- useReducer demo
+    ```typescript
+    const [{ name, score, loading }, dispatch] = useReducer(reducer, {
+        name: undefined,
+        score: 0,
+        loading: true,
+    });
+    ```
+    _The state has been initialized with an undefined name, a score of 0, and loading set to true_
+
+<hr>
+
+- PersonScore.tsx
+    ```typescript
+    useEffect(() => {
+        getPerson().then(({ name }) => dispatch({ type: 'initialize', name }));
+    }, []);
+    ```
+<hr>
+
+#### 3-6) Dispatch the relevant actions in the button click handlers
+- PersonScore.tsx
+```typescript
+return (
+    <div>
+        <h3>
+            {name}, {score}
+        </h3>
+        <button onClick={() => dispatch({ type: 'increment' })}>Add</button>
+        <button onClick={() => dispatch({ type: 'decrement' })}>Subtract</button>
+        <button onClick={() => dispatch({ type: 'reset' })}>Reset</button>
+    </div>
+);
+```
+
+&nbsp;
+
+### 4. Using the ref Hook
+
