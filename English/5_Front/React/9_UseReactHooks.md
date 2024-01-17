@@ -287,3 +287,94 @@ return (
 
 ### 4. Using the ref Hook
 
+#### 4-1) What is ref Hook
+
+> The ref Hook is called useRef and it returns a variable whose value is persisted for the lifetime of a component. This means that the variable doesn’t lose its value when a component re-renders.
+
+
+The value returned from the ref Hook is often referred to as a ref. The ref can be changed without causing a re-render
+
+syntax for useRef:
+```typescript
+const ref = useRef(initialValue);
+```
+
+The type of the ref can be explicitly defined in a generic argument for useRef:
+```typescript
+const ref = useRef<Ref>(initialValue);
+```
+
+The value of the ref is accessed via its current property:
+```typescript
+console.log("Current ref value", ref.current);
+```
+The value of the ref can be updated via its current property as well
+```typescript
+ref.current = newValue;
+```
+
+A common use of the useRef Hook is to access HTML elements imperatively. HTML elements have a ref attribute in JSX that can be assigned to a ref:
+```typescript
+function MyComponent() {
+    const inputRef = useRef<HTMLInputElement>(null);
+    
+    function doSomething() {
+        console.log("All the properties and methods of the input", inputRef.current);
+    }
+
+    return <input ref={inputRef} type="text" />;
+}
+```
+
+<hr>
+
+#### 4-2) refHook example
+
+1) Import useRef from React
+
+- PersonScore.tsx
+    ```typescript
+    import { ..., useRef } from 'react';
+    ```
+<hr>
+
+2) Create a ref for the Add button
+
+- PersonScore.tsx
+    ```typescript
+    const [ ... ] = useReducer( ... );
+
+    const addButtonRef = useRef<HTMLButtonElement>(null);
+
+    useEffect( ... )
+    ```
+<hr>
+
+3) Assign the ref to the ref attribute on the Add button JSX element
+
+- PersonScore.tsx
+    ```typescript
+    <button ref={addButtonRef} onClick={() => dispatch({ type: 'increment' })}>
+        Add
+    </button>
+    ```
+<hr>
+
+4) Now that we have a reference to the Add button, we can invoke its focus method to move the focus to it when the person’s information has been fetched
+
+Let’s add another effect to do this below the existing effect that fetches the person:
+- PersonScore.tsx
+```typescript
+useEffect(() => {
+    getPerson().then(({ name }) =>
+        ...
+    );
+}, []);
+
+
+useEffect(() => {
+    if (!loading) {
+        addButtonRef.current?.focus();
+    }
+}, [loading]);
+```
