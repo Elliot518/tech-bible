@@ -364,17 +364,21 @@ function MyComponent() {
 
 Let’s add another effect to do this below the existing effect that fetches the person:
 - PersonScore.tsx
-```typescript
-useEffect(() => {
-    getPerson().then(({ name }) =>
-        ...
-    );
-}, []);
+    ```typescript
+    useEffect(() => {
+        getPerson().then(({ name }) =>
+            ...
+        );
+    }, []);
 
 
-useEffect(() => {
-    if (!loading) {
-        addButtonRef.current?.focus();
-    }
-}, [loading]);
-```
+    useEffect(() => {
+        if (!loading) {
+            addButtonRef.current?.focus();
+        }
+    }, [loading]);
+    ```
+&nbsp;
+
+### 5. Using the memo Hook
+
