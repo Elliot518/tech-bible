@@ -598,4 +598,7 @@ print('validation', rmse(y_val, y_pred))
 ```
 
 #### The validation error is 0.517, which is a good improvement from 0.76 — the value we had in the baseline solution. Thus, we conclude that adding “age” is indeed helpful when making predictions.
+<hr>
+
+#### 7-6) Handling categorical variables
 
