@@ -382,3 +382,22 @@ Let’s add another effect to do this below the existing effect that fetches the
 
 ### 5. Using the memo Hook
 
+#### 5-1) What is memo Hook
+
+> The memo Hook creates a memoized value and is beneficial for values that have computationally expensive calculations.
+
+- Syntax
+
+    ```typescript
+    const memoizedValue = useMemo(() => expensiveCalculation(), []);
+    ```
+
+<hr>
+
+#### 5-2) How to use the memo Hook
+
+1) Import useMemo from React
+- PersonScore.tsx
+```typescript
+
+```
