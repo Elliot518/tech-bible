@@ -399,5 +399,60 @@ Let’s add another effect to do this below the existing effect that fetches the
 1) Import useMemo from React
 - PersonScore.tsx
 ```typescript
-
+import { ..., useMemo } from 'react';
 ```
+<hr>
+
+2) Add the demo expensive function
+```typescript
+function sillyExpensiveFunction() {
+    console.log('Executing silly function');
+    let sum = 0;
+    for (let i = 0; i < 10000; i++) {
+        sum += i;
+    }
+
+    return sum;
+}
+```
+<hr>
+
+3) Add call to the expensive function
+```typescript
+export function PersonScore() {
+    ...
+
+    useEffect(...);
+
+    const expensiveCalculation = useMemo(() => sillyExpensiveFunction(), []);
+
+    if (loading) {
+        return <div>Loading ...</div>;
+    }
+}
+```
+<hr>
+
+4) Add the result of the function call to the JSX underneath name and score
+
+```html
+<h3>
+    {name}, {score}
+</h3>
+<p>{expensiveCalculation}</p>
+<button ... >
+    Add
+</button>
+```
+
+
+<hr>
+
+5) Refresh the browser containing the app and click the buttons
+
+    If you look in the console, you will see that the expensive function is executed every time the component is re-rendered after a button click
+
+
+&nbsp;
+
+### 6. Using the callback Hook
