@@ -456,3 +456,64 @@ export function PersonScore() {
 &nbsp;
 
 ### 6. Using the callback Hook
+
+#### 6-1) What is callback Hook
+
+> The callback Hook memoizes a function so that it isn’t recreated on each render
+
+
+- syntax
+    ```typescript
+    const memoizedCallback = useCallback(() => someFunction(), []);
+    ```
+
+A function that executes the function to memoize is passed into useCallback as the first argument. The second argument passed to useCallback is an array of dependencies. So, if the someFunction function has dependencies a and b, the call will be as follows:
+    ```typescript
+    const memoizedCallback = useCallback(
+        () => someFunction(a, b), [a, b]
+    );
+    ```
+<hr>
+
+#### 6-2) Understanding when a component is re-rendered
+
+A component re-renders when its state changes
+```typescript
+export function SomeComponent() {
+    const [someState, setSomeState] = useState('something');
+    return (
+        <div>
+            <ChildComponent />
+            <AnotherChildComponent something={someState} />
+            <button onClick={() => setSomeState('Something else')}></button>
+        </div>
+    );
+}
+```
+_When someState changes, SomeComponent will re-render – for example, when the button is 
+clicked. In addition, ChildComponent and AnotherChildComponent will re-render when 
+someState changes. This is because a component is re-rendered when its parent is re-rendered._
+
+
+There is a function called memo in React that can be used to prevent unnecessary re-renders. The memo function can be applied as follows to ChildComponent to prevent unnecessary re-renders:
+```typescript
+export const ChildComponent = memo(() => {
+    return <span>A child component</span>;
+});
+```
+
+The memo function wraps the component and memoizes the result for a given set of props. The memoized function is then used during a re-render if the props are the same.
+
+
+**In summary, React’s memo function can prevent the unnecessary re-rendering of slow components**
+<hr>
+
+#### 6-3) How to use the callback Hook
+
+- Problem
+
+    > We will now refactor the PersonScore component by extracting the Reset button into a separate component called Reset. This will lead to unnecessary re-rendering of the Reset component,
+
+- Solution
+    > We will resolve using React’s memo function and the useCallback Hook.
+
