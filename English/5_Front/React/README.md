@@ -19,3 +19,6 @@
 [7. Use the effect Hook](7_UseEffectHook.md)
 
 [8. Use React Hooks](9_UseReactHooks.md)
+
+[9. Styling React Frontend](10_ReactStyling.md)
+

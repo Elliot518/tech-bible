@@ -517,3 +517,73 @@ The memo function wraps the component and memoizes the result for a given set of
 - Solution
     > We will resolve using React’s memo function and the useCallback Hook.
 
+1) Create reset component without memo
+- Reset.tsx
+    ```typescript
+    type Props = {
+        onClick: () => void;
+    };
+    export function Reset({ onClick }: Props) {
+        console.log("render Reset");
+        return <button onClick={onClick}>Reset</button>;
+    }
+    ```
+    The component takes in a click handler and displays the reset button. <br>
+    _The component also outputs render Reset to the console so that we can clearly see when the component is re-rendered._
+    <hr>
+
+2) Import the Reset component in PersonScore.tsx
+- PersonScore.tsx
+    ```typescript
+    import { Reset } from './Reset';
+    ```
+
+<hr>
+
+3) Replace the existing reset button with the new Reset component
+    ```typescript
+    <div>
+        ...
+        <button onClick=...> ...</button>
+        <Reset onClick={() => dispatch({ type: 'reset' })} />
+    </div>;
+    ```
+<hr>
+
+4) Tick the Highlight updates when components render option
+
+    Go to the app running in the browser and open React’s DevTools. Make sure the Highlight updates when components render option is ticked in the Components panel’s settings.
+
+    ![hightlight update](https://github.com/Elliot518/mcp-oss-tech/blob/main/frontend/react/react_devtools1.png?raw=true)
+<hr>
+
+5) We will now add React’s memo function to try to prevent unnecessary re-renders
+- Reset.tsx
+    ```typescript
+    import { memo } from 'react';
+
+    type Props = {
+    onClick: () => void;
+    };
+    export const Reset = memo(({ onClick }: Props) => {
+    console.log('render Reset');
+    return <button onClick={onClick}>Reset</button>;
+    });
+    Reset.displayName = 'Reset';
+    ```
+
+<hr>
+
+6) We can use the useCallback Hook to memoize the onClick handler and prevent the 
+re-render
+- PersonScore.tsx
+    ```typescript
+    import { ..., useCallback } from 'react';
+
+    const handleReset = useCallback(() => dispatch({ type: 'reset' }), []);
+
+    <Reset onClick={handleReset} />
+    ```
+
+
+
