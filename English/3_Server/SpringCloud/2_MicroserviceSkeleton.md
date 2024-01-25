@@ -92,3 +92,8 @@ find microservices -depth -name "gradlew*" -exec rm -fv "{}" \;
 - build in IDEA
 ![build in IDEA](https://github.com/Elliot518/mcp-oss-tech/blob/main/backend/springcloud/multiple_gradle_projects.png?raw=true)
 
+&nbsp;
+
+### 3. Adding RESTful APIs
+
+#### 3-1) Adding an API and a util project
