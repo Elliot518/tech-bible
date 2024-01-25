@@ -70,6 +70,10 @@
 
 [Catalog](6_Mobile/Android/README.md)
 
+### 6.2 iOS
+
+[Catalog](6_Mobile/iOS/README.md)
+
 &nbsp;
 
 ## VII. Artificial Intelligence
