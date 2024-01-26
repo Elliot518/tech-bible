@@ -659,3 +659,41 @@ there’s an extra parameter r that controls the amount of regularization — th
 Regularization affects the final solution by making the components of $w$ smaller.
 We can see that the more regularization we add, the smaller the weights become.
 
+
+<hr>
+
+Let’s check what happens with our weights for different values of r:
+```python
+for r in [0, 0.001, 0.01, 0.1, 1, 10]:
+    w_0, w = train_linear_regression_reg(X_train, y_train, r=r)
+    print('%5s, %.2f, %.2f, %.2f' % (r, w_0, w[13], w[21]))
+```
+We start with 0, which is an unregularized solution, and get very large numbers. Then
+we try 0.001 and increase it 10 times on each step: 0.01, 0.1, 1, and 10. We see that the
+values that we selected become smaller as r grows
+
+Now let’s check whether regularization helps with our problem and what RMSE we
+get after that. Let’s run it with r=0.001:
+
+#### 7-8) Using the model
+
+#### Because we now have a model, we can start using it for predicting the price of a car
+
+We’d like to suggest the price for this car. For that, we use our model:
+```python
+df_test = pd.DataFrame([ad])
+X_test = prepare_X(df_test)
+```
+First, we create a small DataFrame with one row. This row contains all the values of the
+ad dictionary we created earlier. Next, we convert this DataFrame to a matrix
+
+Now we can apply our model to the matrix to predict the price of this car:
+```python
+y_pred = w_0 + X_test.dot(w)
+```
+
+To get the actual price, we need to undo the logarithm and apply the exponent function:
+```python
+suggestion = np.expm1(y_pred)
+suggestion
+```
