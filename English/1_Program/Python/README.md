@@ -9,3 +9,6 @@
 [Tuple](Tuple.md)
 
 [List](List.md)
+
+[Dictionary](Dictionary.md)
+
