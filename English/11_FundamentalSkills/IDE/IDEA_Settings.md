@@ -50,5 +50,10 @@ File(IntelliJ IDEA)–>Settings–>Editor–>General->Editor Tabs
     ```
 &nbsp;
 
+### 6. Setup tab size in IDEA
+
+![tab size](https://github.com/Elliot518/mcp-oss-tech/blob/main/ide/idea/IDEA_Tab_Size.png?raw=true)
+
+
 
 

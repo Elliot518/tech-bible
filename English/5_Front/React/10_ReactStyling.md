@@ -141,3 +141,86 @@ A CSS module file is imported into a React component file as follows:
 ```css
 import styles from './styles.module.css';
 ```
+<hr>
+
+
+
+
+#### 2-2) Rename Alert.css to Alert.module.css
+<hr>
+
+#### 2-3) Open Alert.module.css and change the CSS class names to camel case rather than kebab case
+- Alert.module.css
+    ```css
+
+    .headerIcon {
+        ...
+    } 
+    .headerText {
+        ...
+    }
+    .closeButton {
+        ...
+    }
+    ```
+<hr>
+
+#### 2-4) Open Alert.tsx and change the CSS import statement to import the CSS module
+- Alert.tsx
+```typescript
+import styles from './Alert.module.css';
+```
+<hr>
+
+#### 2-5) Change the class name references to use the scoped names from the CSS module in the JSX
+- Alert.tsx
+```typescript
+<div className={`${styles.container} ${styles[type]}`}>
+    <div className={styles.header}>
+        <span
+            ...
+            className={styles.headerIcon}
+        >
+            {type === "warning" ? "⚠" : "i"}
+        </span>
+        {heading && (
+            <span className={styles.headerText}>{heading}</span>
+        )}
+        {closable && (
+            <button
+                ...
+                className={styles.closeButton}
+            >
+                ...
+            </button>
+        )}
+    </div>
+    <div className={styles.content}>{children}</div>
+</div>
+```
+<hr>
+
+#### 2-6) Verification
+
+Inspect the elements in the DOM using the browser’s DevTools. You will see that the alert 
+component is now using scoped CSS class names. This means the alert container styles no 
+longer clash with the app container styles
+<hr>
+
+#### 2-7) Summary of CSS modules
+
+- CSS modules allow CSS class names to be automatically scoped to a React component 
+    
+    This prevents styles for different React components from clashing.
+
+- CSS modules isn’t a standard browser feature
+
+    Instead, it is an open source library that can be added to the webpack process
+
+- CSS modules are pre-installed and pre-configured in projects created with Create React App
+
+- Similar to plain CSS, redundant CSS classes are not pruned from the production CSS bundle
+&nbsp;
+
+### 3. Using CSS-in-JS
+
