@@ -25,3 +25,7 @@ with its associated value is called a key-value pair.
 Unlike lists, items in dictionaries are unordered. The first item in a list
 named spam would be spam[0]. But there is no “first” item in a dictionary.
 
+Because dictionaries are not ordered, they can’t be sliced like lists.
+Trying to access a key that does not exist in a dictionary will result in
+a KeyError error message, much like a list’s “out-of-range” IndexError
+error message.
