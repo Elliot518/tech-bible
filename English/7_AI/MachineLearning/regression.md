@@ -602,3 +602,60 @@ print('validation', rmse(y_val, y_pred))
 
 #### 7-6) Handling categorical variables
 
+#### 7-7) Regularization
+
+We saw that adding new features does not always help, and in our case, it made things
+a lot worse. The reason for this behavior is numerical instability.
+
+_Sometimes, when adding new columns to X, we
+can accidentally add a column that is a combination of other columns. For example, if
+we already have the MPG in the city feature and decide to add kilometers per liter in
+the city, the second feature is the same as the first one but multiplied by a constant._
+
+In numerical linear algebra, such issues are called numerical instability issues, and they
+are typically solved with regularization techniques. The aim of regularization is to make
+sure that the inverse exists by forcing the matrix to be invertible.
+
+One way to do regularization is to add a small number to each diagonal element of
+the matrix. 
+Then we get the following formula for linear regression:
+$
+w = (X^TX + \alpha I)^{-1}X^Ty
+$
+This formula says that we need I — an identity matrix, which is a matrix with ones on
+the main diagonal(对角线的) and zeros everywhere else. We multiply this identity matrix by a
+number $\alpha$. This way, all the ones on the diagonal of I become $\alpha$. Then we sum $\alpha I$ and $X^TX$, which adds $\alpha$ to all the diagonal elements of $X^TX$.
+This formula can directly translate to NumPy code:
+```python
+XTX = X_train.T.dot(X_train)
+XTX = XTX + 0.01 * np.eye(XTX.shape[0])
+```
+The np.eye function creates a two-dimensional NumPy array that is also an identity
+matrix. When we multiply by 0.01, the ones on the diagonal become 0.01, so when we
+add this matrix to XTX, we add only 0.01 to its main diagonal
+
+Using an identity matrix to add 0.01 to the main diagonal of a square matrix
+![identity matrix](https://github.com/Elliot518/mcp-oss-tech/blob/main/ai/ml/identity_matrix.png?raw=true)
+
+Linear regression with regularization
+```python
+# Controls the amount of regularization by using the parameter r
+def train_linear_regression_reg(X, y, r=0.0):
+    ones = np.ones(X.shape[0])
+    X = np.column_stack([ones, X])
+
+    XTX = X.T.dot(X)
+    reg = r * np.eye(XTX.shape[0])
+    # Adds r to the main diagonal of XTX
+    XTX = XTX + reg
+
+    XTX_inv = np.linalg.inv(XTX)
+    w = XTX_inv.dot(X.T).dot(y)
+    
+    return w[0], w[1:]
+```
+The function is very similar to linear regression, but a few lines are different. First,
+there’s an extra parameter r that controls the amount of regularization — this corresponds to the number $\alpha$ in the formula that we add to the main diagonal of $X^TX$. 
+Regularization affects the final solution by making the components of $w$ smaller.
+We can see that the more regularization we add, the smaller the weights become.
+
