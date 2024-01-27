@@ -28,3 +28,32 @@ _A layout is made up of definitions written in XML. Each definition is used to c
 
 ### 3. Creating an Android Project
 
+#### 3-1) New Project wizard
+
+**a. Choosing a project template**
+
+![choose template](https://github.com/Elliot518/mcp-oss-tech/blob/main/mobile/android/PickProjectTemplate1.png?raw=true)
+
+Make sure Phone and Tablet is selected on the left. 
+Pick Empty Activity and click Next.
+<hr>
+
+**b. Configure your new project**
+
+![configure new project](https://github.com/Elliot518/mcp-oss-tech/blob/main/mobile/android/ConfigureYourProject.png?raw=true)
+<hr>
+
+
+
+
+**c. Run application**
+
+![Hello Android](https://github.com/Elliot518/mcp-oss-tech/blob/main/mobile/android/HelloAndroidApp.png?raw=true)
+
+
+
+
+
+
+
+
