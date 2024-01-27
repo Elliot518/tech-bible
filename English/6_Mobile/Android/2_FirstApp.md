@@ -23,3 +23,8 @@ _A simple application may need only one subclass; a complex application may have
 
 
 _A layout is made up of definitions written in XML. Each definition is used to create an object that appears onscreen, like a button or some text._
+
+&nbsp;
+
+### 3. Creating an Android Project
+
