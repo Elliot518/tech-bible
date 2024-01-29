@@ -224,4 +224,68 @@ longer clash with the app container styles
 
 ### 3. Using CSS-in-JS
 
+> You write the CSS in JavaScript rather than in a CSS file – hence the name CSS-in-JS
 
+In fact, you can write the CSS directly on JSX elements
+```typescript
+<span
+    css = {css`
+    font-weight: 700;
+    font-size: 14;
+    `}
+>
+    {text}
+</span>
+```
+
+A massive benefit of CSS-in-JS is that you can mix logic into the style, which is really useful for highly interactive apps
+- conditional font-weight & conditional font-size
+    ```typescript
+    <span
+        css={css`
+        font-weight: ${important ? 700 : 400};
+        font-size: ${mobile ? 15 : 14};
+        `}
+    >
+        {text}
+    </span>
+    ```
+
+
+#### Using Emotion in the alert component
+
+#### 3-1) Install Emotion
+
+```shell
+npm i @emotion/react
+```
+<hr>
+#### 3-2) Add an import for the css prop from Emotion
+
+_remove the CSS module import_
+
+- Alert.tsx
+```typescript
+/** @jsxImportSource @emotion/react */
+import { css } from '@emotion/react';
+```
+
+<hr>
+
+#### 3-3) Replace all the className props with the equivalent Emotion css attributes
+
+```typescript
+<div
+      css={css`
+        display: inline-flex;
+        flex-direction: column;
+        text-align: left;
+        padding: 10px 15px;
+        border-radius: 4px;
+        border: 1px solid transparent;
+        color: ${type === 'warning' ? '#e7650f' : '#118da0'};
+        background-color: ${type === 'warning' ? '#f3e8da' : '#dcf1f3'};
+      `}
+    >
+    ...
+</div>
