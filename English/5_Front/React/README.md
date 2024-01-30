@@ -18,7 +18,10 @@
 
 [7. Use the effect Hook](7_UseEffectHook.md)
 
-[8. Use React Hooks](9_UseReactHooks.md)
+[8. Fetch Data Hook](8_FetchDataHook.md)
 
-[9. Styling React Frontend](10_ReactStyling.md)
+[9. Use React Hooks](9_UseReactHooks.md)
 
+[10. Styling React Frontend](10_ReactStyling.md)
+
+[11. Routing with React Router](11_RoutingReact.md)
