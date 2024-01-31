@@ -23,3 +23,8 @@ The rectangle that you see in the Interface Builder canvas is called a scene and
 To add them, first show the library by clicking the + button near the top-right corner of Xcode
 
 ![show the library](https://github.com/Elliot518/mcp-oss-tech/blob/main/mobile/ios/IB/IB_ShowLibrary.png?raw=true)
+<hr>
+
+#### 2-2) Building the interface
+
+![build the interface](https://github.com/Elliot518/mcp-oss-tech/blob/main/mobile/ios/IB/build_interface.png?raw=true)
