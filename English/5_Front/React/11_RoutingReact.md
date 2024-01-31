@@ -292,7 +292,7 @@ NavLink is great for main app navigation when we want to highlight an active lin
 
 > A nested route allows a segment of a route to render a component
 
-![](https://github.com/Elliot518/mcp-oss-tech/blob/main/frontend/react/routes/nested_routes_demo.png?raw=true)
+![nested routes demo](https://github.com/Elliot518/mcp-oss-tech/blob/main/frontend/react/routes/nested_routes_demo.png?raw=true)
 
 In the mockup, Profile is the active tab because that is the last segment in the path. If the user selects the History tab, the path would change to /customers/1234/history
 
@@ -320,4 +320,43 @@ const router = createBrowserRouter([
 ]);
 ```
 
+#### Using nested routes in the app
 
+1) Open App.tsx and replace all the existing content with the following:
+
+    ```typescript
+    import { Outlet } from 'react-router-dom';
+    import { Header } from './Header';
+
+    export default function App() {
+        return (
+            <>
+                <Header />
+                <Outlet />
+            </>
+        );
+    }
+    ```
+
+<hr>
+
+2) Import the App component in Routes.tsx
+
+    Open Routes.tsx, import the App component we just modified, and remove the import component for Header
+
+
+
+    ```typescript
+    import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+    import { ProductsPage } from './pages/ProductsPage';
+    import App from './App';
+    ````
+
+<hr>
+
+3) Update the router definition as follows
+
+```typescript
+const router = createBrowserRouter([
+ {
+    
