@@ -358,5 +358,17 @@ const router = createBrowserRouter([
 
 ```typescript
 const router = createBrowserRouter([
- {
-    
+    {
+        path: '/',
+        element: <App />,
+        children: [
+            {
+                path: 'products',
+                element: <ProductsPage />,
+            }
+        ]
+    }
+]);
+```
+The products list page is now nested inside the App component
+
