@@ -22,6 +22,8 @@
 
 [9. Use React Hooks](9_UseReactHooks.md)
 
-[10. Styling React Frontend](10_ReactStyling.md)
+[10. Deep Understanding React Hooks](10_DeepUnderstandReactHooks.md)
 
-[11. Routing with React Router](11_RoutingReact.md)
+[11. Styling React Frontend](11_ReactStyling.md)
+
+[12. Routing with React Router](12_RoutingReact.md)
