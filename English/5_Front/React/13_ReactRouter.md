@@ -102,7 +102,6 @@ modify main.tsx file to import our router components
 ```typescript
 import { createRoot } from 'react-dom/client'
 import { BrowserRouter as Router } from 'react-router-dom'
-import './index.css'
 
 // Routes
 import AppRoutes from './routes'
@@ -146,3 +145,4 @@ const App: FC<any> = ({ children }) => (
 
 export default App
 ```
+
