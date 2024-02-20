@@ -46,7 +46,49 @@ print(type(wb))
 ```
 
 
+<hr>
 
+### 2-2) Get Sheets from the Workbook
 
+- get a list of all the sheet names in the workbook
+    ```python
+    print(wb.sheetnames)
+    ```
 
+- get a sheet by name from the workbook
+    ```python
+    sheet = wb['Sheet3']
+    print(type(sheet))
+    print(sheet.title)
+    ```
 
+-  get the active sheet
+    ```python
+    anotherSheet = wb.active
+    print(anotherSheet.title)
+    ```
+
+<hr>
+
+### 2-3) Get Cells from the Sheets
+
+- get a cell value from the sheet
+    ```python
+    print(sheet['A1'].value)
+    ```
+
+- get the row, column, and value from the cell
+    ```python
+    c = sheet['B1']
+
+    print('Row %s, Column %s is %s' % (c.row, c.column, c.value))
+    print('Cell %s is %s' % (c.coordinate, c.value))
+    ```
+
+- you can also get a cell using the sheet’s cell() method and passing integers for its row and column
+    ```python
+    print(sheet.cell(row=1, column=2).value)
+    # Go through every other row
+    for i in range(1, 8, 2):
+        print(i, sheet.cell(row=i, column=2).value)
+    ```
