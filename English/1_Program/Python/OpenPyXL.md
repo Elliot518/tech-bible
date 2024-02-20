@@ -35,3 +35,18 @@
 &nbsp;
 
 ### 2. Read Excel Documents
+
+### 2-1) Open Excel Documents with OpenPyXL
+
+```python
+import openpyxl
+
+wb = openpyxl.load_workbook('example.xlsx')
+print(type(wb))
+```
+
+
+
+
+
+
