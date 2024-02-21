@@ -119,3 +119,19 @@ print('max column for example: %s' % get_column_letter(sheet.max_column))
 print('column index for A: %s' % column_index_from_string('A'))
 print('column index for AA: %s' % column_index_from_string('AA'))
 ```
+
+<hr>
+
+### 2-5) Enumerate by row and cell objects
+
+```python
+import openpyxl
+
+wb = openpyxl.load_workbook('example.xlsx')
+sheet = wb['Sheet1']
+
+for rowOfCellObjects in sheet['A1':'C3']:
+    for cellObj in rowOfCellObjects:
+        print(cellObj.coordinate, cellObj.value)
+    print('--- END OF ROW ---')
+```
