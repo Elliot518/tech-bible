@@ -87,6 +87,7 @@ print(type(wb))
 
 - you can also get a cell using the sheet’s cell() method and passing integers for its row and column
     ```python
+    # get cell B1
     print(sheet.cell(row=1, column=2).value)
     # Go through every other row
     for i in range(1, 8, 2):
