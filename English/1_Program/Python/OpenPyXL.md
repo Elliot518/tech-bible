@@ -36,7 +36,7 @@
 
 ### 2. Read Excel Documents
 
-### 2-1) Open Excel Documents with OpenPyXL
+#### 2-1) Open Excel Documents with OpenPyXL
 
 ```python
 import openpyxl
@@ -48,7 +48,7 @@ print(type(wb))
 
 <hr>
 
-### 2-2) Get Sheets from the Workbook
+#### 2-2) Get Sheets from the Workbook
 
 - get a list of all the sheet names in the workbook
     ```python
@@ -70,7 +70,7 @@ print(type(wb))
 
 <hr>
 
-### 2-3) Get Cells from the Sheets
+#### 2-3) Get Cells from the Sheets
 
 - get a cell value from the sheet
     ```python
@@ -100,7 +100,7 @@ print(type(wb))
     ```
 <hr>
 
-### 2-4) Converting Between Column Letters and Numbers
+#### 2-4) Converting Between Column Letters and Numbers
 
 ```python
 import openpyxl
@@ -122,7 +122,7 @@ print('column index for AA: %s' % column_index_from_string('AA'))
 
 <hr>
 
-### 2-5) Enumerate by row and cell objects
+#### 2-5) Enumerate by row and cell objects
 
 ```python
 import openpyxl
@@ -135,3 +135,28 @@ for rowOfCellObjects in sheet['A1':'C3']:
         print(cellObj.coordinate, cellObj.value)
     print('--- END OF ROW ---')
 ```
+
+&nbsp;
+
+### 3. Write Excel Documents
+
+#### 3-1) Creating and Saving Excel Documents
+```python
+import openpyxl
+
+# Create a blank workbook
+wb = openpyxl.Workbook()
+
+print(wb.sheetnames)
+
+sheet = wb.active
+print(sheet.title)
+
+# Change title
+sheet.title = 'MySheet'
+print(wb.sheetnames)
+
+wb.save("blank_workbook.xlsx")
+```
+
+
