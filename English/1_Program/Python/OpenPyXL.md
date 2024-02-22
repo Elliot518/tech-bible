@@ -158,5 +158,40 @@ print(wb.sheetnames)
 
 wb.save("blank_workbook.xlsx")
 ```
+&nbsp;
 
+#### 3-2) Creating and Removing Sheets
+
+Sheets can be added to and removed from a workbook with the create_sheet() method and del operator
+
+```python
+import openpyxl
+
+wb = openpyxl.Workbook()
+print(wb.sheetnames)
+# Add a new sheet
+wb.create_sheet()
+print(wb.sheetnames)
+# Create a new sheet at index 0
+wb.create_sheet(index=0, title='First Sheet')
+print(wb.sheetnames)
+
+wb.create_sheet(index=2, title='Middle Sheet')
+print(wb.sheetnames)
+
+del wb['Middle Sheet']
+del wb['Sheet1']
+print(wb.sheetnames)
+```
+
+<hr>
+
+#### 3-3) Writing sheet cells
+
+```python
+sheet = wb['Sheet']
+sheet['A1'] = 'Hello, world!'
+print(sheet['A1'].value)
+wb.save("new_workbook.xlsx")
+```
 
