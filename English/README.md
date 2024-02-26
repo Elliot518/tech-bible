@@ -66,7 +66,7 @@
 
 ### 5.5 React Advanced
 
-[Catalog](5_Front/reactAdvanced/README.md)
+[Catalog](5_Front/ReactAdvanced/README.md)
 
 ## VI. Mobile Programming
 
