@@ -18,7 +18,7 @@
     >A virtual environment allows us to create separate environments for each of our projects. 
     Each of our environments will only have the packages that it needs installed. 
     This makes it easy to share our environment with others, have multiple versions of the same package installed on our machine for different projects without interfering with each other.
-
+### KEEPING LIBRARIES STRAIGHT WITH VIRTUAL ENVIRONMENTS
 &nbsp;
 
 
@@ -38,16 +38,19 @@
   2. Use venv to create an environment in this folder.
   ```python
   # windows/Linux/macOS
-  python3 -m venv env_name
+  python -m venv env_name
+  (eg: python -m venv scrapingEnv)
   ```
 
   3. Activate the environment.
   ```
   # windows
   {your dir}\env_name\Scripts\activate.bat
-
   # Linux/macOS
   source {your dir}/env_name/bin/activate
+  eg:
+  cd scrapingEnv
+  source bin/activate
   ```
 
   4. Install Python packages in the environment with pip.
