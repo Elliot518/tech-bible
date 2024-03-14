@@ -56,7 +56,11 @@
 
 [目录](4_Database/NoSql/README.md)
 
-### 4.2 数据中台
+### 4.2 关系型数据库
+
+[目录](4_Database/RDBMS/README.md)
+
+### 4.3 数据中台
 
 [目录](4_BigData/DataMiddlePlatform/README.md)
 

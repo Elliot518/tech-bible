@@ -4,4 +4,4 @@
 
 <hr>
 
-[1. MySQL](xxx)
+[1. MySQL常用命令](MySqlCommands.md)
