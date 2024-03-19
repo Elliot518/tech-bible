@@ -14,6 +14,7 @@ You can write subclasses of Activity to implement the functionality your app req
 
 _A simple application may need only one subclass; a complex application may have many._
 
+_The Activity suffix on the class name. This is not required, but it is an excellent convention to follow._
 
 &nbsp;
 
@@ -49,9 +50,9 @@ Pick Empty Activity and click Next.
 **c. Run application**
 
 ![Hello Android](https://github.com/Elliot518/mcp-oss-tech/blob/main/mobile/android/HelloAndroidApp.png?raw=true)
+&nbsp;
 
-
-
+### 4. Laying Out the UI
 
 
 
