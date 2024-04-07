@@ -4,6 +4,9 @@
 
 <hr>
 
+
+[Dev Tools](DevTools.md)
+
 [Composition API](CompositionAPI.md)
 
 [Routing Hooks](RoutingHooks.md)
