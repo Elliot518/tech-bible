@@ -8,4 +8,8 @@
 
 [2. Create microservices skeleton](2_MicroserviceSkeleton.md)
 
+<hr>
 
+### Server softwares up and run
+
+[Nacos Start (Local)](NacosStartLocal.md)
