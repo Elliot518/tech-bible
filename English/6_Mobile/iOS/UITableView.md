@@ -38,3 +38,32 @@
 4. connect the actions for the two buttons
 
 ![view header](https://github.com/Elliot518/mcp-oss-tech/blob/main/mobile/ios/UI/uitableview5_ibaction.png?raw=true)
+
+&nbsp;
+
+### 3. Customize table view cell
+
+#### 3-1) Change style and identifier of the cell
+Open Main.storyboard and select the UITableViewCell in the document outline. 
+Open its attributes inspector, change the Style to Custom, and change the Identifier to ItemCell.
+
+![Change style and identifier of the cell](https://github.com/Elliot518/mcp-oss-tech/blob/main/mobile/ios/tableview/customtablecell_1.png?raw=true)
+
+<hr>
+
+#### 3-2) Input class for cell
+
+Now open its identity inspector (the tab). In the Class field, enter ItemCell
+
+![Input class for cell](https://github.com/Elliot518/mcp-oss-tech/blob/main/mobile/ios/tableview/customtablecell_2.png?raw=true)
+
+<hr>
+
+#### 3-3) Set height of the cell
+
+Change the height of the prototype cell to be about 65 points tall by selecting the table view cell and changing the Row Height in its size inspector
+
+![Set height of the cell](https://github.com/Elliot518/mcp-oss-tech/blob/main/mobile/ios/tableview/customtablecell_3.png?raw=true)
+
+
+
