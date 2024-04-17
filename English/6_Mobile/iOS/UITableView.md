@@ -65,5 +65,27 @@ Change the height of the prototype cell to be about 65 points tall by selecting 
 
 ![Set height of the cell](https://github.com/Elliot518/mcp-oss-tech/blob/main/mobile/ios/tableview/customtablecell_3.png?raw=true)
 
+<hr>
 
+1) Select the top-left label and open the Auto Layout Add New Constraints
+menu. Select the top and left struts and then click Add 2 Constraints
+
+2) You want the bottom-left label to always be aligned with the top-left
+label. Control-drag from the bottom-left label to the top-left label
+and select Leading.
+
+3) With the bottom-left label still selected, open the Add New Constraints
+menu, select the bottom strut, and then click Add 1 Constraint.
+
+4) Select the right label and Control-drag from this label to its
+superview on its right side. Select both Trailing Space to Container and
+Center Vertically in Container.
+
+
+5) Select the bottom-left label and open its size inspector. Find the
+Vertical Content Hugging Priority and lower it to 250. Lower the Vertical Content
+Compression Resistance Priority to 749.
+
+6) Your frames might be misplaced, so select the three labels and click
+the Update Frames button.
 
