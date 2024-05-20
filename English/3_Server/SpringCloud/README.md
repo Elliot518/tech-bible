@@ -15,3 +15,5 @@
 ### Server softwares up and run
 
 [Nacos Start (Local)](NacosStartLocal.md)
+
+[Consul](Consul.md)
