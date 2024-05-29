@@ -32,8 +32,6 @@
 
 [Catalog](3_Server/MiddleWare/README.md)
 
-&nbsp;
-
 ### 3.4 Linux Server
 
 [Catalog](3_Server/LinuxServer/README.md)
