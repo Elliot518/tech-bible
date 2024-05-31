@@ -7,6 +7,6 @@
 
 [1. Install Jenkins(Docker)](InstallJenkinsDocker.md)
 
-[2. Jenkins Settings](JenkinsSettings)
+[2. Jenkins Settings](JenkinsSettings.md)
 
 [3. Upgrade Jenkins Jdk](UpgradeJenkinsJdk.md)
