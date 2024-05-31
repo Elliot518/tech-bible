@@ -52,9 +52,10 @@ cat /data/jenkins_home/secrets/initialAdminPassword
 ## Additional
 &nbsp
 
-### 1. Jenkins配置免密，免密登录到其他服务器
+### 1. Configure password-free to log other servers
 
 ```
+# Jenkins配置免密，免密登录到其他服务器
 sudo useradd kg
 sudo passwd kg
 ```
@@ -62,9 +63,10 @@ sudo passwd kg
 &nbsp;
 
 
-### 2. 产生公钥与私钥对
+### 2. Generate public and private key pairs
 
 ```shell
+# 产生公钥与私钥对
 ssh-keygen -t rsa 
 
 cd ~/.ssh
@@ -72,9 +74,10 @@ cat id_rsa.pub >> authorized_keys
 ```
 &nbsp;
 
-### 3. 用ssh-copy-id将公钥复制到目标机
+### 3. Copy the public key to the target machine
 
 ```shell
+# 用ssh-copy-id将公钥复制到目标机
 ssh-copy-id -i ~/.ssh/id_rsa.pub root@[target server ip]
 
 eg:
@@ -82,7 +85,7 @@ ssh-copy-id -i ~/.ssh/id_rsa.pub root@192.168.1.12
 ```
 &nbsp;
 
-### 4. 测试免密登陆
+### 4. Test password-free login
 
 ```shell
 ssh root@[target server ip]
@@ -94,9 +97,10 @@ logout
 
 &nbsp;
 
-### 5. 把秘钥文件（id_rsa,文件不是文件内容）复制到Jenkins目录
+### 5. Copy the secret key file to the Jenkins directory
 
 ```shell
+# 把秘钥文件（id_rsa,文件不是文件内容）复制到Jenkins目录
 cp -rf id_rsa /data/jenkins_home/
 cp -rf id_rsa /var/jenkins_home/
 
