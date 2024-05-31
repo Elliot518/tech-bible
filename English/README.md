@@ -6,6 +6,10 @@
 
 [Catalog](1_Program/Python/README.md)
 
+### 1.2 Java
+
+[Catalog](1_Program/Java/README.md)
+
 &nbsp;
 
 ## II. Architecture
