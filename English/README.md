@@ -40,6 +40,10 @@
 
 [Catalog](3_Server/LinuxServer/README.md)
 
+### 3.5 Dev Ops
+
+[Catalog](3_Server/DevOps/README.md)
+
 &nbsp;
 
 ## IV. Big Data
