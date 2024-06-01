@@ -33,9 +33,17 @@ chown -R 1000:1000 /data/jenkins_home/
 
 ### 4. Run docker (Include jdk and maven)
 
-```shell
-docker run -d --name jenkins -p 8099:8080 -p 50000:50000 -v /data/jenkins_home:/var/jenkins_home -v /soft/jdk1.8.0_251:/usr/local/java -v /soft/apache-maven-3.8.1:/usr/local/maven jenkinsci/blueocean
-```
+- Java 8 + Maven 3.8
+    ```shell
+    docker run -d --name jenkins -p 8099:8080 -p 50000:50000 -v /data/jenkins_home:/var/jenkins_home -v /soft/jdk1.8.0_251:/usr/local/java -v /soft/apache-maven-3.8.1:/usr/local/maven jenkinsci/blueocean
+    ```
+
+<hr>
+
+- Java 17 + Maven 3.9
+    ```shell
+    docker run -d --name jenkins -p 8099:8080 -p 50000:50000 -v /data/jenkins_home:/var/jenkins_home -v /soft/jdk-17.0.11:/usr/local/java -v /soft/apache-maven-3.9.7:/usr/local/maven jenkinsci/blueocean
+    ```
 
 &nbsp;
 
