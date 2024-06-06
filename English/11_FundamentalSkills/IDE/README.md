@@ -12,3 +12,4 @@
 [3. IntelliJ IDEA Tips](IDEA_tips.md)
 
 
+[4. Chrome Settings](ChromeSettings.md)
