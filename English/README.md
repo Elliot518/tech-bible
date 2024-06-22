@@ -183,3 +183,15 @@
 
 [Catalog](11_FundamentalSkills/AI/README.md)
 
+&nbsp;
+
+## XII. Trouble Shooting
+
+### 12.1 React
+
+[Catalog](12_TroubleShooting/React/README.md)
+
+
+### 12.2 Vue3
+
+[Catalog](12_TroubleShooting/Vue3/README.md)
