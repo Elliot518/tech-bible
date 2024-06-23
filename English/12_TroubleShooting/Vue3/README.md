@@ -1,6 +1,6 @@
 [Back](../../README.md)
 
-## 12.2 Vue3
+## 12.2 Vue 3
 
 <hr>
 

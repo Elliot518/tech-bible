@@ -195,3 +195,7 @@
 ### 12.2 Vue3
 
 [Catalog](12_TroubleShooting/Vue3/README.md)
+
+### 12.3 SpringBoot3
+
+[Catalog](12_TroubleShooting/SpringBoot3/README.md)
