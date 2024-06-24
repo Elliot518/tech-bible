@@ -167,3 +167,29 @@ export default App
 
 ### 4. Adding parameters to the routes
 
+```typescript
+if (contactId > 0) {
+    // If the contact id is higher than 0 then we filter it from our
+    // contacts array.
+    selectedContact = contacts.filter((contact) => contact.id === Number(contactId))[0]
+  }
+
+  const renderSingleContact = ({ name, email, phone }: Contact) => (
+    <>
+      <h2>{name}</h2>
+      <p>{email}</p>
+      <p>{phone}</p>
+    </>
+  )
+
+  const renderContacts = () => (
+    <ul>
+      {contacts.map((contact: Contact, key) => (
+        <li key={key}>
+          <Link to={`/contacts/${contact.id}`}>{contact.name}</Link>
+        </li>
+      ))}
+    </ul>
+  )
+  ```
+  
