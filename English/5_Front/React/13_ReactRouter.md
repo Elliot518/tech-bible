@@ -68,11 +68,26 @@ If you are using React for the web, you should use **react-router-dom**, and if 
 
 &nbsp;
 
-
-
 ### 3. Create and use routes
 
-#### 3-1) Create routes
+#### 3-1) Import route file
+
+After we have created all the functional components, we need to modify our index.tsx(main.tsx) file to  import our route file
+
+```typescript
+import { createRoot } from 'react-dom/client'
+import { BrowserRouter as Router } from 'react-router-dom'
+// Routes
+import AppRoutes from './routes'
+
+createRoot(document.getElementById('root') as HTMLElement).render(
+  <Router>
+    <AppRoutes />
+  </Router>
+)
+```
+
+#### 3-2) Create routes
 
 create a routes.tsx file in src folder
 ```typescript
@@ -98,7 +113,7 @@ const AppRoutes = () => (
 export default AppRoutes
 ```
 
-#### 3-2) Import routes in App
+#### 3-3) Import routes in App
 
 modify main.tsx file to import our router components
 ```typescript
@@ -115,7 +130,7 @@ createRoot(document.getElementById('root') as HTMLElement).render(
 )
 ```
 
-#### 3-3) Render routes
+#### 3-4) Render routes
 
 We need to modify our App.tsx file to render the route components as children
 
@@ -147,4 +162,8 @@ const App: FC<any> = ({ children }) => (
 
 export default App
 ```
+
+&nbsp;
+
+### 4. Adding parameters to the routes
 
