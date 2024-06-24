@@ -5,6 +5,8 @@
 <hr>
 
 
+> One key feature that React doesn’t provide is routing, which is the ability to handle URLs and navigate between different pages or views in a single-page application.
+
 ### 1. Install and configure React Router
 
 install React Router
