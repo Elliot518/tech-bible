@@ -199,3 +199,7 @@
 ### 12.3 SpringBoot3
 
 [Catalog](12_TroubleShooting/SpringBoot3/README.md)
+
+### 12.5 IDE
+
+[Catalog](12_TroubleShooting/IDE/README.md)
