@@ -18,3 +18,20 @@ Pinia helps with handling data that must be synchronized between multiple differ
 
 ### 2. Installing Pinia
 
+#### 2-1) Install dependency
+```
+ npm install pinia
+ ```
+ 
+ <hr>
+
+#### 2-2) Import pinia
+- main.js
+```javascript
+...
+import { createPinia } from 'pinia'
+...
+```
+
+<hr>
+
