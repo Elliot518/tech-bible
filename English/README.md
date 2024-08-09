@@ -10,6 +10,10 @@
 
 [Catalog](1_Program/Java/README.md)
 
+### 1.3 Go
+
+[Catalog](1_Program/Go/README.md)
+
 &nbsp;
 
 ## II. Architecture
