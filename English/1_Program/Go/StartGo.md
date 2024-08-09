@@ -30,3 +30,14 @@
   go version go1.22.6 darwin/arm64
   ```
 
+&nbsp;
+
+### 2. Install Go Doc
+
+```
+go install golang.org/x/tools/cmd/godoc@latest
+
+# start go doc
+~/go/bin/godoc -http=:8001
+```
+You can acceess url: http://localhost:8001/pkg/
