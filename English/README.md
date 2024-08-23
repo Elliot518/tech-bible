@@ -98,6 +98,10 @@
 
 [Catalog](6_Mobile/iOS/README.md)
 
+### 6.3 Wechat Mini Program
+
+[Catalog](6_Mobile/Mini/README.md)
+
 &nbsp;
 
 ## VII. Artificial Intelligence
