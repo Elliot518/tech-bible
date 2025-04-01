@@ -134,6 +134,10 @@
 
 [Catalog](7_AI/DataScience/README.md)
 
+### 7.9 DeepSeek
+
+[Catalog](7_AI/DeepSeek/README.md)
+
 &nbsp;
 
 ## VIII. Network & Security
