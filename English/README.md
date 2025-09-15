@@ -223,3 +223,7 @@
 ### 12.5 IDE
 
 [Catalog](12_TroubleShooting/IDE/README.md)
+
+### 12.6 OS
+
+[Catalog](12_TroubleShooting/OS/README.md)
