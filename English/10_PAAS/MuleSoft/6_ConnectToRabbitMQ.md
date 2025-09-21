@@ -27,3 +27,12 @@
 ![create queue](https://raw.githubusercontent.com/Elliot518/mcp-oss-tech/refs/heads/main/mulesoft/rabbitmq/create_queue_rabbitmq.png)
 
 ![create queue1](https://raw.githubusercontent.com/Elliot518/mcp-oss-tech/refs/heads/main/mulesoft/rabbitmq/create_queue_rabbitmq1.png)
+
+### 4. Bind exchange to the queue
+
+![bind exchange queue1](https://raw.githubusercontent.com/Elliot518/mcp-oss-tech/refs/heads/main/mulesoft/rabbitmq/bind_exchange_queue1.png)
+
+![bind exchange queue2](https://raw.githubusercontent.com/Elliot518/mcp-oss-tech/refs/heads/main/mulesoft/rabbitmq/bind_exchange_queue2.png)
+
+![bind exchange queue3](https://raw.githubusercontent.com/Elliot518/mcp-oss-tech/refs/heads/main/mulesoft/rabbitmq/bind_exchange_queue3.png)
+
