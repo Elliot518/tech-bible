@@ -15,3 +15,15 @@
 ### 2.Create an exchange in RabbitMQ
 
 ![create exchange](https://raw.githubusercontent.com/Elliot518/mcp-oss-tech/refs/heads/main/mulesoft/rabbitmq/create_exchange_rabbitmq.png)
+
+
+![create exchange1](https://raw.githubusercontent.com/Elliot518/mcp-oss-tech/refs/heads/main/mulesoft/rabbitmq/create_exchagne_rabbitmq1.png)
+
+&nbsp;
+
+
+### 3. Create a queue in RabbitMQ
+
+![create queue](https://raw.githubusercontent.com/Elliot518/mcp-oss-tech/refs/heads/main/mulesoft/rabbitmq/create_queue_rabbitmq.png)
+
+![create queue1](https://raw.githubusercontent.com/Elliot518/mcp-oss-tech/refs/heads/main/mulesoft/rabbitmq/create_queue_rabbitmq1.png)
