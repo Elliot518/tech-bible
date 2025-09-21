@@ -14,4 +14,4 @@
 
 [5. Deploy API to CloudHub](5_deploy_to_cloudhub.md)
 
-
+[6. Connect to RabbitMQ]()
