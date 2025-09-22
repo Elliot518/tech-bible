@@ -48,4 +48,12 @@
 
 &nbsp;
 
+### 6. Create AMQP Config
+
+![create amqp config](https://raw.githubusercontent.com/Elliot518/mcp-oss-tech/refs/heads/main/mulesoft/rabbitmq/create_amqp_config.png)
+
+![create amqp config1](https://raw.githubusercontent.com/Elliot518/mcp-oss-tech/refs/heads/main/mulesoft/rabbitmq/create_amqp_config1.png)
+
+
+
 
