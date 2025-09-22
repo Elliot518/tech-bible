@@ -36,3 +36,16 @@
 
 ![bind exchange queue3](https://raw.githubusercontent.com/Elliot518/mcp-oss-tech/refs/heads/main/mulesoft/rabbitmq/bind_exchange_queue3.png)
 
+&nbsp;
+
+### 5. Add AMQP Connector
+
+![add amqp connector](https://raw.githubusercontent.com/Elliot518/mcp-oss-tech/refs/heads/main/mulesoft/rabbitmq/add_amqp_connector.png)
+
+![add amqp connector1](https://raw.githubusercontent.com/Elliot518/mcp-oss-tech/refs/heads/main/mulesoft/rabbitmq/add_amqp_connector1.png)
+
+
+
+&nbsp;
+
+
