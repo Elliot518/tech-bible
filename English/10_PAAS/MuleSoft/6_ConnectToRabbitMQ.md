@@ -54,6 +54,36 @@
 
 ![create amqp config1](https://raw.githubusercontent.com/Elliot518/mcp-oss-tech/refs/heads/main/mulesoft/rabbitmq/create_amqp_config1.png)
 
+&nbsp;
+
+### 7. Publish & Listen Message
+
+#### 7-1) Publish Message
+
+![publish message](https://raw.githubusercontent.com/Elliot518/mcp-oss-tech/refs/heads/main/mulesoft/rabbitmq/publish_message.png)
+
+![publish message1](https://raw.githubusercontent.com/Elliot518/mcp-oss-tech/refs/heads/main/mulesoft/rabbitmq/publish_message1.png)
+
+<hr>
+
+#### 7-2) Listen Message
+
+![listen message](https://raw.githubusercontent.com/Elliot518/mcp-oss-tech/refs/heads/main/mulesoft/rabbitmq/listen_message.png)
+
+![listen message1](https://raw.githubusercontent.com/Elliot518/mcp-oss-tech/refs/heads/main/mulesoft/rabbitmq/listen_message1.png)
+
+&nbsp;
+
+
+
+
+
+
+
+
+
+
+
 
 
 
