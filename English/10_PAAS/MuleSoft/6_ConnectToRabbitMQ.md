@@ -96,3 +96,25 @@
 
 ![queue example a](https://raw.githubusercontent.com/Elliot518/mcp-oss-tech/refs/heads/main/mulesoft/rabbitmq/bind_multiple_queues_to_exchange.png)
 
+&nbsp;
+
+### 9. Code broadcast in MuleSoft
+
+#### 9-1) Set Broadcast Exchange
+
+![set broadcast exchange](https://raw.githubusercontent.com/Elliot518/mcp-oss-tech/refs/heads/main/mulesoft/rabbitmq/set_broadcast_exchange.png)
+
+<hr>
+
+#### 9-2) Set Broadcast Queues
+
+![mule queueA](https://raw.githubusercontent.com/Elliot518/mcp-oss-tech/refs/heads/main/mulesoft/rabbitmq/mule_queue_a.png)
+
+![mule queueB](https://raw.githubusercontent.com/Elliot518/mcp-oss-tech/refs/heads/main/mulesoft/rabbitmq/mule_queue_b.png)
+
+<hr>
+
+#### 9-3) Validate broadcasting message
+![mule broadcast](https://raw.githubusercontent.com/Elliot518/mcp-oss-tech/refs/heads/main/mulesoft/rabbitmq/mule_broadcast.png)
+
+![mule broadcast](https://raw.githubusercontent.com/Elliot518/mcp-oss-tech/refs/heads/main/mulesoft/rabbitmq/mule_broadcast1.png)
