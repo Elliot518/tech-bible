@@ -81,7 +81,7 @@
 
 ![create broadcast exchange1](https://raw.githubusercontent.com/Elliot518/mcp-oss-tech/refs/heads/main/mulesoft/rabbitmq/create_broadcast_exchange1.png)
 
-&nbsp;
+<hr>
 
 #### 8-2) Create multiple queues
 ![queue example a](https://raw.githubusercontent.com/Elliot518/mcp-oss-tech/refs/heads/main/mulesoft/rabbitmq/queue_example_a.png)
@@ -90,5 +90,9 @@
 
 ![multiple queues](https://raw.githubusercontent.com/Elliot518/mcp-oss-tech/refs/heads/main/mulesoft/rabbitmq/multiple_queues.png)
 
-&nbsp;
+<hr>
+
+#### 8-3) Bind multiple queues to exchange
+
+![queue example a](https://raw.githubusercontent.com/Elliot518/mcp-oss-tech/refs/heads/main/mulesoft/rabbitmq/bind_multiple_queues_to_exchange.png)
 
