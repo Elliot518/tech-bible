@@ -74,16 +74,21 @@
 
 &nbsp;
 
+### 8. Broadcasting Message in RabbitMQ
 
+#### 8-1) Create a broadcast exchange
+![create broadcast exchange](https://raw.githubusercontent.com/Elliot518/mcp-oss-tech/refs/heads/main/mulesoft/rabbitmq/create_broadcast_exchange.png)
 
+![create broadcast exchange1](https://raw.githubusercontent.com/Elliot518/mcp-oss-tech/refs/heads/main/mulesoft/rabbitmq/create_broadcast_exchange1.png)
 
+&nbsp;
 
+#### 8-2) Create multiple queues
+![queue example a](https://raw.githubusercontent.com/Elliot518/mcp-oss-tech/refs/heads/main/mulesoft/rabbitmq/queue_example_a.png)
 
+![queue example b](https://raw.githubusercontent.com/Elliot518/mcp-oss-tech/refs/heads/main/mulesoft/rabbitmq/queue_example_b.png)
 
+![multiple queues](https://raw.githubusercontent.com/Elliot518/mcp-oss-tech/refs/heads/main/mulesoft/rabbitmq/multiple_queues.png)
 
-
-
-
-
-
+&nbsp;
 
