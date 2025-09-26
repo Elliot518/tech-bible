@@ -17,3 +17,5 @@
 [1. Introduction](RabbitMQ/1_Introduction.md)
 
 [2. Queue Patterns of RabbitMQ](RabbitMQ/2_QueuePatterns.md)
+
+[3. Install RabbitMQ](RabbitMQ/InstallRabbitMQ.md)
