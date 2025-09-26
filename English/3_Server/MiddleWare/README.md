@@ -14,8 +14,11 @@
 
 ### 3.3.2 Rabbit MQ
 
-[1. Introduction](RabbitMQ/1_Introduction.md)
+[Introduction](RabbitMQ/1_Introduction.md)
 
-[2. Queue Patterns of RabbitMQ](RabbitMQ/2_QueuePatterns.md)
+[Queue Patterns of RabbitMQ](RabbitMQ/2_QueuePatterns.md)
 
-[3. Install RabbitMQ](RabbitMQ/InstallRabbitMQ.md)
+[Install RabbitMQ](RabbitMQ/InstallRabbitMQ.md)
+
+[Message Acknowledge](RabbitMQ/message_acknowledge.md)
+
