@@ -182,3 +182,16 @@ If you also want to delete any data of your local Kafka environment including an
 ```
 $ rm -rf /tmp/kafka-logs /tmp/zookeeper /tmp/kraft-combined-logs
 ```
+
+&nbsp;
+
+### 5. Install by docker
+
+- Using JVM Based Apache Kafka Docker Image
+  ```
+  # Get the Docker image
+  docker pull apache/kafka:4.1.0
+
+  # Get the Docker image
+  docker run -p 9092:9092 apache/kafka:4.1.0
+  ```
