@@ -32,8 +32,10 @@ Download [KeyStore Explorer](https://keystore-explorer.org/downloads.html)
 - 3-1) Click File->Open the jks file you just generated
 
 - 3-2) Right click the certificate->Choose "Export"->Choose "Export Key Pair"
-![Export Certificate File](https://raw.githubusercontent.com/Elliot518/mcp-oss-tech/refs/heads/main/tools/encryption/export_jks_p12.png)
+
+  ![Export Certificate File](https://raw.githubusercontent.com/Elliot518/mcp-oss-tech/refs/heads/main/tools/encryption/export_jks_p12.png)
 
 - 3-3) Choose p12 or pfx file you want to export
-![Export Certificate File](https://raw.githubusercontent.com/Elliot518/mcp-oss-tech/refs/heads/main/tools/encryption/choose_p12_file.png)
-_(Don't forget to type in the password you entered when you generated the jks file, then this will generate a p12 or pfx file in your command line execution directory)_
+
+  ![Export Certificate File](https://raw.githubusercontent.com/Elliot518/mcp-oss-tech/refs/heads/main/tools/encryption/choose_p12_file.png)
+  _(Don't forget to type in the password you entered when you generated the jks file, then this will generate a p12 or pfx file in your command line execution directory)_
