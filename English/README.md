@@ -138,6 +138,10 @@
 
 [Catalog](7_AI/DeepSeek/README.md)
 
+### 7.10 MCP
+
+[Catalog](7_AI/MCP/README.md)
+
 &nbsp;
 
 ## VIII. Network & Security
