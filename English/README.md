@@ -211,6 +211,11 @@
 
 [Catalog](11_FundamentalSkills/AI/README.md)
 
+
+### 11.7 Encryption and decryption
+
+[Catalog](11_FundamentalSkills/Encryption/README.md)
+
 &nbsp;
 
 ## XII. Trouble Shooting
