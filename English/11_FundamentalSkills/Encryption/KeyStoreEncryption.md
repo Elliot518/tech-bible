@@ -38,4 +38,5 @@ Download [KeyStore Explorer](https://keystore-explorer.org/downloads.html)
 - 3-3) Choose p12 or pfx file you want to export
 
   ![Export Certificate File](https://raw.githubusercontent.com/Elliot518/mcp-oss-tech/refs/heads/main/tools/encryption/choose_p12_file.png)
+  
   _(Don't forget to type in the password you entered when you generated the jks file, then this will generate a p12 or pfx file in your command line execution directory)_
