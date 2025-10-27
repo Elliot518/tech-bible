@@ -51,7 +51,7 @@
 
     brew uninstall mysql
 
-    # 清理残留文件（重要！避免影响后续安装）
+    # Clean up residual files (Important! To avoid affecting subsequent installations)
     rm -rf /opt/homebrew/var/mysql  # M series chip default data directory
     rm -rf /opt/homebrew/etc/my.cnf  # Configuration file
     rm -rf ~/.mysql_history  # history file
