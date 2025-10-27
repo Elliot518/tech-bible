@@ -17,23 +17,24 @@
 
     brew install mysql@8.0
 
-    # 将MySQL 8.0的二进制目录添加到环境变量（针对zsh终端，默认M系列Mac使用zsh）
+    # Add the MySQL 8.0 binary directory to the environment variable 
+    # (for the zsh terminal, the default M series Mac uses zsh)
     echo 'export PATH="/opt/homebrew/opt/mysql@8.0/bin:$PATH"' >> ~/.zshrc
 
-    # 若使用bash终端，替换为：
+    # If you use the bash terminal, replace it with:
     # echo 'export PATH="/opt/homebrew/opt/mysql@8.0/bin:$PATH"' >> ~/.bash_profile
 
-    # 使环境变量生效
-    source ~/.zshrc  # 或 source ~/.bash_profile
+    # Make environment variables effective
+    source ~/.zshrc  # or source ~/.bash_profile
 
-    # 设置开机自启动（推荐）
+    # Set to start automatically at boot (recommended)
     brew services start mysql@8.0
 
-    # 初始化安全配置（设置密码、删除匿名用户等）
+    # Initialize security configuration (set passwords, delete anonymous users, etc.)
     mysql_secure_installation
 
     mysql -u root -p
-    # 输入密码后，执行以下命令
+    # After entering the password, execute the following command
     SELECT VERSION();
     ```
 
@@ -51,10 +52,10 @@
     brew uninstall mysql
 
     # 清理残留文件（重要！避免影响后续安装）
-    rm -rf /opt/homebrew/var/mysql  # M系列芯片默认数据目录
-    rm -rf /opt/homebrew/etc/my.cnf  # 配置文件
-    rm -rf ~/.mysql_history  # 历史记录文件
-    rm -rf /opt/homebrew/etc/ca-certificates
-    rm -rf /opt/homebrew/etc/ca-certificates/cert.pem
+    rm -rf /opt/homebrew/var/mysql  # M series chip default data directory
+    rm -rf /opt/homebrew/etc/my.cnf  # Configuration file
+    rm -rf ~/.mysql_history  # history file
     ```
+
+
 

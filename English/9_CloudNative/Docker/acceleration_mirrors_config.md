@@ -70,5 +70,10 @@ Hedre's the json you set in docker desktop:
   ]
 }
 ```
+- setup registry mirrors in docker desktop
+
+  ![docker desktop mirrors](https://raw.githubusercontent.com/Elliot518/mcp-oss-tech/refs/heads/main/container/docker/registry_mirrors_docker.png)
+
+
 
 
