@@ -220,6 +220,10 @@
 
 [Catalog](11_FundamentalSkills/Encryption/README.md)
 
+### 11.8 Servers
+
+[Catalog](11_FundamentalSkills/Servers/README.md)
+
 &nbsp;
 
 ## XII. Trouble Shooting
