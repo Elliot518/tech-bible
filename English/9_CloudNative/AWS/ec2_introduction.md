@@ -37,3 +37,7 @@ Amazon EC2 has been instrumental in the transformation of computing. By signific
 
   Amazon EC2 also offers a wide array of instance types, with each of them designed to cater to 
   specific workload types, such as **memory optimized** or **compute-intensive** tasks. This makes it very flexible for users to choose the most suitable instances for their needs, ensuring optimal performance and cost efficiency.
+
+- **High availability and reliability**
+  EC2 is built on top of a highly available infrastructure, ensuring a highly available and reliable computing environment for applications hosted in the cloud.
+  
