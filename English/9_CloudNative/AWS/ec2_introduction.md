@@ -39,5 +39,26 @@ Amazon EC2 has been instrumental in the transformation of computing. By signific
   specific workload types, such as **memory optimized** or **compute-intensive** tasks. This makes it very flexible for users to choose the most suitable instances for their needs, ensuring optimal performance and cost efficiency.
 
 - **High availability and reliability**
-  EC2 is built on top of a highly available infrastructure, ensuring a highly available and reliable computing environment for applications hosted in the cloud.
   
+  EC2 is built on top of a highly available infrastructure, ensuring a highly available and reliable computing environment for applications hosted in the cloud.
+
+  Inside a region, there are multiple data centers clustered together to form an availability 
+  zone, and there are multiple availability zones in the region. This similar setup is spread across different geographic regions (see AWS Global Infrastructure at https://aws.amazon.com/about-aws/global-infrastructure/), enabling EC2 to provide redundancy and fault tolerance ensuring that your application remains up and running even in the face of hardware failures or other issues.
+
+
+  Furthermore, Amazon EC2 also offers advanced features such as **auto-scaling** and **Elastic Load Balancing**, which help distribute incoming traffic and automatically scale instances based on predefined conditions.
+
+- **Security**
+  several built-in features and tools to help you safeguard your data and applications：
+  - Amazon **VPC**
+    Create a private and isolated section of the AWS cloud.
+    _Allows you to launch EC2 inside the custom network with custom network access control lists._
+  - **Security groups**
+    Allow you to **control inbound and outbound traffic to your instance**s** and securely access them using SSH or RDP.
+  - **identity and access management (IAM)** 
+    Ensure that only authorized personnel can access your EC2 resources.
+
+- **AWS Global Infrastructure**
+  https://aws.amazon.com/about-aws/global-infrastructure/
+
+
