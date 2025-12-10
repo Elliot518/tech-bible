@@ -85,3 +85,27 @@ _/**
 **/_
 
 
+#### Add the If node:
+
+- 4-1) Select the Add node **Add node** ![add node icon](img/add_node_icon.png) connector on the NASA node.
+- 4-2) Search for **If**. n8n shows a list of nodes that match the search.
+- 4-3) Select **If** to add the node to the canvas. n8n opens the node.
+  ![add first step](https://github.com/Elliot518/mcp-oss-tech/blob/main/workflow/n8n/firstworkflow/if_node.png?raw=true)
+- 4-4） You need to check the value of the classType property in the NASA data. To do this:
+  a. Drag **classType** into **Value 1**.
+  ![add first step](https://github.com/Elliot518/mcp-oss-tech/blob/main/workflow/n8n/firstworkflow/drag_class_type.png?raw=true)
+  b. Change the comparison operation to **String > Contains**.
+  c. In **Value 2**, enter **X**. This is the highest classification of solar flare. In the next step, you will create two reports: one for X class solar flares, and one for all the smaller solar flares.
+  ![add first step](https://github.com/Elliot518/mcp-oss-tech/blob/main/workflow/n8n/firstworkflow/if_params.png?raw=true)
+  d. You can now check that the node is working and returning the expected date: select **Execute step** to run the node manually. n8n tests the data against the condition, and shows which results match true or false in the **OUTPUT** panel.
+  ![add first step](https://github.com/Elliot518/mcp-oss-tech/blob/main/workflow/n8n/firstworkflow/if_branch.png?raw=true)
+- 4-5) Once you are happy the node will return some events, you can close the node to return to the canvas.
+  ![add first step](https://github.com/Elliot518/mcp-oss-tech/blob/main/workflow/n8n/firstworkflow/nasa_with_if.png?raw=true)
+
+&nbsp;
+
+### Step 5: Output data from your workflow
+
+_The last step of the workflow is to send the two reports about solar flares. For this example, you'll send data to [Postbin](https://www.postb.in). Postbin is a service that receives data and displays it on a temporary web page._
+
+
