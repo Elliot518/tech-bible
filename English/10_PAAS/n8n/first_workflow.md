@@ -39,5 +39,11 @@
 
   ![add first step](https://github.com/Elliot518/mcp-oss-tech/blob/main/workflow/n8n/firstworkflow/schedule_trigger_node.png?raw=true)
 
+&nbsp;
+
+### Step 3: Add the NASA node and set up credentials#
+
+
+
 
 
