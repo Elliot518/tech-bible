@@ -74,8 +74,14 @@ _The NASA node interacts with NASA's public APIs to fetch useful data. We will u
 
   ![add first step](https://github.com/Elliot518/mcp-oss-tech/blob/main/workflow/n8n/firstworkflow/scheduler_with_nasa.png?raw=true)
 
+&nbsp;
 
+### Step 4: Add logic with the If node
 
-
+_/** 
+  Use the If node to create two branches that each generate a report from the NASA data. 
+  Solar flares have five possible classifications; we will add logic that sends a report with the lower classifications to one output, 
+  and the higher classifications to another. 
+**/_
 
 
