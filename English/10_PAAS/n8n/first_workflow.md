@@ -41,7 +41,39 @@
 
 &nbsp;
 
-### Step 3: Add the NASA node and set up credentials#
+### Step 3: Add the NASA node and set up credentials
+
+_The NASA node interacts with NASA's public APIs to fetch useful data. We will use the real-time data from the API to find solar events._
+
+
+- 3-1) Select the Add node ![add node icon](img/add_node_icon.png) connector on the Schedule Trigger node.
+- 3-2) Search for NASA. n8n shows a list of nodes that match the search.
+- 3-3) Select NASA to view a list of operations.
+- 3-4) Search for and select **Get a DONKI solar flare**. This operation returns a report about recent solar flares. When you select the operation, n8n adds the node to the canvas and opens it.
+  ![add first step](https://github.com/Elliot518/mcp-oss-tech/blob/main/workflow/n8n/firstworkflow/donki_solar_flare.png?raw=true)
+- 3-5) To access the NASA APIs, you need to set up credentials:
+  a. Select the **Credential for NASA API** dropdown.
+  b. Select **Create new credential**. n8n opens the credentials view.
+  c. Go to [NASA APIs](https://api.nasa.gov) and fill out the form from the Generate API Key link. The NASA site generates the key and emails it to the address you entered.
+  d. Check your email account for the API key. Copy the key, and paste it into API Key in n8n.
+  e. Select Save.
+  f. Close the credentials screen. n8n returns to the node. The new credentials should be automatically selected in **Credential for NASA API**.
+- 3-6) By default, DONKI Solar Flare provides data for the past 30 days. To limit it to just the last week, use **Additional Fields**:
+  a. Select **Add field**.
+  b. Select **Start date**.
+  c. To get a report starting from a week ago, you can use an expression: next to **Start date**, select the **Expression** tab, then select the expand button Add node icon to open the full expressions editor.
+  d. In the **Expression** field, enter the following expression:
+    ```javascript
+    {{ $today.minus(7, 'days') }}
+    ```
+    _This generates a date in the correct format, seven days before the current date_
+- 3-7) Close the **Edit Expression** modal to return to the NASA node.
+- 3-8) You can now check that the node is working and returning the expected date: select **Execute step** to run the node manually. n8n calls the NASA API and displays details of solar flares in the past seven days in the **OUTPUT** section.
+  ![add first step](https://github.com/Elliot518/mcp-oss-tech/blob/main/workflow/n8n/firstworkflow/nasa_donki_solar_flare_result.png?raw=true)
+- 3-9) Close the NASA node to return to the workflow canvas.
+
+  ![add first step](https://github.com/Elliot518/mcp-oss-tech/blob/main/workflow/n8n/firstworkflow/scheduler_with_nasa.png?raw=true)
+
 
 
 
