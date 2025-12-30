@@ -108,4 +108,10 @@ _/**
 
 _The last step of the workflow is to send the two reports about solar flares. For this example, you'll send data to [Postbin](https://www.postb.in). Postbin is a service that receives data and displays it on a temporary web page._
 
+&nbsp;
+
+### Step 6: Send by email
+
+- 6-1) Click the "+" button to the right of the node from the previous step to add a node, search for "Send Email" (or the corresponding service provider node such as Gmail/Outlook), select it, and connect.
+
 
