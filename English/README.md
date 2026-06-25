@@ -144,7 +144,13 @@
 
 ### 7.10 MCP
 
+
+
 [Catalog](7_AI/MCP/README.md)
+
+### 7.11 Codex
+
+[Catalog](7_AI/Codex/README.md)
 
 &nbsp;
 
